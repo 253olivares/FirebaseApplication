@@ -55,7 +55,6 @@ let afterRoute = (page) => {
     switch (page) {
         case "home":
             console.log("You are on the home page!");
-            loadMachine();
             // $(".checkColor").click(() => {
             //     console.log(event.target);
             //     $(event.target).parent().children().removeClass("selectedColor")
@@ -69,6 +68,7 @@ let afterRoute = (page) => {
             break;
         case "coffee":
             console.log("you are on the coffee page!");
+            loadMachine();
 
             break;
         case "cart":
