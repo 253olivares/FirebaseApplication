@@ -75,3 +75,11 @@ p {
     margin: auto;
     min-height: 320px;
 }
+
+.grayOverlay {
+    display: none;
+    position: absolute;
+    width: 100%;
+    z-index: 6;
+    background-color: rgba(153, 153, 153, .5);
+}

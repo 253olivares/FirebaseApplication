@@ -1,10 +1,8 @@
 var _db
-var bannerAd;
+var bannerAd = true;
 var topNav;
 
 var coffeeCart
-
-var bannerAd = true;
 
 // function creates an event listener that keeps track of our url address to check for any changes
 // The first line creates the listener and the second long runs the route function for the first time to land us on the homepage.
@@ -55,16 +53,6 @@ let afterRoute = (page) => {
     switch (page) {
         case "home":
             console.log("You are on the home page!");
-            // $(".checkColor").click(() => {
-            //     console.log(event.target);
-            //     $(event.target).parent().children().removeClass("selectedColor")
-            //     console.log($(event.target).parent().children());
-            //     $(event.target).addClass("selectedColor");
-            //     let color = $(event.target).attr("color");
-            //     $(event.target).parent().prev().attr("src", `https://firebasestorage.googleapis.com/v0/b/personal-project-d1c24.appspot.com/o/img%2FCoffee1${color}.png?alt=media&token=e08d42bf-c0da-4235-9692-7f4ae31298c7971`);;
-            //     console.log($(event.target).parent().prev());
-            // })
-            // addCoffeeCount();
             break;
         case "coffee":
             console.log("you are on the coffee page!");
@@ -82,13 +70,12 @@ let afterRoute = (page) => {
 let checkBanner = () => {
     if (localStorage.getItem("banner") == "true") {
         $(".bannerAd").css("display", "none");
-        console.log("exists");
-
+        bannerAd = false;
     } else {
         $(".bannerAd__close__button").click(() => {
             $(".bannerAd").addClass("test");
             localStorage.setItem("banner", true);
-            console.log("normally would close banner!");
+            bannerAd = true;
         })
         console.log("no local storeage banner!");
     }
@@ -101,6 +88,7 @@ let debugCommands = () => {
             localStorage.clear();
             $(".bannerAd").removeClass("test");
             $(".bannerAd").css("display", "flex");
+            bannerAd = true;
         }
         console.log(e.which);
     })
@@ -109,7 +97,6 @@ let setFooterHeight = () => {
     $(".content-wrap").css("padding-bottom", $(".footer").height())
 }
 let checkColorListener = () => {
-    console.log("test");
     $(".checkColor").click(() => {
         $(event.target).parent().children().removeClass("selectedColor")
         $(event.target).addClass("selectedColor");
@@ -117,8 +104,8 @@ let checkColorListener = () => {
         let color = $(event.target).attr("color");
         $(event.target).parent().prev().attr("src", `https://firebasestorage.googleapis.com/v0/b/personal-project-d1c24.appspot.com/o/img%2FCoffee${id + color}.png?alt=media&token=e08d42bf-c0da-4235-9692-7f4ae31298c7`);;
     })
-
 }
+
 let loadMachine = (docs) => {
     machineid = "";
     $("#coffeeDisplay").empty();
@@ -197,7 +184,6 @@ let loadMachine = (docs) => {
                     $('.listPage__coffeeList__item:last-child').find(".checkColor:first-child").addClass("selectedColor")
 
                     for (let i = 0 + 1; i <= 5; i++) {
-                        console.log(i);
                         if (i <= y.data().stars) {
                             $('.listPage__coffeeList__item:last-child').find(".listPage__coffeeList__item__ratingSystem").append(`<span class="fa fa-star checked"></span>`);
                         } else {
@@ -213,9 +199,45 @@ let loadMachine = (docs) => {
                 }, (error) => {
                     console.log("Error:", error);
                 });
+                addCoffeeCount();
             }, (error) => {
                 console.log("Error:", error);
             });
+}
+
+let grayOverlay = () => {
+
+
+
+    $(".keurigHeader__topNav__extraRight__profile , .grayOverlay").hover(() => {
+        if (bannerAd == true) {
+            let top = $(".bannerAd").height() + $(".keurigHeader__topNav").height() - 5 - parseInt($(".keurigHeader__topNav__extraRight__profile").css("padding-bottom"));
+            console.log("Banner Height:", $(".bannerAd").height());
+            console.log("Top Nav Height:", $(".keurigHeader__topNav").height());
+            console.log("Padding Height:", parseInt($(".keurigHeader__topNav__extraRight__profile").css("padding-bottom")));
+            $(".grayOverlay").css({ "display": "block", "top": top, "height": `calc(100% - ${top}px)` });
+            $('html, body').css({
+                overflow: 'hidden'
+            });
+            console.log(1);
+        } else {
+            let top = $(".keurigHeader__topNav").height() - parseInt($(".keurigHeader__topNav__extraRight__profile").css("padding-bottom") - 5);
+            console.log("Banner Height:", $(".bannerAd").height());
+            console.log("Top Nav Height:", $(".keurigHeader__topNav").height());
+            console.log("Padding Height:", parseInt($(".keurigHeader__topNav__extraRight__profile").css("padding-bottom")));
+            $(".grayOverlay").css({ "display": "block", "top": top, "height": `calc(100% - ${top}px)` });
+            $('html, body').css({
+                overflow: 'hidden'
+            });
+            console.log(2);
+        }
+    }, () => {
+        $(".grayOverlay").css({ "display": "none" });
+        $('html, body').css({
+            overflow: 'auto'
+        });
+    })
+
 }
 
 // functions that will run at the start of out website. As soon as the dom loads all the intial functions begin to run.
@@ -225,6 +247,7 @@ $(document).ready(() => {
         _db = firebase.firestore();
         checkHash();
         checkBanner();
+        grayOverlay();
         debugCommands();
         setFooterHeight();
     } catch (e) {

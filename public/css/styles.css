@@ -41,6 +41,13 @@ p {
   margin: auto;
   min-height: 320px; }
 
+.grayOverlay {
+  display: none;
+  position: absolute;
+  width: 100%;
+  z-index: 6;
+  background-color: rgba(153, 153, 153, 0.5); }
+
 .bannerAd {
   width: 100%;
   min-height: 42px;
@@ -100,7 +107,6 @@ p {
 .keurigHeader {
   background-color: #ece9e4;
   min-height: 145px;
-  padding-top: 8px;
   letter-spacing: 1px; }
   .keurigHeader__topNav {
     display: flex;
@@ -665,3 +671,31 @@ p {
           color: #2d2a26;
           font-size: 16px;
           margin-left: 5px; }
+
+.cartPage {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto; }
+  .cartPage__banner {
+    width: 100%;
+    height: 150px;
+    background-image: url(../../images/banner.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center; }
+  .cartPage__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%; }
+    .cartPage__content p {
+      color: #706f73;
+      margin-top: 30px;
+      margin-bottom: 10px;
+      word-spacing: 5px; }
+    .cartPage__content h1 {
+      font-size: 40;
+      font-weight: lighter;
+      letter-spacing: 8px;
+      margin-bottom: 150px; }
