@@ -1,0 +1,16 @@
+{
+  "name": "new_firebase_project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "runServerLocally": "firebase serve --only hosting",
+    "deployServer": "firebase deploy --except functions",
+    "compile:sass": "node-sass public/sass/main.scss public/css/styles.css -w"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^9.0.0"
+  }
+}

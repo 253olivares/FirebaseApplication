@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="./lib/aos-master/dist/aos.css">
+  <link rel="stylesheet" type="text/css" href="./css/styles.css">
+  <link rel="stylesheet" crossorigin="anonymous"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Persona Firebase Project</title>
+
+  <!-- Personal project to demonstrate on the linkin -->
+  <!-- Main objective of this project is to incorporate firebase and html css and javascript to recreate the krieg website. -->
+
+  <!-- Project will have functional login and logout and create an account -->
+
+  <!-- Main object is to demonstrate my understaning of mvc modles, htmls, css, javascript, and database -->
+  <!-- My ability to work with them -->
+
+  <!-- Project will be displayed publicly using firebase deploy feature -->
+
+  <!-- later project I will try to the same but with gatsby and vue -->
+  <!-- or at least learn how to use those web pages.  -->
+
+  <!-- Site in question I will be imitating : https://www.keurig.com/c/coffeemakers101 -->
+
+</head>
+
+<body>
+
+  <div id="page-container">
+    <!-- Header -->
+    <div class="bannerAd">
+      <div class="bannerAd__message">
+        <p>K-Supreme<span class="bannerAd__message__cr">&#174;</span> <span class="smart">SMART</span> for $49.99 with
+          Keurig<span class="bannerAd__message__cr">&#174;</span> Starter
+          Kit.</p>
+        <a href="#" class="bannerAd__message__shopNow">SHOP NOW</a>
+        <a href="#" class="bannerAd__message__seeDetails">See Details</a>
+      </div>
+      <div class="bannerAd__close">
+        <img class="bannerAd__close__button" src="./images/times-solid.svg" alt="Button to remove bannerAd">
+      </div>
+    </div>
+    <div class="mobileMenuView"></div>
+    <div class="keurigHeader">
+      <div class="keurigHeader__topNav">
+        <a href="#/listpage" class="keurigHeader__topNav__mainButton">
+          <img class="keurigHeader__topNav__mainButton__logo" src="./images/Logo.svg" alt="Logo for the Keurig website">
+        </a>
+        <div class="keurigHeader__topNav__searchBar">
+          <img src="./images/searchIcon2Blue.svg" alt="Search bar">
+          <input type="text" placeholder="Search" name="search" id="machineSearch">
+          <div id="keurigHeader__topNav__searchBar__results">
+            <!-- Will have a live update that allows the user to search keurig deives and add it to the cart from the search bar -->
+          </div>
+        </div>
+        <div class="keurigHeader__topNav__extraRight">
+          <button title="Free Shipping $35+" class="keurigHeader__topNav__extraRight__freeShipping">FREE SHIPPING
+            $35+</button>
+          <div class="keurigHeader__topNav__extraRight__profile">
+            <img src="./images/profile.svg" alt="Profile icon">
+            <p>Account</p>
+          </div>
+          <div class="keurigHeader__topNav__extraRight__signOut">
+            <img src="./images/signOut.png" alt="Sign out icon">
+          </div>
+          <div class="keurigHeader__topNav__extraRight__cart">
+            <img src="./images/keurig-cart.svg" alt="Search">
+            <div class="keurigHeader__topNav__extraRight__cart__count" id="cartCount"></div>
+            <p>Cart</p>
+          </div>
+        </div>
+      </div>
+      <div class="keurigHeader__login">
+      </div>
+      <div class="keurigHeader__bottomNav">
+        <a href="#" class="keurigHeader__bottomNav__other"><span>Keurig<span>&#174;</span> Starter Kit</span></a>
+        <a href="#" class="keurigHeader__bottomNav__other"><span>Start Auto-Delivery</span></a>
+        <a href="#" class="keurigHeader__bottomNav__other"><span>Beverages</span></a>
+        <a href="#" class="keurigHeader__bottomNav__other"><span>Coffee Makers</span></a>
+        <a href="#" class="keurigHeader__bottomNav__other"><span>Accessories</span></a>
+        <a href="#" class="keurigHeader__bottomNav__deals remove1"> <span><img src="./images/sale-label.svg"
+              alt="sales">Deals</span></a>
+        <a href="#" class="keurigHeader__bottomNav__other"><span>Recipes & More</span></a>
+        <a href="#" class="keurigHeader__bottomNav__other"><span>Sustainability</span></a>
+        <a href="#" class="keurigHeader__bottomNav__other"><span>Perks</span></a>
+        <a href="#" class="keurigHeader__bottomNav__outlet remove2"><span><img src="./images/sale-label.svg"
+              alt="sales">OUTLET</span></a>
+        <div class="keurigHeader__bottomNav__mobileSearch">
+          <input type="text" placeholder="Search hundreds of ways to brew..." name="mobileSearch" id="mobileSearch">
+        </div>
+        <div class="keurigHeader__bottomNav__mobileDeal">
+          <p>TODAY'S DEALS <span>+</span></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- MVC Page Content -->
+    <div class="content-wrap">
+      <div id="app">
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer__container">
+        <div class="footer__container__topWrap">
+          <div class="footer__container__topWrap__left">
+            <img src="./images/location.png" alt="location Icon">
+            <p>Find a Store</p> <span>
+              &#183;</span>
+            <p>Customer Support: 866-901-BREW(2739)</p>
+          </div>
+          <div class="footer__container__topWrap__right">
+            <p>Follow Us</p>
+            <img src="./images/twitter.png" alt="twitter">
+            <img src="./images/facebook.png" alt="facebook">
+            <img src="./images/instagram.png" alt="instagram">
+          </div>
+        </div>
+        <div class="footer__container__middleInfo">
+          <div class="footer__container__middleInfo__column1">
+            <div class="footer__container__middleInfo__column1__topRow">
+              <h1>Shop</h1>
+              <ul>
+                <li>Coffee Makers</li>
+                <li>Beverages</li>
+                <li>Iced</li>
+              </ul>
+            </div>
+            <div class="footer__container__middleInfo__column1__bottomRow">
+              <h1>Orders</h1>
+              <ul>
+                <li>Track Your Order</li>
+                <li>Returns</li>
+                <li>Auto Delivery Orders</li>
+              </ul>
+            </div>
+          </div>
+          <div class="footer__container__middleInfo__column2">
+            <h1>Helpful Info</h1>
+            <ul>
+              <li>Register Your Appliance</li>
+              <li>Support</li>
+              <li>Product Recall</li>
+              <li>Business Solution</li>
+              <li>Site Map</li>
+              <li>Contact Us</li>
+              <li>CA Privacy Rights</li>
+              <li>Do Not Sell or Share My Personal Information</li>
+              <li>Keurig Perks Terms and Conditions</li>
+            </ul>
+          </div>
+          <div class="footer__container__middleInfo__column3">
+            <h1>About Us</h1>
+            <ul>
+              <li>About Us</li>
+              <li>News</li>
+              <li>Careers</li>
+              <li>Sustainability</li>
+              <li>Accepted Payment</li>
+            </ul>
+          </div>
+          <div class="footer__container__middleInfo__column4">
+            <div class="footer__container__middleInfo__column4__Row1">
+              <h1>Join Our Mailing List</h1>
+              <p>Stay up-to-date with the latest news and new arrivals direct to your inbox.</p>
+            </div>
+            <div class="footer__container__middleInfo__column4__Row2">
+              <input type="text" name="emailSignUp" id="emailSignUp" placeholder="Your Email"><button
+                class="footer__container__middleInfo__column4__Row2__signUp">Sign Up</button>
+            </div>
+            <div class="footer__container__middleInfo__column4__Row3">
+              <h1>Select Country</h1>
+              <div class="footer__container__middleInfo__column4__Row3__country">
+                <img src="./images/countryImage.png" alt="Country Image">
+                <select name="countySelect" id="countrySelect">
+                  <option value="US" selected>United States</option>
+                  <option value="Canada">Canada</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer__container__bottomInfo">
+          <div class="footer__container__bottomInfo__copyright">
+            <p>© 2023 Keurig Green Mountain, Inc. - All Rights Reserved</p> <a href="#">Terms of Use</a> <a href="#">
+              Privacy Policy</a> <a href="#">Modern Slavery Act</a>
+          </div>
+          <div class="footer__container__bottomInfo__trademark">
+            <p>All trademarks are the property of their respective owners, not offical or asscociated.</p>
+          </div>
+        </div>
+      </div>
+      <!-- 
+      <div class="footer__middleInfo">
+        <div class="footer__middleInfo__column1">
+          <div class="footer__middleInfo__column1__topRow"></div>
+          <div class="footer__middleInfo__column1__bottomRow"></div>
+        </div>
+        <div class="footer__middleInfo__column2">
+        </div>
+        <div class="footer__middleInfo__column3"></div>
+        <div class="footer__middleInfo__column4">
+          <div class="footer__middleInfo__column4__Row1"></div>
+          <div class="footer__middleInfo__column4__Row2"></div>
+          <div class="footer__middleInfo__column4__Row3"></div>
+        </div>
+      </div>
+      <div class="footer__bottomInfo">
+        <div class="footer__copyright"></div>
+        <div class="footer__trademark"></div>
+      </div> -->
+    </footer>
+
+  </div>
+
+
+  <!-- update the version number as needed -->
+  <script defer src="/__/firebase/10.4.0/firebase-app-compat.js"></script>
+  <!-- include only the Firebase features as you need -->
+  <script defer src="/__/firebase/10.4.0/firebase-auth-compat.js"></script>
+  <script defer src="/__/firebase/10.4.0/firebase-database-compat.js"></script>
+  <script defer src="/__/firebase/10.4.0/firebase-firestore-compat.js"></script>
+  <script defer src="/__/firebase/10.4.0/firebase-functions-compat.js"></script>
+  <script defer src="/__/firebase/10.4.0/firebase-messaging-compat.js"></script>
+  <script defer src="/__/firebase/10.4.0/firebase-storage-compat.js"></script>
+  <script defer src="/__/firebase/10.4.0/firebase-analytics-compat.js"></script>
+  <script defer src="/__/firebase/10.4.0/firebase-remote-config-compat.js"></script>
+  <script defer src="/__/firebase/10.4.0/firebase-performance-compat.js"></script>
+  <!-- 
+     initialize the SDK after all desired features are loaded, set useEmulator to false
+     to avoid connecting the SDK to running emulators.
+   -->
+  <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+
+  <script src="./lib/jquery-3.7.1.min.js"></script>
+  <script src="./lib/aos-master/dist/aos.js"></script>
+  <script src="./app/model.js"></script>
+  <script src="./app/app.js"></script>
+</body>
+
+</html>

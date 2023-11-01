@@ -1,0 +1,430 @@
+// css for the list page that displays all the coffee machines and lets you add to cart
+
+.listPage {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+
+    &__banner {
+        width: 100%;
+        height: 225px;
+        background-image: url(../../images/banner.webp);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        color: $white;
+
+        p {
+            font-size: 15px;
+            margin-bottom: 0px;
+            font-weight: bold;
+            letter-spacing: 2px;
+
+            span {
+                margin-right: 5px;
+            }
+        }
+
+        h1 {
+            font-weight: lighter;
+            font-size: 55px;
+            margin-bottom: 0px;
+            letter-spacing: 5px;
+            margin-top: 5px
+        }
+    }
+
+    &__filterBanner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 18px 0px 5px 0px;
+
+        &__left {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+
+            a {
+                position: relative;
+                text-decoration: none;
+                color: $black;
+                border: 3px solid $textDealGrey;
+                padding: 13px 45px 13px 15px;
+                margin-right: 10px;
+                font-size: 13.5px;
+
+                &:hover {
+                    border: 3px solid $black;
+                }
+
+                &:hover .arrowHover {
+                    transform: rotate(180deg);
+                    filter: $filterBlack;
+                }
+
+                .arrowHover {
+                    width: 20px;
+                    position: absolute;
+                    right: 10%;
+                    margin-top: 3px;
+                }
+            }
+        }
+
+        &__right {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+
+            a {
+                position: relative;
+                text-decoration: none;
+                color: $black;
+                border: 3px solid transparent;
+                padding: 13px 55px 13px 15px;
+                margin-right: 10px;
+
+                p {
+                    display: flex;
+                    flex-direction: column;
+                    margin-bottom: 0px;
+
+                    .first {
+                        color: $textDealGrey;
+                        font-size: 12px;
+                    }
+
+                    .second {
+                        font-size: 15px;
+                    }
+                }
+
+                &:hover .arrowHover {
+                    transform: rotate(180deg);
+                    filter: $filterBlack;
+                }
+
+                .arrowHover {
+                    width: 20px;
+                    position: absolute;
+                    right: 8%;
+                    top: 50%;
+                }
+            }
+        }
+    }
+
+    &__coffeeList {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 30px 5px 30px 5px;
+
+        &__item {
+            padding: 10px;
+            width: 23.5%;
+            color: $textBlack;
+            display: flex;
+            flex-direction: column;
+            min-height: 400px;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+            z-index: 1;
+            position: relative;
+            background-color: $white;
+            margin-bottom: 20px;
+            border: 1px solid transparent;
+            margin-right: auto;
+
+            &:hover {
+                border: 1px solid $black;
+                cursor: pointer;
+                z-index: 5;
+
+            }
+
+            &:hover>.changeAddCart {
+                display: block;
+                cursor: pointer;
+                border: 1px solid $black;
+                border-top: none;
+
+            }
+
+            &__special {
+                position: absolute;
+                top: 5px;
+                left: 1px;
+                font-size: 10px;
+                padding: 5px 20px 5px 10px;
+                border-radius: 5px;
+                color: $white;
+                margin-bottom: 0px;
+                height: 20px;
+                letter-spacing: 1px;
+
+                &:after {
+                    content: "";
+                    background-image: url('../../images/28911.svg');
+                    background-size: 100% 100%;
+                    width: 20px;
+                    height: 20px;
+                    transform: rotate(-90deg);
+                    position: absolute;
+                    filter: $filterWhite;
+                    top: 0;
+                    right: 0;
+                }
+            }
+
+            .cyan {
+                background-color: $blueDiscount;
+            }
+
+            .nasturtium {
+                background-color: $Nasturtium;
+            }
+
+            .connection {
+                width: 100%;
+                min-height: 250px;
+                margin: 70px auto 20px auto;
+            }
+
+            &__colorPicker {
+                width: 100%;
+                display: flex;
+                justify-content: start;
+                align-items: center;
+                margin: 0px 0px 15px 5px;
+
+                button {
+                    width: 25px;
+                    height: 25px;
+                    border-radius: 25px;
+                    border: none;
+                    margin-right: 12px;
+                    outline-offset: -2px;
+                    transition-property: outline-offset;
+                    transition-timing-function: ease-in-out;
+                    transition-duration: .1s;
+
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+
+                &__Black {
+                    background-color: $black !important;
+                    outline: 2px solid $black !important;
+                }
+
+                &__Silver {
+                    background-color: $gray !important;
+                    outline: 2px solid $gray !important;
+                }
+
+                &__Venus {
+                    background-color: $venus !important;
+                    outline: 2px solid $venus !important;
+                }
+
+                &__Amour {
+                    background-color: $amour !important;
+                    outline: 2px solid $amour !important;
+                }
+
+                &__White {
+                    background-color: $white !important;
+                    outline: 2px solid $black !important;
+                    outline-offset: 0px !important;
+                }
+
+                &__Gold {
+                    background-color: $Gold !important;
+                    outline: 2px solid $Gold !important;
+                }
+
+                &__Red {
+                    background-color: $Red !important;
+                    outline: 2px solid $Red !important;
+                }
+
+                .selectedColor {
+                    outline-offset: 3px !important;
+                }
+
+
+            }
+
+            &__coffeeName {
+                width: 100%;
+                padding: 1px 2px;
+                font-size: 15px;
+                margin-bottom: 15px;
+                font-weight: lighter;
+            }
+
+            &__addCart {
+                position: absolute;
+                width: calc(100% + 2px);
+                ;
+                min-width: 250px;
+                top: 99%;
+                left: -1px;
+                display: none;
+                background-color: $white;
+                text-align: center;
+                padding: 10px 0px 20px 0px;
+                border: 1px solid transparent;
+
+                button {
+                    border: 3px solid $buttonYellow;
+                    background-color: $white;
+                    margin: auto;
+                    width: 90%;
+                    padding: 15px;
+                    transition: all .3s ease-in-out;
+                    font-weight: bold;
+
+                    &:hover {
+                        cursor: pointer;
+                        border: 3px solid $black;
+                    }
+                }
+            }
+
+            .changeAddCart {
+                display: none;
+            }
+
+            &__discount {
+                display: flex;
+                margin-bottom: 7px;
+
+                p {
+                    margin-bottom: 0px;
+                }
+
+                &__cutPrice {
+                    color: $red;
+                    font-size: 20px;
+                    margin-right: 5px;
+
+                    span {
+                        position: relative;
+                        top: -.5em;
+                        font-size: 80%;
+                    }
+                }
+
+                &__originalPrice {
+                    display: flex;
+                    align-items: center;
+                    color: $textDealGrey;
+                    font-size: 11px;
+
+                    .oPS {
+                        position: relative;
+                        top: -.5em;
+                        font-size: 80%;
+                    }
+
+                    .oPDS {
+                        margin-right: 5px;
+                        text-decoration: line-through;
+                    }
+                }
+            }
+
+            &__basePrice {
+                font-size: 20px;
+
+                span {
+                    position: relative;
+                    top: -.5em;
+                    font-size: 80%;
+                }
+            }
+
+            &__coupon {
+                display: flex;
+                align-items: center;
+                color: $couponRed;
+                margin-bottom: 18px;
+
+                p {
+                    margin-bottom: 0px;
+                }
+
+                &__icon {
+                    padding: 5px;
+                    border-radius: 0px 10px 0px 10px;
+                    background-color: $couponRed;
+                    margin-right: 6px;
+
+                    p {
+                        color: $white;
+                        font-weight: bold;
+                        font-size: 13px;
+                    }
+                }
+
+                &__detail {
+                    display: flex;
+                    flex-direction: column;
+
+                    .one {
+                        font-size: 11px;
+                    }
+
+                    .two {
+                        font-size: 9px;
+                    }
+                }
+            }
+
+            &__ratingSystem {
+                display: flex;
+                color: $textDealGrey;
+                font-size: 13px;
+                margin-bottom: 10px;
+
+                .checked {
+                    color: $buttonYellow
+                }
+
+                p {
+                    margin-left: 5px;
+                    margin-bottom: 0px;
+                    color: $black;
+                }
+            }
+
+            &__freeShipping {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                margin-bottom: 30px;
+
+                img {
+                    width: 33px;
+                    height: 33px;
+                    aspect-ratio: 1 / 1 !important;
+                    margin: 0 !important;
+                    filter: $filterBlack;
+                }
+
+                p {
+                    margin-bottom: 0px;
+                    color: $textBlack;
+                    font-size: 16px;
+                    margin-left: 5px;
+                }
+            }
+        }
+    }
+}

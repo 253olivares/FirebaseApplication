@@ -1,0 +1,81 @@
+
+    <div class="keurigHeader">
+      <div class="keurigHeader__topNav">
+        <a href="#/listpage">
+          <img class="keurigHeader__topNav__logo" src="./images/Logo.svg" alt="Logo for the Keurig website">
+        </a>
+        <div class="keurigHeader__topNav__searchBar">
+          <img src="./images/searchIcon2Blue.svg" alt="Search bar">
+          <input type="text" placeholder="Search hundreds of ways to brew..." name="search" id="machineSearch">
+          <div id="keurigHeader__topNav__searchBar__results">
+            <!-- Will have a live update that allows the user to search keurig deives and add it to the cart from the search bar -->
+          </div>
+        </div>
+        <div class="keurigHeader__topNav__extraRight">
+          <button title="Free Shipping $35+" class="keurigHeader__topNav__extraRight__freeshipping">FREE SHIPPING
+            $29+</button>
+          <div class="keurigHeader__topNav__extraRight__profile">
+            <img src="./images/profile.svg" alt="Profile icon">
+          </div>
+          <div class="keurigHeader__topNav__extraRight__signOut">
+            <img src="./images/signOut.png" alt="Sign out icon">
+          </div>
+          <div class="keurigHeader__topNav__extraRight__cart">
+            <a href="#/cart"><img src="./images/keurig-cart.svg" alt="Search"></a>
+            <div class="keurigHeader__topNav__extraRight__cart__count" id="cartCount"></div>
+          </div>
+        </div>
+      </div>
+      <div class="keurigHeader__login">
+      </div>
+      <div class="keurigHeader__bottomNav">
+        <a href="#" class="keurigHeader__bottomNav__other">Keurig Starter Kit</a>
+        <a href="#" class="keurigHeader__bottomNav__other">Start Auto-Delivery</a>
+        <a href="#" class="keurigHeader__bottomNav__other">Beverages</a>
+        <a href="#" class="keurigHeader__bottomNav__other">Coffee Makers</a>
+        <a href="#" class="keurigHeader__bottomNav__other">Accessories</a>
+        <a href="#" class="keurigHeader__bottomNav__deals remove"> <span><img src="./images/sale-label.svg"
+              alt="sales"></span>Deals</a>
+        <a href="#" class="keurigHeader__bottomNav__other">Recipes & More</a>
+        <a href="#" class="keurigHeader__bottomNav__other">Sustainability</a>
+        <a href="#" class="keurigHeader__bottomNav__other">Perks</a>
+        <a href="#" class="keurigHeader__bottomNav__other remove"><span><img src="" alt="sales">OUTLET</a>
+        <div class="keurigHeader__bottomNav__mobileSearch">
+          <input type="text" placeholder="Search hundreds of ways to brew..." name="mobileSearch" id="mobileSearch">
+        </div>
+        <div class="keurigHeader__bottomNav__mobileDeal">
+          <p>TODAY'S DEALS <span>+</span></p>
+        </div>
+      </div>
+    </div>
+    <!-- MVC Page Content -->
+    <div class="content-wrap">
+      <div id="app">
+
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="footer__topWrap">
+        <div class="footer__topWrap__left"></div>
+        <div class="footer__topWrap__right"></div>
+      </div>
+      <div class="footer__middleInfo">
+        <div class="footer__middleInfo__column1">
+          <div class="footer__middleInfo__column1__topRow"></div>
+          <div class="footer__middleInfo__column1__bottomRow"></div>
+        </div>
+        <div class="footer__middleInfo__column2">
+        </div>
+        <div class="footer__middleInfo__column3"></div>
+        <div class="footer__middleInfo__column4">
+          <div class="footer__middleInfo__column4__Row1"></div>
+          <div class="footer__middleInfo__column4__Row2"></div>
+          <div class="footer__middleInfo__column4__Row3"></div>
+        </div>
+      </div>
+      <div class="footer__bottomInfo">
+        <div class="footer__copyright"></div>
+        <div class="footer__trademark"></div>
+      </div>
+    </footer>
+    <div class="grayOverlay"></div>

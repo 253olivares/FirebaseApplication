@@ -1,0 +1,11 @@
+{
+    "COFFEEMAKERS": [
+        {
+            "id": 0,
+            "name": "K-Supreme® SMART Single Serve Coffee Maker",
+            "defaultImage": "",
+            "color": ""
+        },
+        {}
+    ]
+}

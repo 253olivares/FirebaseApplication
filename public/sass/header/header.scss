@@ -1,0 +1,291 @@
+// CSS for anything that is considered header
+
+.bannerAd {
+    width: 100%;
+    min-height: 42px;
+    position: relative;
+    background-color: $marine;
+    display: flex;
+    top: 0;
+    overflow: hidden;
+    transition: all .8s ease-in-out;
+
+
+    &__message {
+        display: flex;
+        font-size: 15px;
+        color: $white;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        &__cr {
+            font-size: 13px;
+        }
+
+        p {
+            margin-bottom: 0px;
+
+        }
+
+        .smart {
+            font-weight: bolder;
+        }
+
+        &__shopNow {
+            color: $white;
+            margin-bottom: 0px;
+            margin: 0px 8px 0px 8px;
+            font-weight: bolder;
+        }
+
+        &__seeDetails {
+            color: $white;
+            margin-bottom: 0px;
+        }
+
+
+    }
+
+    &__close {
+        margin-right: 20px;
+        margin-left: 20px;
+        min-height: 42px;
+        height: 100%;
+        width: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        :hover {
+            cursor: pointer;
+        }
+
+        &__button {
+            width: 100%;
+            filter: $filterWhite;
+        }
+    }
+}
+
+.test {
+    height: 0px;
+    min-height: 0px;
+    top: 100%;
+    transition: all .8s ease-in-out;
+}
+
+.mobileMenuView {
+    display: none;
+}
+
+.keurigHeader {
+    background-color: $burg;
+    min-height: 145px;
+    padding-top: 8px;
+    letter-spacing: 1px;
+
+    &__topNav {
+        display: flex;
+        flex: wrap;
+        justify-content: space-between;
+        align-items: center;
+        min-height: 91px;
+        margin: 0px 40px 0px 40px;
+
+        &__mainButton {
+            &__logo {
+                width: 175px;
+                filter: $filterBlack;
+            }
+        }
+
+        &__searchBar {
+            min-width: 570px;
+            background-color: $secondWhite;
+            padding: 5px 30px 5px 30px;
+            border-radius: 25px;
+            display: flex;
+            flex: wrap;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid $gray;
+            margin: 0px 5px 0px 5px;
+
+            img {
+                filter: $filterBlack;
+                padding-right: 10px;
+            }
+
+            img:hover {
+                cursor: pointer;
+            }
+
+            input {
+                width: 100%;
+                padding: 0px 5px 0px 5px;
+                border: none;
+                color: $black;
+                font-size: 13px;
+                background-color: $secondWhite ;
+            }
+
+            input:focus {
+                font-size: 13px;
+                border: none;
+                outline: none;
+            }
+
+            ::placeholder {
+                color: $black;
+                opacity: 1;
+                font-size: 13px;
+            }
+        }
+
+        &__extraRight {
+            display: flex;
+            flex: wrap;
+            justify-content: center;
+            align-items: center;
+
+            button {
+                letter-spacing: 3px;
+            }
+
+            &__freeShipping {
+                border: none;
+                background-color: transparent;
+                padding: 0px 30px 0px 25px;
+                font-size: 13px;
+                margin-bottom: 0px;
+            }
+
+            &__freeShipping:hover {
+                cursor: pointer;
+            }
+
+            &__signOut {
+                display: none;
+
+                img {
+                    filter: $filterBlack;
+                }
+            }
+
+            &__profile,
+            &__cart {
+                position: relative;
+                padding: 8px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                border-radius: 10px;
+
+                img {
+                    width: 32px;
+                    height: 32px;
+                    filter: $filterBlack;
+                }
+
+                p {
+                    width: 100%;
+                    margin: auto;
+                    font-size: 13px;
+                }
+            }
+
+            &__profile {
+                margin: 0px 20px 0px 20px;
+            }
+
+            &__profile:hover,
+            &__cart:hover {
+                cursor: pointer;
+                background-color: $lightBiege;
+            }
+
+        }
+    }
+
+    &__bottomNav {
+        height: 100%;
+        margin: 0px 40px 0px 40px;
+        padding: 0px 0px 10px 0px;
+        display: flex;
+        flex: wrap;
+        justify-content: flex-start;
+        align-items: center;
+
+        a {
+            overflow: hidden;
+            position: relative;
+            font-size: 16px;
+            color: $black;
+            text-decoration: none;
+            padding: 15px;
+            border-radius: 25px;
+            background-color: transparent !important;
+            z-index: 1;
+            transition: .3s ease-in-out;
+            margin-right: 23px;
+
+            span {
+                position: relative;
+                z-index: 1;
+            }
+
+            &:hover {
+
+                color: $brown;
+            }
+
+            &::before {
+                content: "";
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 0%;
+                height: 0%;
+                z-index: 0;
+                border-radius: 25px;
+                background-color: $white;
+                transition: all .4s ease-in-out;
+            }
+
+            &:hover::before {
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
+
+        }
+
+        &__mobileSearch {
+            display: none;
+        }
+
+        &__mobileDeal {
+            display: none;
+        }
+
+        img {
+            width: 14px;
+            margin-right: 5px;
+        }
+
+        .remove1 {
+            color: $red;
+        }
+
+        .remove2 {
+            img {
+                filter: $filterBlack;
+            }
+        }
+    }
+}

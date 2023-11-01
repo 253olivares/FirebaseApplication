@@ -1,0 +1,666 @@
+@font-face {
+  font-family: MarkOT-Medium;
+  src: url(../css/fonts/MarkOT-Medium.ttf); }
+
+:root {
+  font-family: "MarkOT-Medium"; }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  background-color: #fff; }
+
+body::-webkit-scrollbar {
+  display: none; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-bottom: 16px; }
+
+#page-container {
+  position: relative;
+  min-height: 100vh; }
+
+#app {
+  width: 100%;
+  max-width: 1280px;
+  margin: auto;
+  min-height: 320px; }
+
+.bannerAd {
+  width: 100%;
+  min-height: 42px;
+  position: relative;
+  background-color: #005f70;
+  display: flex;
+  top: 0;
+  overflow: hidden;
+  transition: all .8s ease-in-out; }
+  .bannerAd__message {
+    display: flex;
+    font-size: 15px;
+    color: #fff;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap; }
+    .bannerAd__message__cr {
+      font-size: 13px; }
+    .bannerAd__message p {
+      margin-bottom: 0px; }
+    .bannerAd__message .smart {
+      font-weight: bolder; }
+    .bannerAd__message__shopNow {
+      color: #fff;
+      margin-bottom: 0px;
+      margin: 0px 8px 0px 8px;
+      font-weight: bolder; }
+    .bannerAd__message__seeDetails {
+      color: #fff;
+      margin-bottom: 0px; }
+  .bannerAd__close {
+    margin-right: 20px;
+    margin-left: 20px;
+    min-height: 42px;
+    height: 100%;
+    width: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+    .bannerAd__close :hover {
+      cursor: pointer; }
+    .bannerAd__close__button {
+      width: 100%;
+      filter: invert(100%) sepia(35%) saturate(11%) hue-rotate(245deg) brightness(104%) contrast(103%); }
+
+.test {
+  height: 0px;
+  min-height: 0px;
+  top: 100%;
+  transition: all .8s ease-in-out; }
+
+.mobileMenuView {
+  display: none; }
+
+.keurigHeader {
+  background-color: #ece9e4;
+  min-height: 145px;
+  padding-top: 8px;
+  letter-spacing: 1px; }
+  .keurigHeader__topNav {
+    display: flex;
+    flex: wrap;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 91px;
+    margin: 0px 40px 0px 40px; }
+    .keurigHeader__topNav__mainButton__logo {
+      width: 175px;
+      filter: invert(0%) sepia(3%) saturate(13%) hue-rotate(77deg) brightness(97%) contrast(103%); }
+    .keurigHeader__topNav__searchBar {
+      min-width: 570px;
+      background-color: #f3f3f3;
+      padding: 5px 30px 5px 30px;
+      border-radius: 25px;
+      display: flex;
+      flex: wrap;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid #c7c7c7;
+      margin: 0px 5px 0px 5px; }
+      .keurigHeader__topNav__searchBar img {
+        filter: invert(0%) sepia(3%) saturate(13%) hue-rotate(77deg) brightness(97%) contrast(103%);
+        padding-right: 10px; }
+      .keurigHeader__topNav__searchBar img:hover {
+        cursor: pointer; }
+      .keurigHeader__topNav__searchBar input {
+        width: 100%;
+        padding: 0px 5px 0px 5px;
+        border: none;
+        color: #000000;
+        font-size: 13px;
+        background-color: #f3f3f3; }
+      .keurigHeader__topNav__searchBar input:focus {
+        font-size: 13px;
+        border: none;
+        outline: none; }
+      .keurigHeader__topNav__searchBar ::placeholder {
+        color: #000000;
+        opacity: 1;
+        font-size: 13px; }
+    .keurigHeader__topNav__extraRight {
+      display: flex;
+      flex: wrap;
+      justify-content: center;
+      align-items: center; }
+      .keurigHeader__topNav__extraRight button {
+        letter-spacing: 3px; }
+      .keurigHeader__topNav__extraRight__freeShipping {
+        border: none;
+        background-color: transparent;
+        padding: 0px 30px 0px 25px;
+        font-size: 13px;
+        margin-bottom: 0px; }
+      .keurigHeader__topNav__extraRight__freeShipping:hover {
+        cursor: pointer; }
+      .keurigHeader__topNav__extraRight__signOut {
+        display: none; }
+        .keurigHeader__topNav__extraRight__signOut img {
+          filter: invert(0%) sepia(3%) saturate(13%) hue-rotate(77deg) brightness(97%) contrast(103%); }
+      .keurigHeader__topNav__extraRight__profile, .keurigHeader__topNav__extraRight__cart {
+        position: relative;
+        padding: 8px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px; }
+        .keurigHeader__topNav__extraRight__profile img, .keurigHeader__topNav__extraRight__cart img {
+          width: 32px;
+          height: 32px;
+          filter: invert(0%) sepia(3%) saturate(13%) hue-rotate(77deg) brightness(97%) contrast(103%); }
+        .keurigHeader__topNav__extraRight__profile p, .keurigHeader__topNav__extraRight__cart p {
+          width: 100%;
+          margin: auto;
+          font-size: 13px; }
+      .keurigHeader__topNav__extraRight__profile {
+        margin: 0px 20px 0px 20px; }
+      .keurigHeader__topNav__extraRight__profile:hover, .keurigHeader__topNav__extraRight__cart:hover {
+        cursor: pointer;
+        background-color: #f0f0f0; }
+  .keurigHeader__bottomNav {
+    height: 100%;
+    margin: 0px 40px 0px 40px;
+    padding: 0px 0px 10px 0px;
+    display: flex;
+    flex: wrap;
+    justify-content: flex-start;
+    align-items: center; }
+    .keurigHeader__bottomNav a {
+      overflow: hidden;
+      position: relative;
+      font-size: 16px;
+      color: #000000;
+      text-decoration: none;
+      padding: 15px;
+      border-radius: 25px;
+      background-color: transparent !important;
+      z-index: 1;
+      transition: .3s ease-in-out;
+      margin-right: 23px; }
+      .keurigHeader__bottomNav a span {
+        position: relative;
+        z-index: 1; }
+      .keurigHeader__bottomNav a:hover {
+        color: #592615; }
+      .keurigHeader__bottomNav a::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0%;
+        height: 0%;
+        z-index: 0;
+        border-radius: 25px;
+        background-color: #fff;
+        transition: all .4s ease-in-out; }
+      .keurigHeader__bottomNav a:hover::before {
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%; }
+    .keurigHeader__bottomNav__mobileSearch {
+      display: none; }
+    .keurigHeader__bottomNav__mobileDeal {
+      display: none; }
+    .keurigHeader__bottomNav img {
+      width: 14px;
+      margin-right: 5px; }
+    .keurigHeader__bottomNav .remove1 {
+      color: #cd2832; }
+    .keurigHeader__bottomNav .remove2 img {
+      filter: invert(0%) sepia(3%) saturate(13%) hue-rotate(77deg) brightness(97%) contrast(103%); }
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  min-height: 2.5rem; }
+  .footer__container {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto; }
+    .footer__container__topWrap {
+      width: 100%;
+      background-color: #3b2b2f;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0px 30px 0px 30px; }
+      .footer__container__topWrap__left {
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center; }
+        .footer__container__topWrap__left img {
+          height: 22px; }
+        .footer__container__topWrap__left img:hover {
+          cursor: pointer; }
+        .footer__container__topWrap__left p {
+          font-size: 15px;
+          margin: 0px 10px 0px 10px;
+          font-weight: lighter; }
+        .footer__container__topWrap__left p:hover {
+          cursor: pointer; }
+        .footer__container__topWrap__left span {
+          font-size: 20px;
+          font-weight: bold; }
+      .footer__container__topWrap__right {
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-right: 100px; }
+        .footer__container__topWrap__right img {
+          width: 17px;
+          margin: 0px 10px 0px 10px; }
+        .footer__container__topWrap__right img:hover {
+          cursor: pointer; }
+        .footer__container__topWrap__right p {
+          margin: 0px 10px 0px 0px; }
+    .footer__container__middleInfo {
+      width: 100%;
+      display: flex;
+      padding: 18px 0px 40px 0px; }
+      .footer__container__middleInfo__column1, .footer__container__middleInfo__column2, .footer__container__middleInfo__column3, .footer__container__middleInfo__column4 {
+        width: 25%; }
+        .footer__container__middleInfo__column1 h1, .footer__container__middleInfo__column2 h1, .footer__container__middleInfo__column3 h1, .footer__container__middleInfo__column4 h1 {
+          font-size: 18px;
+          font-weight: bold;
+          letter-spacing: 1px; }
+        .footer__container__middleInfo__column1 li, .footer__container__middleInfo__column2 li, .footer__container__middleInfo__column3 li, .footer__container__middleInfo__column4 li {
+          list-style: none;
+          font-size: 14px;
+          font-weight: lighter;
+          margin-bottom: 10px;
+          cursor: pointer; }
+        .footer__container__middleInfo__column1 li:hover, .footer__container__middleInfo__column2 li:hover, .footer__container__middleInfo__column3 li:hover, .footer__container__middleInfo__column4 li:hover {
+          color: #005f70;
+          text-decoration: underline; }
+      .footer__container__middleInfo__column1 {
+        padding-left: 18px; }
+        .footer__container__middleInfo__column1__topRow {
+          margin-bottom: 25px; }
+      .footer__container__middleInfo__column4__Row1 p {
+        font-size: 14px; }
+      .footer__container__middleInfo__column4__Row2 {
+        margin-top: 40px;
+        margin-bottom: 40px; }
+        .footer__container__middleInfo__column4__Row2 input {
+          padding: 8px 15px 8px 15px;
+          font-size: 14px;
+          width: 160px;
+          border: 2px solid #c7c7c7;
+          border-right: none;
+          border-radius: 3px 0px 0px 3px; }
+        .footer__container__middleInfo__column4__Row2 button {
+          padding: 8px 15px 8px 15px;
+          font-size: 14px;
+          border: 2px solid #f9c507;
+          background-color: #fff; }
+        .footer__container__middleInfo__column4__Row2 button:hover {
+          cursor: pointer;
+          background-color: #f9c507; }
+      .footer__container__middleInfo__column4__Row3__country {
+        margin-top: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: start; }
+        .footer__container__middleInfo__column4__Row3__country img {
+          width: 40px; }
+        .footer__container__middleInfo__column4__Row3__country select {
+          border: none;
+          padding: 8px 10px 8px 10px; }
+    .footer__container__bottomInfo {
+      border-top: 2px solid #c7c7c7;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      height: 100px;
+      color: #000000; }
+      .footer__container__bottomInfo__copyright {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 25px 0px 20px 0px;
+        font-size: 12px;
+        font-weight: lighter;
+        font-style: italic; }
+        .footer__container__bottomInfo__copyright p {
+          margin-bottom: 0px; }
+        .footer__container__bottomInfo__copyright p,
+        .footer__container__bottomInfo__copyright a {
+          margin: 0px 12px 0px 12px;
+          text-decoration: none;
+          color: #2d2a26; }
+      .footer__container__bottomInfo__trademark {
+        width: 100%;
+        padding-top: 20px;
+        padding-bottom: 30px;
+        font-size: 11px;
+        text-align: center;
+        color: #2d2a26;
+        font-weight: lighter;
+        font-style: italic;
+        margin: auto; }
+
+.listPage {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto; }
+  .listPage__banner {
+    width: 100%;
+    height: 225px;
+    background-image: url(../../images/banner.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #fff; }
+    .listPage__banner p {
+      font-size: 15px;
+      margin-bottom: 0px;
+      font-weight: bold;
+      letter-spacing: 2px; }
+      .listPage__banner p span {
+        margin-right: 5px; }
+    .listPage__banner h1 {
+      font-weight: lighter;
+      font-size: 55px;
+      margin-bottom: 0px;
+      letter-spacing: 5px;
+      margin-top: 5px; }
+  .listPage__filterBanner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 18px 0px 5px 0px; }
+    .listPage__filterBanner__left {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center; }
+      .listPage__filterBanner__left a {
+        position: relative;
+        text-decoration: none;
+        color: #000000;
+        border: 3px solid #706f73;
+        padding: 13px 45px 13px 15px;
+        margin-right: 10px;
+        font-size: 13.5px; }
+        .listPage__filterBanner__left a:hover {
+          border: 3px solid #000000; }
+        .listPage__filterBanner__left a:hover .arrowHover {
+          transform: rotate(180deg);
+          filter: invert(0%) sepia(3%) saturate(13%) hue-rotate(77deg) brightness(97%) contrast(103%); }
+        .listPage__filterBanner__left a .arrowHover {
+          width: 20px;
+          position: absolute;
+          right: 10%;
+          margin-top: 3px; }
+    .listPage__filterBanner__right {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center; }
+      .listPage__filterBanner__right a {
+        position: relative;
+        text-decoration: none;
+        color: #000000;
+        border: 3px solid transparent;
+        padding: 13px 55px 13px 15px;
+        margin-right: 10px; }
+        .listPage__filterBanner__right a p {
+          display: flex;
+          flex-direction: column;
+          margin-bottom: 0px; }
+          .listPage__filterBanner__right a p .first {
+            color: #706f73;
+            font-size: 12px; }
+          .listPage__filterBanner__right a p .second {
+            font-size: 15px; }
+        .listPage__filterBanner__right a:hover .arrowHover {
+          transform: rotate(180deg);
+          filter: invert(0%) sepia(3%) saturate(13%) hue-rotate(77deg) brightness(97%) contrast(103%); }
+        .listPage__filterBanner__right a .arrowHover {
+          width: 20px;
+          position: absolute;
+          right: 8%;
+          top: 50%; }
+  .listPage__coffeeList {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 30px 5px 30px 5px; }
+    .listPage__coffeeList__item {
+      padding: 10px;
+      width: 23.5%;
+      color: #2d2a26;
+      display: flex;
+      flex-direction: column;
+      min-height: 400px;
+      box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+      z-index: 1;
+      position: relative;
+      background-color: #fff;
+      margin-bottom: 20px;
+      border: 1px solid transparent;
+      margin-right: auto; }
+      .listPage__coffeeList__item:hover {
+        border: 1px solid #000000;
+        cursor: pointer;
+        z-index: 5; }
+      .listPage__coffeeList__item:hover > .changeAddCart {
+        display: block;
+        cursor: pointer;
+        border: 1px solid #000000;
+        border-top: none; }
+      .listPage__coffeeList__item__special {
+        position: absolute;
+        top: 5px;
+        left: 1px;
+        font-size: 10px;
+        padding: 5px 20px 5px 10px;
+        border-radius: 5px;
+        color: #fff;
+        margin-bottom: 0px;
+        height: 20px;
+        letter-spacing: 1px; }
+        .listPage__coffeeList__item__special:after {
+          content: "";
+          background-image: url("../../images/28911.svg");
+          background-size: 100% 100%;
+          width: 20px;
+          height: 20px;
+          transform: rotate(-90deg);
+          position: absolute;
+          filter: invert(100%) sepia(35%) saturate(11%) hue-rotate(245deg) brightness(104%) contrast(103%);
+          top: 0;
+          right: 0; }
+      .listPage__coffeeList__item .cyan {
+        background-color: #007c91; }
+      .listPage__coffeeList__item .nasturtium {
+        background-color: #c60000; }
+      .listPage__coffeeList__item .connection {
+        width: 100%;
+        min-height: 250px;
+        margin: 70px auto 20px auto; }
+      .listPage__coffeeList__item__colorPicker {
+        width: 100%;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        margin: 0px 0px 15px 5px; }
+        .listPage__coffeeList__item__colorPicker button {
+          width: 25px;
+          height: 25px;
+          border-radius: 25px;
+          border: none;
+          margin-right: 12px;
+          outline-offset: -2px;
+          transition-property: outline-offset;
+          transition-timing-function: ease-in-out;
+          transition-duration: .1s; }
+          .listPage__coffeeList__item__colorPicker button:hover {
+            cursor: pointer; }
+        .listPage__coffeeList__item__colorPicker__Black {
+          background-color: #000000 !important;
+          outline: 2px solid #000000 !important; }
+        .listPage__coffeeList__item__colorPicker__Silver {
+          background-color: #c7c7c7 !important;
+          outline: 2px solid #c7c7c7 !important; }
+        .listPage__coffeeList__item__colorPicker__Venus {
+          background-color: #969091 !important;
+          outline: 2px solid #969091 !important; }
+        .listPage__coffeeList__item__colorPicker__Amour {
+          background-color: #efe8e9 !important;
+          outline: 2px solid #efe8e9 !important; }
+        .listPage__coffeeList__item__colorPicker__White {
+          background-color: #fff !important;
+          outline: 2px solid #000000 !important;
+          outline-offset: 0px !important; }
+        .listPage__coffeeList__item__colorPicker__Gold {
+          background-color: #c4b8aa !important;
+          outline: 2px solid #c4b8aa !important; }
+        .listPage__coffeeList__item__colorPicker__Red {
+          background-color: #952023 !important;
+          outline: 2px solid #952023 !important; }
+        .listPage__coffeeList__item__colorPicker .selectedColor {
+          outline-offset: 3px !important; }
+      .listPage__coffeeList__item__coffeeName {
+        width: 100%;
+        padding: 1px 2px;
+        font-size: 15px;
+        margin-bottom: 15px;
+        font-weight: lighter; }
+      .listPage__coffeeList__item__addCart {
+        position: absolute;
+        width: calc(100% + 2px);
+        min-width: 250px;
+        top: 99%;
+        left: -1px;
+        display: none;
+        background-color: #fff;
+        text-align: center;
+        padding: 10px 0px 20px 0px;
+        border: 1px solid transparent; }
+        .listPage__coffeeList__item__addCart button {
+          border: 3px solid #f9c507;
+          background-color: #fff;
+          margin: auto;
+          width: 90%;
+          padding: 15px;
+          transition: all .3s ease-in-out;
+          font-weight: bold; }
+          .listPage__coffeeList__item__addCart button:hover {
+            cursor: pointer;
+            border: 3px solid #000000; }
+      .listPage__coffeeList__item .changeAddCart {
+        display: none; }
+      .listPage__coffeeList__item__discount {
+        display: flex;
+        margin-bottom: 7px; }
+        .listPage__coffeeList__item__discount p {
+          margin-bottom: 0px; }
+        .listPage__coffeeList__item__discount__cutPrice {
+          color: #cd2832;
+          font-size: 20px;
+          margin-right: 5px; }
+          .listPage__coffeeList__item__discount__cutPrice span {
+            position: relative;
+            top: -.5em;
+            font-size: 80%; }
+        .listPage__coffeeList__item__discount__originalPrice {
+          display: flex;
+          align-items: center;
+          color: #706f73;
+          font-size: 11px; }
+          .listPage__coffeeList__item__discount__originalPrice .oPS {
+            position: relative;
+            top: -.5em;
+            font-size: 80%; }
+          .listPage__coffeeList__item__discount__originalPrice .oPDS {
+            margin-right: 5px;
+            text-decoration: line-through; }
+      .listPage__coffeeList__item__basePrice {
+        font-size: 20px; }
+        .listPage__coffeeList__item__basePrice span {
+          position: relative;
+          top: -.5em;
+          font-size: 80%; }
+      .listPage__coffeeList__item__coupon {
+        display: flex;
+        align-items: center;
+        color: #5a0000;
+        margin-bottom: 18px; }
+        .listPage__coffeeList__item__coupon p {
+          margin-bottom: 0px; }
+        .listPage__coffeeList__item__coupon__icon {
+          padding: 5px;
+          border-radius: 0px 10px 0px 10px;
+          background-color: #5a0000;
+          margin-right: 6px; }
+          .listPage__coffeeList__item__coupon__icon p {
+            color: #fff;
+            font-weight: bold;
+            font-size: 13px; }
+        .listPage__coffeeList__item__coupon__detail {
+          display: flex;
+          flex-direction: column; }
+          .listPage__coffeeList__item__coupon__detail .one {
+            font-size: 11px; }
+          .listPage__coffeeList__item__coupon__detail .two {
+            font-size: 9px; }
+      .listPage__coffeeList__item__ratingSystem {
+        display: flex;
+        color: #706f73;
+        font-size: 13px;
+        margin-bottom: 10px; }
+        .listPage__coffeeList__item__ratingSystem .checked {
+          color: #f9c507; }
+        .listPage__coffeeList__item__ratingSystem p {
+          margin-left: 5px;
+          margin-bottom: 0px;
+          color: #000000; }
+      .listPage__coffeeList__item__freeShipping {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        margin-bottom: 30px; }
+        .listPage__coffeeList__item__freeShipping img {
+          width: 33px;
+          height: 33px;
+          aspect-ratio: 1 / 1 !important;
+          margin: 0 !important;
+          filter: invert(0%) sepia(3%) saturate(13%) hue-rotate(77deg) brightness(97%) contrast(103%); }
+        .listPage__coffeeList__item__freeShipping p {
+          margin-bottom: 0px;
+          color: #2d2a26;
+          font-size: 16px;
+          margin-left: 5px; }

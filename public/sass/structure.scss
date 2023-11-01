@@ -1,0 +1,77 @@
+// anything in structure sits at the very top of my css
+
+@font-face {
+    font-family: MarkOT-Medium;
+    src: url(../css/fonts/MarkOT-Medium.ttf);
+}
+
+// color variables
+$white: #fff;
+$marine: #005f70;
+$venus: #969091;
+$burg: #ece9e4;
+$amour: #efe8e9;
+$nasturtium: #e6431e;
+$black: #000000;
+$secondWhite: #f3f3f3;
+$gray: #c7c7c7;
+$lightBiege: #f0f0f0;
+$red: #cd2832;
+$Nasturtium: #c60000;
+$Red: #952023;
+$Gold: #c4b8aa;
+$brown: #592615;
+$darkBrown: #3b2b2f;
+$textBlack : #2d2a26;
+$buttonYellow: #f9c507;
+$blueDiscount: #007c91;
+$textDealGrey: #706f73;
+$couponRed: #5a0000;
+$filterBlack: invert(0%) sepia(3%) saturate(13%) hue-rotate(77deg) brightness(97%) contrast(103%);
+$filterWhite: invert(100%) sepia(35%) saturate(11%) hue-rotate(245deg) brightness(104%) contrast(103%);
+
+:root {
+    font-family: "MarkOT-Medium";
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    background-color: $white;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin-bottom: 16px
+}
+
+#page-container {
+    position: relative;
+    min-height: 100vh;
+}
+
+#app {
+    width: 100%;
+    max-width: 1280px;
+    margin: auto;
+    min-height: 320px;
+}
