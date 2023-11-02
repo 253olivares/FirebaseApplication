@@ -76,10 +76,238 @@ p {
     min-height: 320px;
 }
 
+.loginContainer {
+    display: none;
+    position: absolute;
+    width: 350px;
+    right: 5%;
+    z-index: 7;
+    background-color: $white;
+    border-radius: 9px;
+
+    &:after {
+        content: "";
+        background-image: url('../images/28911.svg');
+        background-size: 100% 100%;
+        filter: $filterWhite;
+        width: 40px;
+        height: 40px;
+        display: block;
+        position: absolute;
+        top: -30px;
+        right: 9%;
+    }
+
+    &__close {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        margin-bottom: 14px;
+        padding: 20px 20px 0px 20px;
+
+        i {
+            display: block;
+            background-image: url('../images/times-solid.svg');
+            background-size: 100% 100%;
+            filter: $filterBlack;
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 18px;
+            display: table-cell;
+            vertical-align: middle;
+            margin-bottom: 0px;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+
+    &__options {
+        width: 100%;
+        display: flex;
+        padding: 0px 20px 0px 20px;
+
+        button {
+            width: 50%;
+            font-size: 16px;
+            padding: 8px 0px 8px 0px;
+            background-color: $white;
+            border: none;
+            color: $textDealGrey;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        .lCSelected {
+            background-color: $burg;
+            color: $textBlack;
+            font-weight: bold;
+        }
+    }
+
+    &__formsLogin {
+        padding: 15px 20px 15px 20px;
+        position: relative;
+
+        &:after {
+            content: "";
+            background-image: url('../images/28911.svg');
+            background-size: 100% 100%;
+            filter: $filterWhite;
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            display: block;
+            top: -18px;
+            left: calc(25%);
+        }
+
+        form {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: start;
+
+            .inputEnter {
+                padding: 10px 12px 10px 12px;
+                font-size: 15px;
+                margin-bottom: 10px;
+            }
+        }
+
+        &__checkbox {
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            margin: 5px 0px 5px 0px;
+
+            #checkboxRemeber {
+                width: 17px;
+                height: 17px;
+                margin-right: 8px;
+            }
+
+            label {
+                color: $textDealGrey;
+                font-size: 13px;
+                line-height: 17px;
+                display: table-cell;
+                vertical-align: middle;
+            }
+        }
+
+        &__signIn {
+            background-color: $darkBrown;
+            width: 100%;
+            text-align: center;
+            font-weight: bold;
+            font-size: 15px;
+            color: $white;
+            border-radius: 25px;
+            padding: 5px 0px 5px 0px;
+            margin: 15px 0px 15px 0px;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+        &__forgotPass {
+            border: none;
+            text-decoration: underline;
+            color: $blueDiscount;
+            text-align: center;
+            margin: 0px auto 0px auto;
+            background-color: $white;
+            width: 100%;
+
+            &:hover {
+                cursor: pointer;
+            }
+
+        }
+    }
+
+    &__formsLoginInformation {
+        width: 100%;
+        padding: 20px 20px 10px 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        background-color: $burg;
+
+        h1 {
+            font-size: 14px;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        p {
+            font-size: 12px;
+            margin-bottom: 0px;
+            color: $textDealGrey;
+            margin-bottom: 5px;
+        }
+
+        ul {
+            list-style-type: none;
+            font-size: 10px;
+            color: $textDealGrey;
+            text-indent: 15px;
+
+            li {
+                margin-bottom: 5px;
+            }
+        }
+
+    }
+
+    &__extra {
+        width: 100%;
+        padding: 20px 20px 20px 20px;
+        display: flex;
+        flex-direction: column;
+
+        &__register {
+            margin-bottom: 10px;
+        }
+
+        button {
+            border-radius: 25px;
+            background-color: $white;
+            border: 2px solid $gray;
+            color: $black;
+            font-weight: bold;
+            padding: 10px 0px 10px 0px;
+
+            &:hover {
+                background-color: $burg;
+                border-color: $black;
+                text-decoration: underline;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
 .grayOverlay {
     display: none;
     position: absolute;
     width: 100%;
+    height: 100%;
+    top: 0;
     z-index: 6;
     background-color: rgba(153, 153, 153, .5);
 }

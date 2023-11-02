@@ -2,7 +2,7 @@ var _db
 var bannerAd = true;
 var topNav;
 
-var coffeeCart
+var coffeeCart = [];
 
 // function creates an event listener that keeps track of our url address to check for any changes
 // The first line creates the listener and the second long runs the route function for the first time to land us on the homepage.
@@ -206,16 +206,14 @@ let loadMachine = (docs) => {
 }
 
 let grayOverlay = () => {
-
-
-
-    $(".keurigHeader__topNav__extraRight__profile , .grayOverlay").hover(() => {
+    $(".keurigHeader__topNav__extraRight__profile,.loginContainer ").hover(() => {
         if (bannerAd == true) {
             let top = $(".bannerAd").height() + $(".keurigHeader__topNav").height() - 5 - parseInt($(".keurigHeader__topNav__extraRight__profile").css("padding-bottom"));
             console.log("Banner Height:", $(".bannerAd").height());
             console.log("Top Nav Height:", $(".keurigHeader__topNav").height());
             console.log("Padding Height:", parseInt($(".keurigHeader__topNav__extraRight__profile").css("padding-bottom")));
-            $(".grayOverlay").css({ "display": "block", "top": top, "height": `calc(100% - ${top}px)` });
+            $(".grayOverlay ").css({ "display": "block", "top": top, "height": `calc(100% - ${top}px)` });
+            $(".loginContainer").css({ "display": "block", "top": top, });
             $('html, body').css({
                 overflow: 'hidden'
             });
@@ -226,6 +224,7 @@ let grayOverlay = () => {
             console.log("Top Nav Height:", $(".keurigHeader__topNav").height());
             console.log("Padding Height:", parseInt($(".keurigHeader__topNav__extraRight__profile").css("padding-bottom")));
             $(".grayOverlay").css({ "display": "block", "top": top, "height": `calc(100% - ${top}px)` });
+            $(".loginContainer").css({ "display": "block", "top": top, });
             $('html, body').css({
                 overflow: 'hidden'
             });
@@ -233,6 +232,7 @@ let grayOverlay = () => {
         }
     }, () => {
         $(".grayOverlay").css({ "display": "none" });
+        $(".loginContainer").css({ "display": "none" });
         $('html, body').css({
             overflow: 'auto'
         });

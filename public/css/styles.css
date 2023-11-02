@@ -41,10 +41,175 @@ p {
   margin: auto;
   min-height: 320px; }
 
+.loginContainer {
+  display: none;
+  position: absolute;
+  width: 350px;
+  right: 5%;
+  z-index: 7;
+  background-color: #fff;
+  border-radius: 9px; }
+  .loginContainer:after {
+    content: "";
+    background-image: url("../images/28911.svg");
+    background-size: 100% 100%;
+    filter: invert(100%) sepia(35%) saturate(11%) hue-rotate(245deg) brightness(104%) contrast(103%);
+    width: 40px;
+    height: 40px;
+    display: block;
+    position: absolute;
+    top: -30px;
+    right: 9%; }
+  .loginContainer__close {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin-bottom: 14px;
+    padding: 20px 20px 0px 20px; }
+    .loginContainer__close i {
+      display: block;
+      background-image: url("../images/times-solid.svg");
+      background-size: 100% 100%;
+      filter: invert(0%) sepia(3%) saturate(13%) hue-rotate(77deg) brightness(97%) contrast(103%);
+      width: 20px;
+      height: 20px;
+      margin-right: 10px; }
+      .loginContainer__close i:hover {
+        cursor: pointer; }
+    .loginContainer__close p {
+      font-size: 16px;
+      line-height: 18px;
+      display: table-cell;
+      vertical-align: middle;
+      margin-bottom: 0px; }
+      .loginContainer__close p:hover {
+        cursor: pointer; }
+  .loginContainer__options {
+    width: 100%;
+    display: flex;
+    padding: 0px 20px 0px 20px; }
+    .loginContainer__options button {
+      width: 50%;
+      font-size: 16px;
+      padding: 8px 0px 8px 0px;
+      background-color: #fff;
+      border: none;
+      color: #706f73; }
+      .loginContainer__options button:hover {
+        text-decoration: underline; }
+    .loginContainer__options .lCSelected {
+      background-color: #ece9e4;
+      color: #2d2a26;
+      font-weight: bold; }
+  .loginContainer__formsLogin {
+    padding: 15px 20px 15px 20px;
+    position: relative; }
+    .loginContainer__formsLogin:after {
+      content: "";
+      background-image: url("../images/28911.svg");
+      background-size: 100% 100%;
+      filter: invert(100%) sepia(35%) saturate(11%) hue-rotate(245deg) brightness(104%) contrast(103%);
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      display: block;
+      top: -18px;
+      left: calc(25%); }
+    .loginContainer__formsLogin form {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: start; }
+      .loginContainer__formsLogin form .inputEnter {
+        padding: 10px 12px 10px 12px;
+        font-size: 15px;
+        margin-bottom: 10px; }
+    .loginContainer__formsLogin__checkbox {
+      display: flex;
+      justify-content: start;
+      align-items: center;
+      margin: 5px 0px 5px 0px; }
+      .loginContainer__formsLogin__checkbox #checkboxRemeber {
+        width: 17px;
+        height: 17px;
+        margin-right: 8px; }
+      .loginContainer__formsLogin__checkbox label {
+        color: #706f73;
+        font-size: 13px;
+        line-height: 17px;
+        display: table-cell;
+        vertical-align: middle; }
+    .loginContainer__formsLogin__signIn {
+      background-color: #3b2b2f;
+      width: 100%;
+      text-align: center;
+      font-weight: bold;
+      font-size: 15px;
+      color: #fff;
+      border-radius: 25px;
+      padding: 5px 0px 5px 0px;
+      margin: 15px 0px 15px 0px; }
+      .loginContainer__formsLogin__signIn:hover {
+        cursor: pointer; }
+    .loginContainer__formsLogin__forgotPass {
+      border: none;
+      text-decoration: underline;
+      color: #007c91;
+      text-align: center;
+      margin: 0px auto 0px auto;
+      background-color: #fff;
+      width: 100%; }
+      .loginContainer__formsLogin__forgotPass:hover {
+        cursor: pointer; }
+  .loginContainer__formsLoginInformation {
+    width: 100%;
+    padding: 20px 20px 10px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    background-color: #ece9e4; }
+    .loginContainer__formsLoginInformation h1 {
+      font-size: 14px;
+      letter-spacing: 1px;
+      margin-bottom: 5px; }
+    .loginContainer__formsLoginInformation p {
+      font-size: 12px;
+      margin-bottom: 0px;
+      color: #706f73;
+      margin-bottom: 5px; }
+    .loginContainer__formsLoginInformation ul {
+      list-style-type: none;
+      font-size: 10px;
+      color: #706f73;
+      text-indent: 15px; }
+      .loginContainer__formsLoginInformation ul li {
+        margin-bottom: 5px; }
+  .loginContainer__extra {
+    width: 100%;
+    padding: 20px 20px 20px 20px;
+    display: flex;
+    flex-direction: column; }
+    .loginContainer__extra__register {
+      margin-bottom: 10px; }
+    .loginContainer__extra button {
+      border-radius: 25px;
+      background-color: #fff;
+      border: 2px solid #c7c7c7;
+      color: #000000;
+      font-weight: bold;
+      padding: 10px 0px 10px 0px; }
+      .loginContainer__extra button:hover {
+        background-color: #ece9e4;
+        border-color: #000000;
+        text-decoration: underline;
+        cursor: pointer; }
+
 .grayOverlay {
   display: none;
   position: absolute;
   width: 100%;
+  height: 100%;
+  top: 0;
   z-index: 6;
   background-color: rgba(153, 153, 153, 0.5); }
 
