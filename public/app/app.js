@@ -68,13 +68,13 @@ let afterRoute = (page) => {
 }
 
 let checkBanner = () => {
-    if (localStorage.getItem("banner") == "true") {
+    if (sessionStorage.getItem("banner") == "true") {
         $(".bannerAd").css("display", "none");
         bannerAd = false;
     } else {
         $(".bannerAd__close__button").click(() => {
             $(".bannerAd").addClass("test");
-            localStorage.setItem("banner", true);
+            sessionStorage.setItem("banner", true);
             bannerAd = true;
         })
         console.log("no local storeage banner!");
@@ -82,10 +82,10 @@ let checkBanner = () => {
 }
 let debugCommands = () => {
 
-    // press C to clear localstorage
+    // press C to clear sessionStorage
     $(document).keydown((e) => {
         if (e.which == 67) {
-            localStorage.clear();
+            sessionStorage.clear();
             $(".bannerAd").removeClass("test");
             $(".bannerAd").css("display", "flex");
             bannerAd = true;
@@ -206,6 +206,7 @@ let loadMachine = (docs) => {
 }
 
 let grayOverlay = () => {
+    let click = false;
     $(".keurigHeader__topNav__extraRight__profile,.loginContainer ").hover(() => {
         if (bannerAd == true) {
             let top = $(".bannerAd").height() + $(".keurigHeader__topNav").height() - 5 - parseInt($(".keurigHeader__topNav__extraRight__profile").css("padding-bottom"));
@@ -217,6 +218,8 @@ let grayOverlay = () => {
             $('html, body').css({
                 overflow: 'hidden'
             });
+            accountModal();
+
             console.log(1);
         } else {
             let top = $(".keurigHeader__topNav").height() - parseInt($(".keurigHeader__topNav__extraRight__profile").css("padding-bottom") - 5);
@@ -228,16 +231,57 @@ let grayOverlay = () => {
             $('html, body').css({
                 overflow: 'hidden'
             });
+            accountModal();
+
             console.log(2);
         }
+        $(".keurigHeader__topNav__extraRight__profile,.inputEnter,.chec ").click(() => {
+            click = true;
+        })
+        $(".loginContainer__close > i, .loginContainer__close > p,.grayOverlay ").click(() => {
+            click = false;
+            $(".grayOverlay").css({ "display": "none" });
+            $(".loginContainer").css({ "display": "none" });
+            $('html, body').css({
+                overflow: 'auto'
+            });
+        })
+
+
     }, () => {
-        $(".grayOverlay").css({ "display": "none" });
-        $(".loginContainer").css({ "display": "none" });
-        $('html, body').css({
-            overflow: 'auto'
-        });
+        if (click == false) {
+            $(".grayOverlay").css({ "display": "none" });
+            $(".loginContainer").css({ "display": "none" });
+            $('html, body').css({
+                overflow: 'auto'
+            });
+        }
     })
 
+}
+
+let accountModal = () => {
+    $(".loginContainer__options__logIn, .loginContainer__options__signUp").click(() => {
+        console.log(event.target);
+        $(event.target).parent().children().removeClass("lCSelected")
+        $(event.target).addClass("lCSelected");
+        let value = $(event.target).attr("value")
+        switch (value) {
+            case "signUp":
+                $(".loginContainer__formsSignup").css("display", "block");
+                $(".loginContainer__formsSignUpInformation").css("display", "flex");
+                $(".loginContainer__formsLogin").css("display", "none");
+                $(".loginContainer__formsLoginInformation").css("display", "none");
+                break;
+            case "logIn":
+                $(".loginContainer__formsLogin").css("display", "block");
+                $(".loginContainer__formsLoginInformation").css("display", "flex");
+                $(".loginContainer__formsSignup").css("display", "none");
+                $(".loginContainer__formsSignUpInformation").css("display", "none");
+                break;
+
+        }
+    });
 }
 
 // functions that will run at the start of out website. As soon as the dom loads all the intial functions begin to run.

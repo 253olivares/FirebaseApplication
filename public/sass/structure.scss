@@ -81,6 +81,7 @@ p {
     position: absolute;
     width: 350px;
     right: 5%;
+    top: 135px;
     z-index: 7;
     background-color: $white;
     border-radius: 9px;
@@ -157,9 +158,95 @@ p {
         }
     }
 
+    &__formsSignup {
+        padding: 15px 20px 15px 20px;
+        position: relative;
+        display: none;
+
+        &:after {
+            content: "";
+            background-image: url('../images/28911.svg');
+            background-size: 100% 100%;
+            filter: $filterWhite;
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            display: block;
+            top: -18px;
+            left: calc(75% - 20px);
+        }
+
+        form {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: start;
+
+            .inputEnter {
+                padding: 10px 12px 10px 12px;
+                font-size: 15px;
+                margin-bottom: 10px;
+            }
+        }
+
+        &__checkbox,
+        &__checkbox2 {
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            margin: 5px 0px 5px 0px;
+
+            #checkboxSpecials,
+            #checkboxKeep {
+                width: 17px;
+                height: 17px;
+                margin-right: 8px;
+            }
+
+            label {
+                color: $textDealGrey;
+                font-size: 13px;
+                line-height: 17px;
+                display: table-cell;
+                vertical-align: middle;
+            }
+        }
+
+
+        &__signUp {
+            background-color: $darkBrown;
+            width: 100%;
+            text-align: center;
+            font-weight: bold;
+            font-size: 15px;
+            color: $white;
+            border-radius: 25px;
+            padding: 5px 0px 5px 0px;
+            margin: 15px 0px 15px 0px;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+        p {
+            margin-bottom: 0px;
+            color: $textDealGrey;
+            font-size: 14px;
+            align-items: center;
+            margin: auto;
+            text-align: center;
+
+            a {
+                color: $brown;
+            }
+        }
+    }
+
     &__formsLogin {
         padding: 15px 20px 15px 20px;
         position: relative;
+        display: block;
 
         &:after {
             content: "";
@@ -240,6 +327,40 @@ p {
         }
     }
 
+    &__formsSignUpInformation {
+        width: 100%;
+        padding: 20px 20px 10px 50px;
+        display: none;
+        flex-direction: column;
+        justify-content: start;
+        background-color: $burg;
+
+        h1 {
+            font-size: 14px;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        p {
+            font-size: 12px;
+            margin-bottom: 0px;
+            color: $textDealGrey;
+            margin-bottom: 5px;
+        }
+
+        ul {
+            list-style-type: none;
+            font-size: 10px;
+            color: $textDealGrey;
+            text-indent: 15px;
+
+            li {
+                margin-bottom: 5px;
+            }
+        }
+
+    }
+
     &__formsLoginInformation {
         width: 100%;
         padding: 20px 20px 10px 50px;
@@ -306,8 +427,8 @@ p {
     display: none;
     position: absolute;
     width: 100%;
-    height: 100%;
-    top: 0;
+    height: calc(100% - 130px);
+    top: 130px;
     z-index: 6;
     background-color: rgba(153, 153, 153, .5);
 }

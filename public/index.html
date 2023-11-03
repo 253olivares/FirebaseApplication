@@ -256,20 +256,48 @@
         <p>Close</p>
       </div>
       <div class="loginContainer__options">
-        <button class="loginContainer__options__logIn lCSelected"> LOG IN</button>
-        <button class="loginContainer__options__signUp"> SIGN UP</button>
+        <button class="loginContainer__options__logIn lCSelected" value="logIn"> LOG IN</button>
+        <button class="loginContainer__options__signUp" value="signUp"> SIGN UP</button>
+      </div>
+      <div class="loginContainer__formsSignup">
+        <form action="">
+          <input class="inputEnter" placeholder="First Name*" name="fname-Signup" id="fname-Signup">
+          <input class="inputEnter" placeholder="Last Name*" name="lname-Signup" id="lname-Signup">
+          <input class="inputEnter" type="email" placeholder="Email*" name="email-Signup" id="email-Signup">
+          <input class="inputEnter" type="password" placeholder="Passowrd*" name="password-Signup" id="password-Signup">
+          <div class="loginContainer__formsSignup__checkbox">
+            <input type="checkbox" class="chec" name="checkboxSpecials" id="checkboxSpecials" value="specialOffers">
+            <label for="checkboxSpecials">Recieve specil offer emails</label>
+          </div>
+          <div class="loginContainer__formsSignup__checkbox2">
+            <input type="checkbox" class="chec" name="checkboxKeep" id="checkboxKeep" value="keep">
+            <label for="checkboxKeep">Keep me signed in.</label>
+          </div>
+          <button class="loginContainer__formsSignup__signUp"> CREATE AN ACCOUNT </button>
+        </form>
+        <p>By clicking "Create and Account" I accept Keurig <a href="#">Terms of Use</a> and <a href="#">Privacy
+            Policy</a></p>
       </div>
       <div class="loginContainer__formsLogin">
-        <form action="#">
+        <form action="">
           <input class="inputEnter" type="email" name="email-Login" placeholder="Email*" id="email-login">
           <input class="inputEnter" type="password" name="password-Login" placeholder="Password*" id="password-Login">
           <div class="loginContainer__formsLogin__checkbox">
-            <input type="checkbox" id="checkboxRemeber" name="checkbox" value="remeber">
-            <label for="checkbox">Keep me signed in.</label>
+            <input type="checkbox" class="chec" id="checkboxRemeber" name="checkboxRemeber" value="remeber">
+            <label for="checkboxRemeber">Keep me signed in.</label>
           </div>
           <button class="loginContainer__formsLogin__signIn"> SIGN IN </button>
         </form>
         <button class="loginContainer__formsLogin__forgotPass"> Forgot Password? </button>
+      </div>
+      <div class="loginContainer__formsSignUpInformation">
+        <h1>Why Sign Up?</h1>
+        <p>Creating an account lets you easily:</p>
+        <ul>
+          <li>Reorder favorites with one click</li>
+          <li>Get news about our amazing deals</li>
+          <li>Track your order shipments</li>
+        </ul>
       </div>
       <div class="loginContainer__formsLoginInformation">
         <h1>Why Sign Into Your Account?</h1>
@@ -277,7 +305,7 @@
         <ul>
           <li>Manage your account details</li>
           <li>Check your order status</li>
-          <li>Tracl shipment and more</li>
+          <li>Track shipment and more</li>
         </ul>
       </div>
       <div class="loginContainer__extra">
