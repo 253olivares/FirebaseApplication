@@ -4,6 +4,21 @@ var topNav;
 
 var coffeeCart = [];
 
+// debug commands that I create for debugging
+let debugCommands = () => {
+
+    // press C to clear sessionStorage
+    $(document).keydown((e) => {
+        if (e.which == 67) {
+            sessionStorage.clear();
+            $(".bannerAd").removeClass("test");
+            $(".bannerAd").css("display", "flex");
+            bannerAd = true;
+        }
+        console.log(e.which);
+    })
+}
+
 // function creates an event listener that keeps track of our url address to check for any changes
 // The first line creates the listener and the second long runs the route function for the first time to land us on the homepage.
 let checkHash = () => {
@@ -23,9 +38,6 @@ let route = () => {
         case "cart":
             MODEL.changeContent(pageID, afterRoute);
             break;
-        case "coffee":
-            MODEL.changeContent(pageID, afterRoute);
-            break;
         default:
             if (pageID.length == 0) {
                 MODEL.changeContent("home", afterRoute);
@@ -38,26 +50,13 @@ let route = () => {
     }
 }
 
-let setAppHeight = () => {
-    $("#app").css("height", $("#app").height());
-}
-
-let addCoffeeCount = () => {
-    console.log($("#coffeeDisplay > div").length);
-    $(".coffeeMakerCount").append($("#coffeeDisplay > div").length);;
-}
-
 // function to run any script after redirection to a new page
 let afterRoute = (page) => {
 
     switch (page) {
         case "home":
             console.log("You are on the home page!");
-            break;
-        case "coffee":
-            console.log("you are on the coffee page!");
             loadMachine();
-
             break;
         case "cart":
             console.log("you are on the cart page!");
@@ -67,6 +66,7 @@ let afterRoute = (page) => {
 
 }
 
+// checks to see if banner is suppose to exist
 let checkBanner = () => {
     if (sessionStorage.getItem("banner") == "true") {
         $(".bannerAd").css("display", "none");
@@ -80,33 +80,75 @@ let checkBanner = () => {
         console.log("no local storeage banner!");
     }
 }
-let debugCommands = () => {
 
-    // press C to clear sessionStorage
-    $(document).keydown((e) => {
-        if (e.which == 67) {
-            sessionStorage.clear();
-            $(".bannerAd").removeClass("test");
-            $(".bannerAd").css("display", "flex");
-            bannerAd = true;
-        }
-        console.log(e.which);
-    })
-}
+// function that sets footer high
 let setFooterHeight = () => {
     $(".content-wrap").css("padding-bottom", $(".footer").height())
 }
-let checkColorListener = () => {
-    $(".checkColor").click(() => {
-        $(event.target).parent().children().removeClass("selectedColor")
-        $(event.target).addClass("selectedColor");
-        let id = $(event.target).parent().parent().attr("listNum");
-        let color = $(event.target).attr("color");
-        $(event.target).parent().prev().attr("src", `https://firebasestorage.googleapis.com/v0/b/personal-project-d1c24.appspot.com/o/img%2FCoffee${id + color}.png?alt=media&token=e08d42bf-c0da-4235-9692-7f4ae31298c7`);;
-    })
+
+let cartNumer = () => {
+    if (coffeeCart >= 1) {
+
+    }
 }
 
-let loadMachine = (docs) => {
+let searchBarListener = () => {
+    try {
+        $("#machineSearch").focusin(() => {
+            if (bannerAd == true) {
+                let top = $(".bannerAd").height() + $(".keurigHeader__topNav").height() - 5 - parseInt($(".keurigHeader__topNav__extraRight__profile").css("padding-bottom"));
+                $(".grayOverlay ").css({ "display": "block", "top": top, "height": `calc(100% - ${top}px)` });
+                $('html, body').css({
+                    overflow: 'hidden'
+                });
+
+            } else {
+                let top = $(".keurigHeader__topNav").height() - parseInt($(".keurigHeader__topNav__extraRight__profile").css("padding-bottom") - 5);
+                $(".grayOverlay").css({ "display": "block", "top": top, "height": `calc(100% - ${top}px)` });
+                $('html, body').css({
+                    overflow: 'hidden'
+                });
+            }
+        }
+        )
+        $("#machineSearch").focusout(() => {
+            $(".grayOverlay").css({ "display": "none" });
+            $(".loginContainer").css({ "display": "none" });
+            $('html, body').css({
+                overflow: 'auto'
+            });
+        })
+    } catch (e) {
+        console.error("Document.ready has failed Error: " + e);
+        alert(e);
+    }
+    // $("#machineSearch").on("focus", () => {
+    //     console.log("test");
+    //     if (bannerAd == true) {
+    //         let top = $(".bannerAd").height() + $(".keurigHeader__topNav").height() - 5 - parseInt($(".keurigHeader__topNav__extraRight__profile").css("padding-bottom"));
+    //         $(".grayOverlay ").css({ "display": "block", "top": top, "height": `calc(100% - ${top}px)` });
+    //         $('html, body').css({
+    //             overflow: 'hidden'
+    //         });
+
+    //     } else {
+    //         let top = $(".keurigHeader__topNav").height() - parseInt($(".keurigHeader__topNav__extraRight__profile").css("padding-bottom") - 5);
+    //         $(".grayOverlay").css({ "display": "block", "top": top, "height": `calc(100% - ${top}px)` });
+    //         $('html, body').css({
+    //             overflow: 'hidden'
+    //         });
+    //     }
+    // }, () => {
+    // $(".grayOverlay").css({ "display": "none" });
+    // $(".loginContainer").css({ "display": "none" });
+    // $('html, body').css({
+    //     overflow: 'auto'
+    // });
+    // });
+}
+
+// function that loads all machines into our coffee page
+let loadMachine = () => {
     machineid = "";
     $("#coffeeDisplay").empty();
     _db
@@ -174,7 +216,7 @@ let loadMachine = (docs) => {
                             <p>Free Shipping</p>
                         </div>
                         <div class="listPage__coffeeList__item__addCart changeAddCart">
-                            <button coffeeNumber="${y.data().id}">BUY NOW</button>
+                            <button coffeeNumber="${y.data().id}" onclick="addCoffee2Cart(${y.data().id})">BUY NOW</button>
                         </div>
                     </div>`)
 
@@ -205,7 +247,36 @@ let loadMachine = (docs) => {
             });
 }
 
-let grayOverlay = () => {
+// Minor function that counts number of coffee items that exist on the data base and displays number of coffee list page
+let addCoffeeCount = () => {
+    console.log($("#coffeeDisplay > div").length);
+    $(".coffeeMakerCount").append($("#coffeeDisplay > div").length);;
+}
+
+// listener function created to give collor buttons on the coffee listing a function to change the coffee's color
+let checkColorListener = () => {
+    $(".checkColor").click(() => {
+        $(event.target).parent().children().removeClass("selectedColor")
+        $(event.target).addClass("selectedColor");
+        let id = $(event.target).parent().parent().attr("listNum");
+        let color = $(event.target).attr("color");
+        $(event.target).parent().prev().attr("src", `https://firebasestorage.googleapis.com/v0/b/personal-project-d1c24.appspot.com/o/img%2FCoffee${id + color}.png?alt=media&token=e08d42bf-c0da-4235-9692-7f4ae31298c7`);;
+    })
+}
+
+let addCoffee2Cart = (id) => {
+    let targetItem = $(event.target).parent().parent()
+    console.log(targetItem.attr("listNum"));
+    if (sessionStorage.login == false) {
+
+    } else {
+
+    }
+
+}
+
+// function that takes care of loding and hidding the gray overlay the pops up when user tried to sign in or access search bar
+let accountHover = () => {
     let click = false;
     $(".keurigHeader__topNav__extraRight__profile,.loginContainer ").hover(() => {
         if (bannerAd == true) {
@@ -259,7 +330,7 @@ let grayOverlay = () => {
     })
 
 }
-
+// Modal create for user to create a new account using an email and password
 let accountModal = () => {
     $(".loginContainer__options__logIn, .loginContainer__options__signUp").click(() => {
         console.log(event.target);
@@ -289,11 +360,12 @@ $(document).ready(() => {
     try {
         let app = firebase.app();
         _db = firebase.firestore();
-        checkHash();
-        checkBanner();
-        grayOverlay();
         debugCommands();
+        checkHash();
         setFooterHeight();
+        accountHover();
+        searchBarListener();
+        checkBanner();
     } catch (e) {
         console.error("Document.ready has failed Error: " + e);
         alert(e);
