@@ -1,5 +1,7 @@
 var _db
 var bannerAd = true;
+let emptyCartPage = `<p>0 ITEM</p>
+    <h1>You don't have any items in your shopping cart</h1>`;
 var topNav;
 
 var coffeeCart = [];
@@ -60,7 +62,7 @@ let afterRoute = (page) => {
             break;
         case "cart":
             console.log("you are on the cart page!");
-
+            checkCartPage();
             break;
     }
 
@@ -87,8 +89,18 @@ let setFooterHeight = () => {
 }
 
 let cartNumer = () => {
-    if (coffeeCart >= 1) {
-
+    try {
+        if (coffeeCart.length >= 1) {
+            console.log("array has more than one");
+            $(".keurigHeader__topNav__extraRight__cart__count").css("display", "inline-block");
+            $(".keurigHeader__topNav__extraRight__cart__count").html(coffeeCart.length);
+        } else {
+            console.log("arrary has none");
+            $(".keurigHeader__topNav__extraRight__cart__count").css("display", "none");
+        }
+    } catch {
+        console.error("Document.ready has failed Error: " + e);
+        alert(e);
     }
 }
 
@@ -275,6 +287,14 @@ let addCoffee2Cart = (id) => {
 
 }
 
+let checkCartPage = () => {
+    if (coffeeCart.length >= 1) {
+
+    } else {
+        $(".cartPage__content").html(emptyCartPage);
+    }
+}
+
 // function that takes care of loding and hidding the gray overlay the pops up when user tried to sign in or access search bar
 let accountHover = () => {
     let click = false;
@@ -365,6 +385,7 @@ $(document).ready(() => {
         setFooterHeight();
         accountHover();
         searchBarListener();
+        cartNumer();
         checkBanner();
     } catch (e) {
         console.error("Document.ready has failed Error: " + e);

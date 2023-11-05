@@ -437,6 +437,21 @@ p {
           width: 100%;
           margin: auto;
           font-size: 13px; }
+        .keurigHeader__topNav__extraRight__profile__count, .keurigHeader__topNav__extraRight__cart__count {
+          display: none;
+          position: absolute;
+          padding: 3px;
+          background-color: #592615;
+          color: #fff !important;
+          font-size: 15px;
+          width: 20px;
+          height: 20px;
+          right: 0;
+          margin-bottom: 0px;
+          border-radius: 25px;
+          text-align: center;
+          line-height: 16px;
+          vertical-align: middle; }
       .keurigHeader__topNav__extraRight__profile {
         margin: 0px 20px 0px 20px; }
       .keurigHeader__topNav__extraRight__profile:hover, .keurigHeader__topNav__extraRight__cart:hover {
