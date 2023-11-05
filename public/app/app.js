@@ -89,6 +89,7 @@ let setFooterHeight = () => {
     $(".content-wrap").css("padding-bottom", $(".footer").height())
 }
 
+//
 let cartNumer = () => {
     console.log("cartNumber:Running");
     try {
@@ -106,6 +107,7 @@ let cartNumer = () => {
     }
 }
 
+//
 let searchBarListener = () => {
     try {
         $("#machineSearch").focusin(() => {
@@ -278,6 +280,7 @@ let checkColorListener = () => {
     })
 }
 
+//
 let addCoffee2Cart = (id) => {
     let targetItem = $(event.target).parent().parent()
     console.log("addCoffee2Cart page has ran. Output: ", targetItem.attr("listNum"));
@@ -289,6 +292,7 @@ let addCoffee2Cart = (id) => {
 
 }
 
+//
 let checkCartPage = () => {
     if (coffeeCart.length >= 1) {
 
@@ -297,6 +301,7 @@ let checkCartPage = () => {
     }
 }
 
+//
 let accountInfoHover = () => {
     let click = false;
     $(".keurigHeader__topNav__extraRight__account, .accountContainer").hover(() => {
@@ -339,6 +344,7 @@ let accountInfoHover = () => {
     });
 }
 
+//
 let loadInfo = () => {
     $(".accountContainer__info__span").text(loggedUser.fname, " ", loggedUser.lname);
     $(".accountContainer__info__email").text(loggedUser.email);
@@ -357,7 +363,7 @@ let accountHover = () => {
             $('html, body').css({
                 overflow: 'hidden'
             });
-
+            accountModal();
             console.log(1);
         } else {
             let top = $(".keurigHeader__topNav").height() - parseInt($(".keurigHeader__topNav__extraRight__profile").css("padding-bottom") - 5);
@@ -366,7 +372,7 @@ let accountHover = () => {
             $('html, body').css({
                 overflow: 'hidden'
             });
-
+            accountModal();
             console.log(2);
         }
         $(".keurigHeader__topNav__extraRight__profile,.inputEnter,.chec ").click(() => {
@@ -394,6 +400,7 @@ let accountHover = () => {
 
 }
 
+//
 let signoutClick = () => {
     $(".keurigHeader__topNav__extraRight__signOut").click(() => {
         firebase.auth().signOut().then(() => {
@@ -406,6 +413,7 @@ let signoutClick = () => {
             })
     });
 }
+
 // Modal create for user to create a new account using an email and password
 let accountModal = () => {
     $(".loginContainer__options__logIn, .loginContainer__options__signUp").click(() => {
@@ -429,6 +437,7 @@ let accountModal = () => {
         }
     });
 }
+
 // A function that contains a list of functions I want running before hashing the page
 let commands2LoadBeforePageHash = () => {
     debugCommands();
