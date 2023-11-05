@@ -41,6 +41,62 @@ p {
   margin: auto;
   min-height: 320px; }
 
+.accountContainer {
+  display: none;
+  position: absolute;
+  width: 350px;
+  right: 9.25%;
+  top: 135px;
+  z-index: 7;
+  background-color: #fff;
+  border-radius: 9px; }
+  .accountContainer:after {
+    content: "";
+    background-image: url("../images/28911.svg");
+    background-size: 100% 100%;
+    filter: invert(100%) sepia(35%) saturate(11%) hue-rotate(245deg) brightness(104%) contrast(103%);
+    width: 40px;
+    height: 40px;
+    display: block;
+    position: absolute;
+    top: -30px;
+    right: 9%; }
+  .accountContainer__close {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin-bottom: 14px;
+    padding: 20px 20px 0px 20px; }
+    .accountContainer__close i {
+      display: block;
+      background-image: url("../images/times-solid.svg");
+      background-size: 100% 100%;
+      filter: invert(0%) sepia(3%) saturate(13%) hue-rotate(77deg) brightness(97%) contrast(103%);
+      width: 20px;
+      height: 20px;
+      margin-right: 10px; }
+      .accountContainer__close i:hover {
+        cursor: pointer; }
+    .accountContainer__close p {
+      font-size: 16px;
+      line-height: 18px;
+      display: table-cell;
+      vertical-align: middle;
+      margin-bottom: 0px; }
+      .accountContainer__close p:hover {
+        cursor: pointer; }
+  .accountContainer__info {
+    width: 100%;
+    padding: 20px 20px 20px 20px;
+    display: flex;
+    flex-direction: column; }
+    .accountContainer__info img {
+      width: 50px;
+      margin: 0px auto 20px auto; }
+    .accountContainer__info p {
+      margin-bottom: 10px;
+      font-size: 14px; }
+
 .loginContainer {
   display: none;
   position: absolute;
@@ -411,33 +467,28 @@ p {
       .keurigHeader__topNav__extraRight__freeShipping {
         border: none;
         background-color: transparent;
-        padding: 0px 30px 0px 25px;
+        padding: 0px 25px 0px 25px;
         font-size: 13px;
         margin-bottom: 0px; }
       .keurigHeader__topNav__extraRight__freeShipping:hover {
         cursor: pointer; }
-      .keurigHeader__topNav__extraRight__signOut {
-        display: none; }
-        .keurigHeader__topNav__extraRight__signOut img {
-          filter: invert(0%) sepia(3%) saturate(13%) hue-rotate(77deg) brightness(97%) contrast(103%); }
-      .keurigHeader__topNav__extraRight__profile, .keurigHeader__topNav__extraRight__cart {
+      .keurigHeader__topNav__extraRight__profile, .keurigHeader__topNav__extraRight__cart, .keurigHeader__topNav__extraRight__signOut, .keurigHeader__topNav__extraRight__account {
         position: relative;
         padding: 8px;
-        display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         border-radius: 10px; }
-        .keurigHeader__topNav__extraRight__profile img, .keurigHeader__topNav__extraRight__cart img {
+        .keurigHeader__topNav__extraRight__profile img, .keurigHeader__topNav__extraRight__cart img, .keurigHeader__topNav__extraRight__signOut img, .keurigHeader__topNav__extraRight__account img {
           width: 32px;
           height: 32px;
           filter: invert(0%) sepia(3%) saturate(13%) hue-rotate(77deg) brightness(97%) contrast(103%); }
-        .keurigHeader__topNav__extraRight__profile p, .keurigHeader__topNav__extraRight__cart p {
+        .keurigHeader__topNav__extraRight__profile p, .keurigHeader__topNav__extraRight__cart p, .keurigHeader__topNav__extraRight__signOut p, .keurigHeader__topNav__extraRight__account p {
           color: #000000;
           width: 100%;
           margin: auto;
           font-size: 13px; }
-        .keurigHeader__topNav__extraRight__profile__count, .keurigHeader__topNav__extraRight__cart__count {
+        .keurigHeader__topNav__extraRight__profile__count, .keurigHeader__topNav__extraRight__cart__count, .keurigHeader__topNav__extraRight__signOut__count, .keurigHeader__topNav__extraRight__account__count {
           display: none;
           position: absolute;
           padding: 3px;
@@ -452,9 +503,18 @@ p {
           text-align: center;
           line-height: 16px;
           vertical-align: middle; }
+      .keurigHeader__topNav__extraRight__cart {
+        display: flex; }
+      .keurigHeader__topNav__extraRight__signOut {
+        display: none;
+        margin-right: 10px; }
+      .keurigHeader__topNav__extraRight__account {
+        display: none;
+        margin-right: 10px; }
       .keurigHeader__topNav__extraRight__profile {
-        margin: 0px 20px 0px 20px; }
-      .keurigHeader__topNav__extraRight__profile:hover, .keurigHeader__topNav__extraRight__cart:hover {
+        margin: 0px 20px 0px 20px;
+        display: flex; }
+      .keurigHeader__topNav__extraRight__profile:hover, .keurigHeader__topNav__extraRight__cart:hover, .keurigHeader__topNav__extraRight__signOut:hover, .keurigHeader__topNav__extraRight__account:hover {
         cursor: pointer;
         background-color: #f0f0f0; }
   .keurigHeader__bottomNav {

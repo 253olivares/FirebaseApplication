@@ -157,7 +157,7 @@
             &__freeShipping {
                 border: none;
                 background-color: transparent;
-                padding: 0px 30px 0px 25px;
+                padding: 0px 25px 0px 25px;
                 font-size: 13px;
                 margin-bottom: 0px;
             }
@@ -166,20 +166,13 @@
                 cursor: pointer;
             }
 
-            &__signOut {
-                display: none;
-
-                img {
-                    filter: $filterBlack;
-                }
-            }
-
 
             &__profile,
-            &__cart {
+            &__cart,
+            &__signOut,
+            &__account {
                 position: relative;
                 padding: 8px;
-                display: flex;
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
@@ -217,13 +210,29 @@
 
             }
 
+            &__cart {
+                display: flex;
+            }
+
+            &__signOut {
+                display: none;
+                margin-right: 10px;
+            }
+
+            &__account {
+                display: none;
+                margin-right: 10px;
+            }
 
             &__profile {
                 margin: 0px 20px 0px 20px;
+                display: flex;
             }
 
             &__profile:hover,
-            &__cart:hover {
+            &__cart:hover,
+            &__signOut:hover,
+            &__account:hover {
                 cursor: pointer;
                 background-color: $lightBiege;
             }

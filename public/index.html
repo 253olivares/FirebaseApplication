@@ -62,10 +62,15 @@
             $35+</button>
           <div class="keurigHeader__topNav__extraRight__profile">
             <img src="./images/profile.svg" alt="Profile icon">
+            <p>Sign In</p>
+          </div>
+          <div class="keurigHeader__topNav__extraRight__account">
+            <img src="./images/mug-svgrepo-com.svg" alt="Profile icon">
             <p>Account</p>
           </div>
           <div class="keurigHeader__topNav__extraRight__signOut">
             <img src="./images/signOut.png" alt="Sign out icon">
+            <p>Sign Out</p>
           </div>
           <a href="#/cart" style="text-decoration: none;">
             <div href="#/cart" class="keurigHeader__topNav__extraRight__cart">
@@ -224,31 +229,24 @@
           <div class="footer__container__bottomInfo__trademark">
             <p>All trademarks are the property of their respective owners, not offical or asscociated.</p>
             <br>
-            <br>
-            <br>
           </div>
         </div>
       </div>
-      <!-- 
-      <div class="footer__middleInfo">
-        <div class="footer__middleInfo__column1">
-          <div class="footer__middleInfo__column1__topRow"></div>
-          <div class="footer__middleInfo__column1__bottomRow"></div>
-        </div>
-        <div class="footer__middleInfo__column2">
-        </div>
-        <div class="footer__middleInfo__column3"></div>
-        <div class="footer__middleInfo__column4">
-          <div class="footer__middleInfo__column4__Row1"></div>
-          <div class="footer__middleInfo__column4__Row2"></div>
-          <div class="footer__middleInfo__column4__Row3"></div>
-        </div>
-      </div>
-      <div class="footer__bottomInfo">
-        <div class="footer__copyright"></div>
-        <div class="footer__trademark"></div>
-      </div> -->
     </footer>
+
+    <div class="accountContainer">
+      <div class="accountContainer__close">
+        <i></i>
+        <p>Close</p>
+      </div>
+      <div class="accountContainer__info">
+        <img src="./images/profile.svg" alt="Profile icon">
+        <p>Full Name: <span class="accountContainer__info__span">Miguel Olivares</span></p>
+        <p>Email: <span class="accountContainer__info__email">olivarezmig@gmail.com</span></p>
+        <p>Uid: <span class="accountContainer__info__uid">olivarezmig@gmail.com</span></p>
+        <p>Specials: <span class="accountContainer__info__specials">olivarezmig@gmail.com</span></p>
+      </div>
+    </div>
 
     <div class="loginContainer">
       <div class="loginContainer__close">
@@ -260,33 +258,36 @@
         <button class="loginContainer__options__signUp" value="signUp"> SIGN UP</button>
       </div>
       <div class="loginContainer__formsSignup">
-        <form action="">
-          <input class="inputEnter" placeholder="First Name*" name="fname-Signup" id="fname-Signup">
-          <input class="inputEnter" placeholder="Last Name*" name="lname-Signup" id="lname-Signup">
-          <input class="inputEnter" type="email" placeholder="Email*" name="email-Signup" id="email-Signup">
-          <input class="inputEnter" type="password" placeholder="Passowrd*" name="password-Signup" id="password-Signup">
+        <form onsubmit="return false">
+          <input class="inputEnter" placeholder="First Name*" name="fname-Signup" id="fname-Signup" required>
+          <input class="inputEnter" placeholder="Last Name*" name="lname-Signup" id="lname-Signup" required>
+          <input class="inputEnter" type="email" placeholder="Email*" name="email-Signup" id="email-Signup" required>
+          <input class="inputEnter" type="password" placeholder="Passowrd*" name="password-Signup" id="password-Signup"
+            required>
           <div class="loginContainer__formsSignup__checkbox">
-            <input type="checkbox" class="chec" name="checkboxSpecials" id="checkboxSpecials" value="specialOffers">
+            <input type="checkbox" class="chec" name="checkboxSpecials" id="checkboxSpecials">
             <label for="checkboxSpecials">Recieve specil offer emails</label>
           </div>
           <div class="loginContainer__formsSignup__checkbox2">
-            <input type="checkbox" class="chec" name="checkboxKeep" id="checkboxKeep" value="keep">
+            <input type="checkbox" class="chec" name="checkboxKeep" id="checkboxKeep">
             <label for="checkboxKeep">Keep me signed in.</label>
           </div>
-          <button class="loginContainer__formsSignup__signUp"> CREATE AN ACCOUNT </button>
+          <button class="loginContainer__formsSignup__signUp" onclick="signup()"> CREATE AN
+            ACCOUNT
+          </button>
         </form>
         <p>By clicking "Create and Account" I accept Keurig <a href="#">Terms of Use</a> and <a href="#">Privacy
             Policy</a></p>
       </div>
       <div class="loginContainer__formsLogin">
-        <form action="">
+        <form onsubmit="return false">
           <input class="inputEnter" type="email" name="email-Login" placeholder="Email*" id="email-login">
           <input class="inputEnter" type="password" name="password-Login" placeholder="Password*" id="password-Login">
           <div class="loginContainer__formsLogin__checkbox">
             <input type="checkbox" class="chec" id="checkboxRemeber" name="checkboxRemeber" value="remeber">
             <label for="checkboxRemeber">Keep me signed in.</label>
           </div>
-          <button class="loginContainer__formsLogin__signIn"> SIGN IN </button>
+          <button class="loginContainer__formsLogin__signIn" onclick="login()"> SIGN IN </button>
         </form>
         <button class="loginContainer__formsLogin__forgotPass"> Forgot Password? </button>
       </div>

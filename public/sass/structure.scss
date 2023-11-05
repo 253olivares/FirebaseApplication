@@ -76,6 +76,82 @@ p {
     min-height: 320px;
 }
 
+.accountContainer {
+    display: none;
+    position: absolute;
+    width: 350px;
+    right: 9.25%;
+    top: 135px;
+    z-index: 7;
+    background-color: $white;
+    border-radius: 9px;
+
+    &:after {
+        content: "";
+        background-image: url('../images/28911.svg');
+        background-size: 100% 100%;
+        filter: $filterWhite;
+        width: 40px;
+        height: 40px;
+        display: block;
+        position: absolute;
+        top: -30px;
+        right: 9%;
+    }
+
+    &__close {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        margin-bottom: 14px;
+        padding: 20px 20px 0px 20px;
+
+        i {
+            display: block;
+            background-image: url('../images/times-solid.svg');
+            background-size: 100% 100%;
+            filter: $filterBlack;
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 18px;
+            display: table-cell;
+            vertical-align: middle;
+            margin-bottom: 0px;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+
+    &__info {
+        width: 100%;
+        padding: 20px 20px 20px 20px;
+        display: flex;
+        flex-direction: column;
+
+        img {
+            width: 50px;
+            margin: 0px auto 20px auto;
+        }
+
+        p {
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+    }
+}
+
 .loginContainer {
     display: none;
     position: absolute;
