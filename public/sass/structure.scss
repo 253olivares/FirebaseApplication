@@ -35,6 +35,7 @@ $filterWhite: invert(100%) sepia(35%) saturate(11%) hue-rotate(245deg) brightnes
 }
 
 * {
+    font-family: "MarkOT-Medium";
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -230,7 +231,7 @@ p {
         .lCSelected {
             background-color: $burg;
             color: $textBlack;
-            font-weight: bold;
+
         }
     }
 

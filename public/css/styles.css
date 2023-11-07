@@ -6,6 +6,7 @@
   font-family: "MarkOT-Medium"; }
 
 * {
+  font-family: "MarkOT-Medium";
   margin: 0;
   padding: 0;
   box-sizing: border-box; }
@@ -156,8 +157,7 @@ p {
         text-decoration: underline; }
     .loginContainer__options .lCSelected {
       background-color: #ece9e4;
-      color: #2d2a26;
-      font-weight: bold; }
+      color: #2d2a26; }
   .loginContainer__formsSignup {
     padding: 15px 20px 15px 20px;
     position: relative;
@@ -577,7 +577,7 @@ p {
   min-height: 2.5rem; }
   .footer__container {
     width: 100%;
-    max-width: 1200px;
+    max-width: 1280px;
     margin: auto; }
     .footer__container__topWrap {
       width: 100%;
@@ -706,7 +706,7 @@ p {
 
 .listPage {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1280px;
   margin: auto; }
   .listPage__banner {
     width: 100%;
@@ -1001,7 +1001,7 @@ p {
 
 .cartPage {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1280px;
   margin: auto; }
   .cartPage__banner {
     width: 100%;
@@ -1011,18 +1011,267 @@ p {
     background-repeat: no-repeat;
     background-position: center; }
   .cartPage__content {
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100%; }
-    .cartPage__content p {
-      color: #706f73;
-      margin-top: 30px;
-      margin-bottom: 10px;
-      word-spacing: 5px; }
-    .cartPage__content h1 {
-      font-size: 40;
-      font-weight: lighter;
-      letter-spacing: 8px;
-      margin-bottom: 150px; }
+    margin-bottom: 30px; }
+    .cartPage__content__shipping {
+      width: 100%;
+      align-items: center;
+      letter-spacing: 1px;
+      font-size: 15px;
+      display: flex;
+      justify-content: center;
+      padding: 30px 0px 30px 0px; }
+      .cartPage__content__shipping i {
+        font-size: 25px;
+        margin-right: 10px;
+        color: green; }
+    .cartPage__content__cartinfo {
+      width: 100%;
+      min-height: 500px;
+      display: flex;
+      justify-content: space-around; }
+      .cartPage__content__cartinfo__cartDisplay {
+        width: 100%;
+        max-width: 925px;
+        display: block;
+        background-color: #fff; }
+        .cartPage__content__cartinfo__cartDisplay__container {
+          width: 100%;
+          min-height: 100px;
+          background-color: #ece9e4;
+          border-radius: 15px;
+          padding: 22px;
+          margin-bottom: 30px; }
+          .cartPage__content__cartinfo__cartDisplay__container__message h1 {
+            margin-bottom: 8px;
+            font-size: 18px;
+            font-weight: normal; }
+          .cartPage__content__cartinfo__cartDisplay__container__message p {
+            font-size: 12px;
+            font-style: italic;
+            margin-bottom: 0px; }
+          .cartPage__content__cartinfo__cartDisplay__container__coffeelist {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center; }
+            .cartPage__content__cartinfo__cartDisplay__container__coffeelist__item {
+              width: 100%;
+              height: 175px;
+              display: flex;
+              background-color: #fff;
+              margin-top: 25px;
+              position: relative; }
+              .cartPage__content__cartinfo__cartDisplay__container__coffeelist__item__left {
+                width: 50%;
+                height: 100%;
+                display: flex; }
+                .cartPage__content__cartinfo__cartDisplay__container__coffeelist__item__left__image {
+                  width: 40%;
+                  height: 100%;
+                  display: flex;
+                  align-items: center;
+                  padding: 13px; }
+                  .cartPage__content__cartinfo__cartDisplay__container__coffeelist__item__left__image img {
+                    width: 100%; }
+                .cartPage__content__cartinfo__cartDisplay__container__coffeelist__item__left__name {
+                  width: 60%;
+                  height: 100%;
+                  display: flex;
+                  flex-direction: column;
+                  align-items: start;
+                  justify-content: center; }
+                  .cartPage__content__cartinfo__cartDisplay__container__coffeelist__item__left__name h1 {
+                    font-size: 14px;
+                    font-weight: normal;
+                    font-style: italic; }
+                  .cartPage__content__cartinfo__cartDisplay__container__coffeelist__item__left__name p {
+                    font-size: 16px; }
+              .cartPage__content__cartinfo__cartDisplay__container__coffeelist__item__right {
+                width: 50%;
+                display: flex; }
+                .cartPage__content__cartinfo__cartDisplay__container__coffeelist__item__right__unitPrice {
+                  width: 50%;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center; }
+                  .cartPage__content__cartinfo__cartDisplay__container__coffeelist__item__right__unitPrice p {
+                    margin-bottom: 0px;
+                    margin-right: 15px;
+                    font-style: italic; }
+                  .cartPage__content__cartinfo__cartDisplay__container__coffeelist__item__right__unitPrice select {
+                    padding: 8px;
+                    border: 3px solid #f9c507; }
+                .cartPage__content__cartinfo__cartDisplay__container__coffeelist__item__right__subtotal {
+                  width: 50%;
+                  display: flex;
+                  align-items: center;
+                  justify-content: end;
+                  padding-right: 35px; }
+                  .cartPage__content__cartinfo__cartDisplay__container__coffeelist__item__right__subtotal p {
+                    font-style: italic; }
+              .cartPage__content__cartinfo__cartDisplay__container__coffeelist__item__close {
+                position: absolute;
+                right: 35px;
+                top: 10%;
+                display: flex;
+                align-items: center;
+                color: #706f73; }
+                .cartPage__content__cartinfo__cartDisplay__container__coffeelist__item__close:hover {
+                  cursor: pointer; }
+                .cartPage__content__cartinfo__cartDisplay__container__coffeelist__item__close p {
+                  margin-right: 10px;
+                  margin-bottom: 0px;
+                  font-size: 13px;
+                  line-height: 13px;
+                  display: table-cell;
+                  vertical-align: middle;
+                  text-decoration: underline;
+                  font-style: italic; }
+              .cartPage__content__cartinfo__cartDisplay__container__coffeelist__item:last-child {
+                border-radius: 0px 0px 15px 15px; }
+              .cartPage__content__cartinfo__cartDisplay__container__coffeelist__item:first-child {
+                margin-top: 20px; }
+        .cartPage__content__cartinfo__cartDisplay__coupon {
+          width: 100%;
+          display: block;
+          background-color: #fff;
+          padding: 30px 25px 30px 25px;
+          box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          color: #000000; }
+          .cartPage__content__cartinfo__cartDisplay__coupon p {
+            font-size: 20px;
+            margin-bottom: 0px;
+            font-weight: lighter; }
+          .cartPage__content__cartinfo__cartDisplay__coupon__couponInput {
+            display: flex;
+            justify-content: center;
+            align-items: center; }
+            .cartPage__content__cartinfo__cartDisplay__coupon__couponInput input {
+              width: 225px;
+              padding: 10px;
+              background-color: #fff;
+              border: 3px solid #c7c7c7;
+              border-right: none; }
+              .cartPage__content__cartinfo__cartDisplay__coupon__couponInput input::placeholder {
+                letter-spacing: 1px; }
+            .cartPage__content__cartinfo__cartDisplay__coupon__couponInput button {
+              background-color: #fff;
+              border: 3px solid #f9c507;
+              padding: 10px;
+              letter-spacing: 1px; }
+              .cartPage__content__cartinfo__cartDisplay__coupon__couponInput button:hover {
+                cursor: pointer;
+                border: 3px solid #000000; }
+      .cartPage__content__cartinfo__total {
+        width: 100%;
+        max-width: 300px;
+        display: block; }
+        .cartPage__content__cartinfo__total__container {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          min-height: 100px;
+          background-color: #fff;
+          border-radius: 15px;
+          box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px; }
+          .cartPage__content__cartinfo__total__container h1 {
+            font-weight: normal;
+            font-size: 15px;
+            margin-bottom: 0px; }
+          .cartPage__content__cartinfo__total__container p {
+            font-weight: normal;
+            font-size: 15px;
+            margin-bottom: 0px; }
+          .cartPage__content__cartinfo__total__container__header {
+            width: 100%;
+            padding: 20px 20px 0px 20px;
+            margin-bottom: 15px; }
+            .cartPage__content__cartinfo__total__container__header h1 {
+              font-size: 19px; }
+          .cartPage__content__cartinfo__total__container__subtotal {
+            width: 100%;
+            padding: 0px 20px 0px 20px;
+            margin-bottom: 5px;
+            display: flex;
+            justify-content: space-between; }
+            .cartPage__content__cartinfo__total__container__subtotal h1,
+            .cartPage__content__cartinfo__total__container__subtotal p {
+              font-size: 16px; }
+          .cartPage__content__cartinfo__total__container .firstHr {
+            margin: 0px 20px 15px 20px;
+            border-top: 3px dotted #000; }
+          .cartPage__content__cartinfo__total__container__savings {
+            display: flex;
+            justify-content: space-between;
+            padding: 0px 20px 1px 20px; }
+            .cartPage__content__cartinfo__total__container__savings h1,
+            .cartPage__content__cartinfo__total__container__savings p {
+              font-size: 16px; }
+            .cartPage__content__cartinfo__total__container__savings p {
+              color: #cd2832; }
+          .cartPage__content__cartinfo__total__container__addCoupon {
+            display: flex;
+            justify-content: space-between;
+            padding: 0px 20px 1px 20px; }
+            .cartPage__content__cartinfo__total__container__addCoupon h1 {
+              color: #7bcfff;
+              font-size: 16px; }
+          .cartPage__content__cartinfo__total__container__shipping {
+            display: flex;
+            justify-content: space-between;
+            padding: 0px 20px 1px 20px; }
+            .cartPage__content__cartinfo__total__container__shipping h1,
+            .cartPage__content__cartinfo__total__container__shipping p {
+              font-size: 16px; }
+            .cartPage__content__cartinfo__total__container__shipping p {
+              color: #498851; }
+          .cartPage__content__cartinfo__total__container__tax {
+            display: flex;
+            justify-content: space-between;
+            padding: 0px 20px 1px 20px;
+            margin-bottom: 15px; }
+            .cartPage__content__cartinfo__total__container__tax h1,
+            .cartPage__content__cartinfo__total__container__tax p {
+              font-size: 16px; }
+          .cartPage__content__cartinfo__total__container__orderTotal {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 10px 8px 20px;
+            margin: 0px 20px 10px 0px;
+            background-color: #ece9e4;
+            border-radius: 0px 25px 25px 0px; }
+            .cartPage__content__cartinfo__total__container__orderTotal h1,
+            .cartPage__content__cartinfo__total__container__orderTotal p {
+              font-size: 16px; }
+          .cartPage__content__cartinfo__total__container .secondHr {
+            margin: 0px 20px 5px 20px;
+            border-top: 3px dotted #000; }
+          .cartPage__content__cartinfo__total__container__paymentButtons {
+            display: flex;
+            flex-direction: column;
+            padding: 0px 20px 20px 20px; }
+            .cartPage__content__cartinfo__total__container__paymentButtons button {
+              width: 100%;
+              padding: 10px 0px 10px 0px;
+              align-items: center;
+              margin-top: 15px; }
+              .cartPage__content__cartinfo__total__container__paymentButtons button:hover {
+                cursor: pointer; }
+              .cartPage__content__cartinfo__total__container__paymentButtons button:first-child {
+                background-color: #f9c507;
+                font-size: 16px;
+                border: none; }
+              .cartPage__content__cartinfo__total__container__paymentButtons button:last-child {
+                border: none;
+                font-size: 16px;
+                background-color: #ebebeb; }
+                .cartPage__content__cartinfo__total__container__paymentButtons button:last-child i {
+                  color: #7bcfff; }

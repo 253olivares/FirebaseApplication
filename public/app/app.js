@@ -63,7 +63,7 @@ let afterRoute = (page) => {
             break;
         case "cart":
             console.log("afterRoute: you are on the cart page!");
-            checkCartPage();
+            // checkCartPage();
             break;
     }
 
@@ -406,7 +406,7 @@ let signoutClick = () => {
         firebase.auth().signOut().then(() => {
             console.log("signoutClick: Signed Out");
             loginStatus = false;
-            MODEL.changeContent("home", afterRoute);
+            route();
         })
             .catch((error) => {
                 console.log("signoutClick Error Occured:", error);
