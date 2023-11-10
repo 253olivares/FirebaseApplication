@@ -6,7 +6,8 @@ var topNav;
 var loginStatus = false;
 var loggedUser;
 
-var coffeeCart = [];
+
+var coffeeCart = [{ id: 0, color: "Black", qty: 2 }, { id: 1, color: "Venus", qty: 3 }, { id: 4, color: "Silver", qty: 4 }];
 
 // debug commands that I create for debugging
 let debugCommands = () => {
@@ -63,7 +64,7 @@ let afterRoute = (page) => {
             break;
         case "cart":
             console.log("afterRoute: you are on the cart page!");
-            // checkCartPage();
+            checkCartPage(getCartSubtotal);
             break;
     }
 
@@ -93,7 +94,7 @@ let setFooterHeight = () => {
 let cartNumer = () => {
     console.log("cartNumber:Running");
     try {
-        if (coffeeCart.length >= 1) {
+        if (coffeeCart.length !== 0) {
             console.log("cartnumber functution has run and has found array has more than one");
             $(".keurigHeader__topNav__extraRight__cart__count").css("display", "inline-block");
             $(".keurigHeader__topNav__extraRight__cart__count").html(coffeeCart.length);
@@ -292,13 +293,75 @@ let addCoffee2Cart = (id) => {
 
 }
 
-//
-let checkCartPage = () => {
-    if (coffeeCart.length >= 1) {
-
-    } else {
+// check array to see if user has carts saved and if so start putting coffee on page
+let checkCartPage = async (callback) => {
+    if (!coffeeCart.length) {
         $(".cartPage__content").html(emptyCartPage);
+    } else {
+        $(".cartPage__content__cartinfo__cartDisplay__container__coffeelist").empty();
+        for (let i = 0; i < coffeeCart.length; i++) {
+            coffeeCart[i]
+            console.log(coffeeCart[i]);
+            await _db.collection('COFFEEMAKERS').where('id', '==', coffeeCart[i].id).get().then(querySnapshot => {
+                // querySnapshot.forEach((doc) => {
+                //     console.log(doc.data());
+                //     let subtotal = coffeeCart[i].qty * doc.data().originalPrice
+
+                //     $(".cartPage__content__cartinfo__cartDisplay__container__coffeelist").append(`
+                //     <div class="cartPage__content__cartinfo__cartDisplay__container__coffeelist__item" coffeeid="${doc.data().id}" machinecolor="${coffeeCart[i].color}" listsubtotal="${subtotal}">
+                //             <div class="cartPage__content__cartinfo__cartDisplay__container__coffeelist__item__left">
+                //                 <div
+                //                     class="cartPage__content__cartinfo__cartDisplay__container__coffeelist__item__left__image">
+                //                     <img src="https://firebasestorage.googleapis.com/v0/b/personal-project-d1c24.appspot.com/o/img%2FCoffee${coffeeCart[i].id + coffeeCart[i].color}.png?alt=media&token=e08d42bf-c0da-4235-9692-7f4ae31298c7"
+                //                         alt="Coffee Machine">
+                //                 </div>
+                //                 <div
+                //                     class="cartPage__content__cartinfo__cartDisplay__container__coffeelist__item__left__name">
+                //                     <h1>
+                //                         Keurig®</h1>
+                //                     <p> ${doc.data().name} <span>(${coffeeCart[i].color})</span></p>
+                //                 </div>
+                //             </div>
+                //             <div class="cartPage__content__cartinfo__cartDisplay__container__coffeelist__item__right">
+                //                 <div
+                //                     class="cartPage__content__cartinfo__cartDisplay__container__coffeelist__item__right__unitPrice">
+                //                     <p>${doc.data().originalPrice} <span>each</span></p>
+                //                     <select class="testing">
+                //                         <option value="1" selected>1</option>
+                //                         <option value="2">2</option>
+                //                         <option value="3">3</option>
+                //                         <option value="4">4</option>
+                //                         <option value="5">5</option>
+                //                         <option value="6">6</option>
+                //                         <option value="7">7</option>
+                //                         <option value="8">8</option>
+                //                         <option value="9">9</option>
+                //                         <option value="10">10</option>
+                //                     </select>
+                //                 </div>
+                //                 <div
+                //                     class="cartPage__content__cartinfo__cartDisplay__container__coffeelist__item__right__subtotal">
+                //                     <p class="cartPage__content__cartinfo__cartDisplay__container__coffeelist__item__right__subtotal__number">$${subtotal}</p>
+                //                 </div>
+                //             </div>
+                //             <div class="cartPage__content__cartinfo__cartDisplay__container__coffeelist__item__close">
+                //                 <p>Remove</p>
+                //                 <i class="fa fa-times"></i>
+                //             </div>
+                //         </div>
+                //     `);
+                //     $('.cartPage__content__cartinfo__cartDisplay__container__coffeelist__item:last-child').find(".testing").val(`${coffeeCart[i].qty}`)
+                // });
+                console.log(querySnapshot.docs[0].data());
+            });
+        }
+        callback();
     }
+
+}
+
+let getCartSubtotal = () => {
+    console.log("test");
 }
 
 //
@@ -646,7 +709,7 @@ let initFirebase = (callback) => {
             $(".keurigHeader__topNav__extraRight__profile").css("display", "flex");
             loginStatus = false;
             loggedUser = null;
-            coffeeCart = [];
+            // coffeeCart = [];
             cartNumer();
         }
     })
