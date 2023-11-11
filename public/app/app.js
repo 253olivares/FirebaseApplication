@@ -64,7 +64,7 @@ let afterRoute = (page) => {
             break;
         case "cart":
             console.log("afterRoute: you are on the cart page!");
-            checkCartPage(getCartSubtotal);
+            cartPageappend();
             break;
     }
 
@@ -293,75 +293,116 @@ let addCoffee2Cart = (id) => {
 
 }
 
-// check array to see if user has carts saved and if so start putting coffee on page
-let checkCartPage = async (callback) => {
+let cartPageappend = async () => {
+    let cartSubtotal = 0;
+    let orderQTY = 0;
     if (!coffeeCart.length) {
         $(".cartPage__content").html(emptyCartPage);
     } else {
-        $(".cartPage__content__cartinfo__cartDisplay__container__coffeelist").empty();
-        for (let i = 0; i < coffeeCart.length; i++) {
-            coffeeCart[i]
-            console.log(coffeeCart[i]);
-            await _db.collection('COFFEEMAKERS').where('id', '==', coffeeCart[i].id).get().then(querySnapshot => {
-                // querySnapshot.forEach((doc) => {
-                //     console.log(doc.data());
-                //     let subtotal = coffeeCart[i].qty * doc.data().originalPrice
+        try {
+            $(".cartPage__content__cartinfo__cartDisplay__container__coffeelist").empty();
+            for (let i = 0; i < coffeeCart.length; i++) {
+                await _db.collection('COFFEEMAKERS').where('id', '==', coffeeCart[i].id).get().then(async (querySnapshot) => {
+                    console.log(querySnapshot.docs[0].data());
+                    let subtotal = coffeeCart[i].qty * querySnapshot.docs[0].data().originalPrice;
 
-                //     $(".cartPage__content__cartinfo__cartDisplay__container__coffeelist").append(`
-                //     <div class="cartPage__content__cartinfo__cartDisplay__container__coffeelist__item" coffeeid="${doc.data().id}" machinecolor="${coffeeCart[i].color}" listsubtotal="${subtotal}">
-                //             <div class="cartPage__content__cartinfo__cartDisplay__container__coffeelist__item__left">
-                //                 <div
-                //                     class="cartPage__content__cartinfo__cartDisplay__container__coffeelist__item__left__image">
-                //                     <img src="https://firebasestorage.googleapis.com/v0/b/personal-project-d1c24.appspot.com/o/img%2FCoffee${coffeeCart[i].id + coffeeCart[i].color}.png?alt=media&token=e08d42bf-c0da-4235-9692-7f4ae31298c7"
-                //                         alt="Coffee Machine">
-                //                 </div>
-                //                 <div
-                //                     class="cartPage__content__cartinfo__cartDisplay__container__coffeelist__item__left__name">
-                //                     <h1>
-                //                         Keurig®</h1>
-                //                     <p> ${doc.data().name} <span>(${coffeeCart[i].color})</span></p>
-                //                 </div>
-                //             </div>
-                //             <div class="cartPage__content__cartinfo__cartDisplay__container__coffeelist__item__right">
-                //                 <div
-                //                     class="cartPage__content__cartinfo__cartDisplay__container__coffeelist__item__right__unitPrice">
-                //                     <p>${doc.data().originalPrice} <span>each</span></p>
-                //                     <select class="testing">
-                //                         <option value="1" selected>1</option>
-                //                         <option value="2">2</option>
-                //                         <option value="3">3</option>
-                //                         <option value="4">4</option>
-                //                         <option value="5">5</option>
-                //                         <option value="6">6</option>
-                //                         <option value="7">7</option>
-                //                         <option value="8">8</option>
-                //                         <option value="9">9</option>
-                //                         <option value="10">10</option>
-                //                     </select>
-                //                 </div>
-                //                 <div
-                //                     class="cartPage__content__cartinfo__cartDisplay__container__coffeelist__item__right__subtotal">
-                //                     <p class="cartPage__content__cartinfo__cartDisplay__container__coffeelist__item__right__subtotal__number">$${subtotal}</p>
-                //                 </div>
-                //             </div>
-                //             <div class="cartPage__content__cartinfo__cartDisplay__container__coffeelist__item__close">
-                //                 <p>Remove</p>
-                //                 <i class="fa fa-times"></i>
-                //             </div>
-                //         </div>
-                //     `);
-                //     $('.cartPage__content__cartinfo__cartDisplay__container__coffeelist__item:last-child').find(".testing").val(`${coffeeCart[i].qty}`)
-                // });
-                console.log(querySnapshot.docs[0].data());
-            });
+                    $(".cartPage__content__cartinfo__cartDisplay__container__coffeelist").append(`
+                        <div class="cartPage__content__cartinfo__cartDisplay__container__coffeelist__item" coffeeid="${querySnapshot.docs[0].data().id}" machinecolor="${coffeeCart[i].color}" listsubtotal="${subtotal}" currentqty="${coffeeCart[i].qty}">
+                            <div class="cartPage__content__cartinfo__cartDisplay__container__coffeelist__item__left">
+                                <div
+                                    class="cartPage__content__cartinfo__cartDisplay__container__coffeelist__item__left__image">
+                                    <img src="https://firebasestorage.googleapis.com/v0/b/personal-project-d1c24.appspot.com/o/img%2FCoffee${coffeeCart[i].id + coffeeCart[i].color}.png?alt=media&token=e08d42bf-c0da-4235-9692-7f4ae31298c7"
+                                        alt="Coffee Machine">
+                                </div>
+                                <div
+                                    class="cartPage__content__cartinfo__cartDisplay__container__coffeelist__item__left__name">
+                                    <h1>
+                                        Keurig®</h1>
+                                    <p> ${querySnapshot.docs[0].data().name} <span>(${coffeeCart[i].color})</span></p>
+                                </div>
+                            </div>
+                            <div class="cartPage__content__cartinfo__cartDisplay__container__coffeelist__item__right">
+                                <div
+                                    class="cartPage__content__cartinfo__cartDisplay__container__coffeelist__item__right__unitPrice">
+                                    <p>${querySnapshot.docs[0].data().originalPrice} <span>each</span></p>
+                                    <select class="testing">
+                                        <option value="1" selected>1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                        <option value="9">9</option>
+                                        <option value="10">10</option>
+                                    </select>
+                                </div>
+                                <div
+                                    class="cartPage__content__cartinfo__cartDisplay__container__coffeelist__item__right__subtotal">
+                                    <p class="cartPage__content__cartinfo__cartDisplay__container__coffeelist__item__right__subtotal__number">$${subtotal}</p>
+                                </div>
+                            </div>
+                            <div class="cartPage__content__cartinfo__cartDisplay__container__coffeelist__item__close">
+                                <p>Remove</p>
+                                <i class="fa fa-times"></i>
+                            </div>
+                        </div>
+                    `);
+                    $('.cartPage__content__cartinfo__cartDisplay__container__coffeelist__item:last-child').find(".testing").val(`${coffeeCart[i].qty}`);
+
+                    cartSubtotal += subtotal;
+                    orderQTY += coffeeCart[i].qty;
+                });
+            }
+        } catch (error) {
+            console.error("Retrieving data has failed Error: " + error);
+            alert(error);
+        } finally {
+            let options = {
+                style: 'decimal',
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2,
+            }
+            let savings = 0.00.toLocaleString('en-US', options);
+            let shipping = 0.00.toLocaleString('en-US', options);;
+            orderTotal = cartSubtotal * 1.07;
+            let tax = cartSubtotal * .07;
+            let taxFormated = tax.toLocaleString('en-US', options);
+            let cartSubtotalFormated = cartSubtotal.toLocaleString('en-US', options);
+            let orderTotalFormated = orderTotal.toLocaleString('en-US', options);
+            console.log(cartSubtotalFormated);
+            console.log(orderTotalFormated);
+
+            if (orderQTY === 1) {
+                $(".cartPage__content__cartinfo__total__container__subtotal>h1>span").html(orderQTY + " item");
+            } else {
+                $(".cartPage__content__cartinfo__total__container__subtotal>h1>span").html(orderQTY + " items");
+            }
+            $(".cartPage__content__cartinfo__total__container__subtotal>p").text("$" + cartSubtotalFormated);
+            $(".cartPage__content__cartinfo__total__container__savings>p").text("-$" + savings);
+            $(".cartPage__content__cartinfo__total__container__tax>p").text("$" + taxFormated);
+            if (shipping != 0.00) {
+                $(".cartPage__content__cartinfo__total__container__shipping>p").html("$" + shipping);
+            } else {
+                $(".cartPage__content__cartinfo__total__container__shipping>p").html("FREE");
+            }
+
+            $(".cartPage__content__cartinfo__total__container__orderTotal>p").text("$" + orderTotalFormated);
+
+            addEventListerCartPageSelect();
+            addEventListerCartPageRemove();
         }
-        callback();
     }
 
 }
 
-let getCartSubtotal = () => {
-    console.log("test");
+let addEventListerCartPageSelect = () => {
+
+}
+
+let addEventListerCartPageRemove = () => {
+
 }
 
 //
