@@ -14,7 +14,7 @@
                     <div class="cartPage__content__cartinfo__cartDisplay__container__coffeelist">
                     </div>
                 </div>
-                <div class="cartPage__content__cartinfo__cartDisplay__coupon">
+                <div id="coupon" class="cartPage__content__cartinfo__cartDisplay__coupon">
                     <p>Savings & Discounts</p>
                     <div class="cartPage__content__cartinfo__cartDisplay__coupon__couponInput">
                         <input type="text" name="couponCode" id="couponCode" placeholder="Coupon Code">
@@ -28,13 +28,13 @@
                         <h1>Cart Summary</h1>
                     </div>
                     <div class="cartPage__content__cartinfo__total__container__subtotal">
-                        <h1>Subtotal (<span>0 items</span>)</h1>
-                        <p>$0.00</p>
+                        <h1>Subtotal (<span><span>0</span> items</span>)</h1>
+                        <p>$<span subprice="0.00">0.00</span></p>
                     </div>
                     <hr class="firstHr">
                     <div class="cartPage__content__cartinfo__total__container__savings">
                         <h1>Savings & Discount</h1>
-                        <p>-$0.00</p>
+                        <p>-$<span>0.00</span></p>
                     </div>
                     <div class="cartPage__content__cartinfo__total__container__addCoupon">
                         <h1>Add Coupon</h1>
@@ -45,16 +45,17 @@
                     </div>
                     <div class="cartPage__content__cartinfo__total__container__tax">
                         <h1>Tax</h1>
-                        <p>$0.00</p>
+                        <p>$<span>0.00</span></p>
                     </div>
                     <div class="cartPage__content__cartinfo__total__container__orderTotal">
                         <h1>Order Total <i class="fa fa-info-circle"></i></h1>
-                        <p>$0.00</p>
+                        <p>$<span>0.00</span></p>
                     </div>
                     <hr class="secondHr">
                     <div class="cartPage__content__cartinfo__total__container__paymentButtons">
-                        <button>SECURE CHECKOUT</button>
-                        <button>Check out with <i class="fa fa-paypal"></i></button>
+                        <p>Need To Login First</p>
+                        <button id="checkout">SECURE CHECKOUT</button>
+                        <button id="checkoutPaypal">Check out with <i class="fa fa-paypal"></i></button>
                     </div>
                 </div>
             </div>

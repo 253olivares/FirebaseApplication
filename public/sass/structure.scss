@@ -49,6 +49,7 @@ body {
     -ms-overflow-style: none;
     scrollbar-width: none;
     background-color: $white;
+    scroll-behavior: smooth;
 }
 
 body::-webkit-scrollbar {
@@ -89,14 +90,14 @@ p {
 
     &:after {
         content: "";
-        background-image: url('../images/28911.svg');
+        background-image: url('../images/28911.png');
         background-size: 100% 100%;
         filter: $filterWhite;
         width: 40px;
-        height: 40px;
+        height: 15px;
         display: block;
         position: absolute;
-        top: -30px;
+        top: -10px;
         right: 9%;
     }
 
@@ -165,14 +166,14 @@ p {
 
     &:after {
         content: "";
-        background-image: url('../images/28911.svg');
+        background-image: url('../images/28911.png');
         background-size: 100% 100%;
         filter: $filterWhite;
         width: 40px;
-        height: 40px;
+        height: 20px;
         display: block;
         position: absolute;
-        top: -30px;
+        top: -10px;
         right: 9%;
     }
 
@@ -508,4 +509,74 @@ p {
     top: 130px;
     z-index: 6;
     background-color: rgba(153, 153, 153, .5);
+}
+
+@media screen and (max-width: 1750px) {
+    .accountContainer {
+        &::after {
+            right: 13%;
+        }
+    }
+
+    .loginContainer {
+        &::after {
+            right: 9.5%;
+        }
+    }
+}
+
+@media screen and (max-width: 1650px) {
+    .accountContainer {
+        &::after {
+            right: 14%;
+        }
+    }
+
+    .loginContainer {
+        &::after {
+            right: 10%;
+        }
+    }
+}
+
+@media screen and (max-width: 1600px) {
+    .accountContainer {
+        &::after {
+            right: 15.5%;
+        }
+    }
+
+    .loginContainer {
+        &::after {
+            right: 10.5%;
+        }
+    }
+}
+
+@media screen and (max-width: 1550px) {
+    .accountContainer {
+        &::after {
+            right: 17%;
+        }
+    }
+
+    .loginContainer {
+        &::after {
+            right: 11.5%;
+        }
+    }
+}
+
+@media screen and (max-width: 1500px) {
+    .accountContainer {
+        &::after {
+            right: 17.5%;
+        }
+    }
+
+    .loginContainer {
+        &::after {
+            right: 12%;
+        }
+    }
 }

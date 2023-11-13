@@ -137,6 +137,7 @@
                                         margin-bottom: 0px;
                                         margin-right: 15px;
                                         font-style: italic;
+
                                     }
 
                                     select {
@@ -150,10 +151,25 @@
                                     display: flex;
                                     align-items: center;
                                     justify-content: end;
-                                    padding-right: 35px;
+                                    margin-right: 35px;
+                                    position: relative;
 
                                     p {
                                         font-style: italic;
+                                        margin-bottom: 0px;
+                                    }
+
+                                    .maxqty {
+                                        color: $red;
+
+                                        &::after {
+                                            content: "MAX PER ORDER REACHED";
+                                            font-size: 11px;
+                                            position: absolute;
+                                            color: $red;
+                                            right: 0;
+                                            top: 56%;
+                                        }
                                     }
                                 }
                             }
@@ -319,6 +335,10 @@
                         justify-content: space-between;
                         padding: 0px 20px 1px 20px;
 
+                        &:hover {
+                            cursor: pointer;
+                        }
+
                         h1 {
                             color: #7bcfff;
                             font-size: 16px;
@@ -375,31 +395,46 @@
                         display: flex;
                         flex-direction: column;
                         padding: 0px 20px 20px 20px;
+                        position: relative;
+
+                        p {
+                            margin-bottom: 0px;
+                            font-size: 15px;
+                            color: $red;
+                            position: absolute;
+                            width: calc(100% - 40px);
+                            text-align: center;
+                            opacity: 0;
+                            transition: all .5s ease-in-out;
+                            font-weight: bold;
+                        }
 
                         button {
                             width: 100%;
                             padding: 10px 0px 10px 0px;
                             align-items: center;
-                            margin-top: 15px;
+                            margin-top: 20px;
+                            border: 2px solid transparent;
+                            transition: all .5s ease-in-out;
 
                             &:hover {
                                 cursor: pointer;
                             }
+                        }
 
-                            &:first-child {
-                                background-color: $buttonYellow;
-                                font-size: 16px;
-                                border: none;
-                            }
+                        #checkout {
+                            background-color: $buttonYellow;
+                            font-size: 16px;
+                            border: none;
+                        }
 
-                            &:last-child {
-                                border: none;
-                                font-size: 16px;
-                                background-color: #ebebeb;
+                        #checkoutPaypal {
+                            border: none;
+                            font-size: 16px;
+                            background-color: #ebebeb;
 
-                                i {
-                                    color: #7bcfff;
-                                }
+                            i {
+                                color: #7bcfff;
                             }
                         }
                     }
@@ -409,3 +444,5 @@
         }
     }
 }
+
+@media screen and (max-width: 1500px) {}
