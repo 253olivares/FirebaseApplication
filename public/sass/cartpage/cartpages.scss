@@ -45,7 +45,7 @@
             justify-content: space-around;
 
             &__cartDisplay {
-                width: 100%;
+                width: 72%;
                 max-width: 925px;
                 display: block;
                 background-color: $white;
@@ -260,7 +260,7 @@
             }
 
             &__total {
-                width: 100%;
+                width: 23.5%;
                 max-width: 300px;
                 display: block;
 
@@ -445,4 +445,423 @@
     }
 }
 
-@media screen and (max-width: 1500px) {}
+@media screen and (max-width: 1500px) {
+    .cartPage {
+        max-width: 1200px;
+
+        &__content {
+            &__cartinfo {
+                &__cartDisplay {
+                    &__container {
+                        &__coffeelist {
+                            &__item {
+                                &__left {
+                                    &__name {
+                                        h1 {
+                                            font-size: 13px;
+                                        }
+
+                                        p {
+                                            font-size: 15px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                &__total {
+                    &__container {
+                        h1 {
+                            font-size: 13.5px;
+                        }
+
+                        p {
+                            font-size: 13.5px;
+                        }
+
+                        &__header {
+                            h1 {
+                                font-size: 18px;
+                            }
+                        }
+
+                        &__subtotal {
+
+                            h1,
+                            p {
+                                font-size: 14.5px;
+                            }
+                        }
+
+                        &__savings {
+
+                            h1,
+                            p {
+                                font-size: 14.5px;
+                            }
+                        }
+
+                        &__addCoupon {
+                            h1 {
+                                font-size: 14.5px;
+                            }
+                        }
+
+                        &__shipping {
+
+                            h1,
+                            p {
+                                font-size: 14.5px;
+                            }
+                        }
+
+                        &__tax {
+
+                            h1,
+                            p {
+                                font-size: 14.5px;
+                            }
+                        }
+
+                        &__orderTotal {
+
+                            h1,
+                            p {
+                                font-size: 14.5px;
+                            }
+                        }
+
+                        &__paymentButtons {
+                            p {
+                                font-size: 14px;
+                            }
+
+                            #checkout {
+                                font-size: 15px;
+                            }
+
+                            #checkoutPaypal {
+                                font-size: 15px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1350px) {
+    .cartPage {
+        max-width: 1150px;
+
+        &__content {
+            &__shipping {
+                font-size: 13px;
+
+                i {
+                    font-size: 20px;
+                }
+            }
+
+            &__cartinfo {
+                &__cartDisplay {
+                    width: 71%;
+
+                    &__container {
+                        &__coffeelist {
+                            &__item {
+                                &__left {
+                                    &__name {
+                                        h1 {
+                                            font-size: 11.5px;
+                                        }
+
+                                        p {
+                                            font-size: 13.5px;
+                                        }
+                                    }
+                                }
+
+                                &__right {
+                                    &__unitPrice {
+                                        font-size: 14px;
+                                    }
+
+                                    &__subtotal {
+                                        font-size: 14px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    &__coupon {
+                        padding: 25px 20px 25px 20px;
+
+                        p {
+                            font-size: 18px;
+                        }
+
+                        &__couponInput {
+
+                            input {
+                                width: 220px;
+                                padding: 8px;
+                            }
+
+                            button {
+                                padding: 8px;
+                            }
+                        }
+
+                    }
+                }
+
+                &__total {
+                    width: 24.5%;
+
+                    &__container {
+                        h1 {
+                            font-size: 13.5px;
+                        }
+
+                        p {
+                            font-size: 13.5px;
+                        }
+
+                        &__header {
+                            h1 {
+                                font-size: 18px;
+                            }
+                        }
+
+                        &__subtotal {
+
+                            h1,
+                            p {
+                                font-size: 14.5px;
+                            }
+                        }
+
+                        &__savings {
+
+                            h1,
+                            p {
+                                font-size: 14.5px;
+                            }
+                        }
+
+                        &__addCoupon {
+                            h1 {
+                                font-size: 14.5px;
+                            }
+                        }
+
+                        &__shipping {
+
+                            h1,
+                            p {
+                                font-size: 14.5px;
+                            }
+                        }
+
+                        &__tax {
+
+                            h1,
+                            p {
+                                font-size: 14.5px;
+                            }
+                        }
+
+                        &__orderTotal {
+
+                            h1,
+                            p {
+                                font-size: 14.5px;
+                            }
+                        }
+
+                        &__paymentButtons {
+                            p {
+                                font-size: 14px;
+                            }
+
+                            #checkout {
+                                font-size: 15px;
+                            }
+
+                            #checkoutPaypal {
+                                font-size: 15px;
+                            }
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1150px) {
+    .cartPage {
+        &__content {
+            &__cartinfo {
+                padding-left: 18px;
+                padding-right: 18px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1080px) {
+    .cartPage {
+        &__content {
+            &__shipping {
+                font-size: 13px;
+
+                i {
+                    font-size: 20px;
+                }
+            }
+
+            &__cartinfo {
+                &__cartDisplay {
+                    width: 70%;
+
+                    &__container {
+                        &__coffeelist {
+                            &__item {
+                                &__left {
+                                    &__name {
+                                        h1 {
+                                            font-size: 10.5px;
+                                        }
+
+                                        p {
+                                            font-size: 12.5px;
+                                        }
+                                    }
+                                }
+
+                                &__right {
+                                    &__unitPrice {
+                                        font-size: 12px;
+                                    }
+
+                                    &__subtotal {
+                                        font-size: 12px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    &__coupon {
+                        padding: 25px 20px 25px 20px;
+
+                        p {
+                            font-size: 16px;
+                        }
+
+                        &__couponInput {
+
+                            input {
+                                width: 220px;
+                                padding: 8px;
+                            }
+
+                            button {
+                                padding: 8px;
+                            }
+                        }
+
+                    }
+                }
+
+                &__total {
+                    width: 26.5%;
+
+                    &__container {
+                        h1 {
+                            font-size: 11.5px;
+                        }
+
+                        p {
+                            font-size: 11.5px;
+                        }
+
+                        &__header {
+                            h1 {
+                                font-size: 17px;
+                            }
+                        }
+
+                        &__subtotal {
+
+                            h1,
+                            p {
+                                font-size: 13px;
+                            }
+                        }
+
+                        &__savings {
+
+                            h1,
+                            p {
+                                font-size: 13px;
+                            }
+                        }
+
+                        &__addCoupon {
+                            h1 {
+                                font-size: 13px;
+                            }
+                        }
+
+                        &__shipping {
+
+                            h1,
+                            p {
+                                font-size: 13px;
+                            }
+                        }
+
+                        &__tax {
+
+                            h1,
+                            p {
+                                font-size: 13px;
+                            }
+                        }
+
+                        &__orderTotal {
+
+                            h1,
+                            p {
+                                font-size: 13px;
+                            }
+                        }
+
+                        &__paymentButtons {
+                            p {
+                                font-size: 13px;
+                            }
+
+                            #checkout {
+                                font-size: 13px;
+                            }
+
+                            #checkoutPaypal {
+                                font-size: 13px;
+                            }
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+}

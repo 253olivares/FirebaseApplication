@@ -532,22 +532,22 @@ let addEventListerCartPageRemove = () => {
 //
 let accountInfoHover = () => {
     let click = false;
-    $(".keurigHeader__topNav__extraRight__account, .accountContainer").hover(() => {
+    $(".keurigHeader__topNav__extraRight__account, .accountContainer__holder").hover(() => {
         if (bannerAd == true) {
             let top = $(".bannerAd").height() + $(".keurigHeader__topNav").height() - 5 - parseInt($(".keurigHeader__topNav__extraRight__profile").css("padding-bottom"));
             $(".grayOverlay ").css({ "display": "block", "top": top, "height": `calc(100% - ${top}px)` });
             $(".accountContainer").css({ "display": "block", "top": top, });
-            $('html, body').css({
-                overflow: 'hidden'
-            });
+            // $('html, body').css({
+            //     overflow: 'hidden'
+            // });
             loadInfo();
         } else {
             let top = $(".keurigHeader__topNav").height() - parseInt($(".keurigHeader__topNav__extraRight__profile").css("padding-bottom") - 5);
             $(".grayOverlay").css({ "display": "block", "top": top, "height": `calc(100% - ${top}px)` });
             $(".accountContainer").css({ "display": "block", "top": top, });
-            $('html, body').css({
-                overflow: 'hidden'
-            });
+            // $('html, body').css({
+            //     overflow: 'hidden'
+            // });
             loadInfo();
         }
         $(".keurigHeader__topNav__extraRight__account ").click(() => {
@@ -557,17 +557,17 @@ let accountInfoHover = () => {
             click = false;
             $(".grayOverlay").css({ "display": "none" });
             $(".accountContainer").css({ "display": "none" });
-            $('html, body').css({
-                overflow: 'auto'
-            });
+            // $('html, body').css({
+            //     overflow: 'auto'
+            // });
         })
     }, () => {
         if (click == false) {
             $(".grayOverlay").css({ "display": "none" });
             $(".accountContainer").css({ "display": "none" });
-            $('html, body').css({
-                overflow: 'auto'
-            });
+            // $('html, body').css({
+            //     overflow: 'auto'
+            // });
         }
     });
 }
@@ -657,18 +657,18 @@ let accountHover = () => {
             let top = $(".bannerAd").height() + $(".keurigHeader__topNav").height() - 5 - parseInt($(".keurigHeader__topNav__extraRight__profile").css("padding-bottom"));
             $(".grayOverlay ").css({ "display": "block", "top": top, "height": `calc(100% - ${top}px)` });
             $(".loginContainer").css({ "display": "block", "top": top, });
-            $('html, body').css({
-                overflow: 'hidden'
-            });
+            // $('html, body').css({
+            //     overflow: 'hidden'
+            // });
             accountModal();
             console.log(1);
         } else {
             let top = $(".keurigHeader__topNav").height() - parseInt($(".keurigHeader__topNav__extraRight__profile").css("padding-bottom") - 5);
             $(".grayOverlay").css({ "display": "block", "top": top, "height": `calc(100% - ${top}px)` });
             $(".loginContainer").css({ "display": "block", "top": top, });
-            $('html, body').css({
-                overflow: 'hidden'
-            });
+            // $('html, body').css({
+            //     overflow: 'hidden'
+            // });
             accountModal();
             console.log(2);
         }
@@ -679,9 +679,9 @@ let accountHover = () => {
             click = false;
             $(".grayOverlay").css({ "display": "none" });
             $(".loginContainer").css({ "display": "none" });
-            $('html, body').css({
-                overflow: 'auto'
-            });
+            // $('html, body').css({
+            //     overflow: 'auto'
+            // });
         })
 
 
@@ -689,9 +689,9 @@ let accountHover = () => {
         if (click == false) {
             $(".grayOverlay").css({ "display": "none" });
             $(".loginContainer").css({ "display": "none" });
-            $('html, body').css({
-                overflow: 'auto'
-            });
+            // $('html, body').css({
+            //     overflow: 'auto'
+            // });
         }
     })
 

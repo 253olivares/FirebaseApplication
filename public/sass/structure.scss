@@ -19,6 +19,10 @@ $lightBiege: #f0f0f0;
 $red: #cd2832;
 $Nasturtium: #c60000;
 $Red: #952023;
+$Scarlet : #9b3342;
+$Green : #085439;
+$Purple: #4e36ab;
+$Lightblue: #4472c4;
 $Gold: #c4b8aa;
 $brown: #592615;
 $darkBrown: #3b2b2f;
@@ -79,6 +83,7 @@ p {
 }
 
 .accountContainer {
+
     display: none;
     position: absolute;
     width: 350px;
@@ -97,7 +102,7 @@ p {
         height: 15px;
         display: block;
         position: absolute;
-        top: -10px;
+        top: -8px;
         right: 9%;
     }
 
@@ -158,7 +163,7 @@ p {
     display: none;
     position: absolute;
     width: 350px;
-    right: 5%;
+    right: 4.75%;
     top: 135px;
     z-index: 7;
     background-color: $white;
@@ -173,7 +178,7 @@ p {
         height: 20px;
         display: block;
         position: absolute;
-        top: -10px;
+        top: -8px;
         right: 9%;
     }
 
@@ -383,6 +388,9 @@ p {
             border-radius: 25px;
             padding: 5px 0px 5px 0px;
             margin: 15px 0px 15px 0px;
+            display: table-cell;
+            vertical-align: middle;
+
 
             &:hover {
                 cursor: pointer;
@@ -562,21 +570,476 @@ p {
 
     .loginContainer {
         &::after {
-            right: 11.5%;
+            right: 12%;
         }
     }
 }
 
 @media screen and (max-width: 1500px) {
     .accountContainer {
+        width: 300px;
+
         &::after {
-            right: 17.5%;
+            right: 20%;
+        }
+
+        &__close {
+            padding: 15px 15px 0px 15px;
+
+            i {
+                width: 17px;
+                height: 17px;
+                margin-right: 8px;
+            }
+
+            p {
+                font-size: 13.5px;
+                line-height: 17px;
+            }
+        }
+
+        &__info {
+            padding: 20px 15px 20px 15px;
+
+            img {
+                width: 40px;
+            }
+
+            p {
+                font-size: 13px;
+            }
+        }
+
+    }
+
+    .loginContainer {
+        width: 300px;
+
+        &::after {
+            right: 14%;
+        }
+
+        &__close {
+            padding: 15px 15px 0px 15px;
+
+            i {
+                width: 17px;
+                height: 17px;
+                margin-right: 8px;
+            }
+
+            p {
+                font-size: 13.5px;
+                line-height: 17px;
+            }
+        }
+
+        &__options {
+            padding: 0px 15px 0px 15px;
+
+            button {
+                font-size: 14px;
+                padding: 6px 0px 6px 0px;
+                font-size: 14px;
+            }
+        }
+
+        &__formsSignup {
+            padding: 15px 15px 15px 15px;
+
+            &:after {
+                width: 18px;
+                height: 18px;
+                top: -16px;
+            }
+
+            form {
+                .inputEnter {
+                    padding: 8px 10px 8px 10px;
+                    font-size: 13.5px;
+                }
+            }
+
+            &__checkbox,
+            &__checkbox2 {
+
+                #checkboxSpecials,
+                #checkboxKeep {
+                    width: 15px;
+                    height: 15px;
+                }
+
+                label {
+                    font-size: 12px;
+                    line-height: 15px;
+                }
+            }
+
+            &__signUp {
+                font-size: 13px;
+                padding: 5px 0px 5px 0px;
+                margin: 11px 0px 8px 0px;
+            }
+
+            p {
+                font-size: 12px;
+            }
+
+        }
+
+        &__formsLogin {
+            padding: 15px 15px 15px 15px;
+
+            &:after {
+                width: 18px;
+                height: 18px;
+                top: -16px;
+            }
+
+            form {
+                .inputEnter {
+                    padding: 8px 10px 8px 10px;
+                    font-size: 13.5px;
+                }
+            }
+
+            &__checkbox {
+                #checkboxRemeber {
+                    width: 15px;
+                    height: 15px;
+                }
+
+                label {
+                    font-size: 12px;
+                    line-height: 15px;
+                }
+            }
+
+            &__signIn {
+                font-size: 13px;
+                padding: 5px 0px 5px 0px;
+                margin: 11px 0px 8px 0px;
+            }
+        }
+
+        &__formsSignUpInformation {
+            padding: 15px 0px 10px 28px;
+
+            h1 {
+                font-size: 13px;
+            }
+
+            p {
+                font-size: 11px;
+            }
+
+            ul {
+                font-size: 9px;
+            }
+        }
+
+        &__formsLoginInformation {
+            padding: 15px 0px 10px 28px;
+
+            h1 {
+                font-size: 13px;
+            }
+
+            p {
+                font-size: 11px;
+            }
+
+            ul {
+                font-size: 9px;
+            }
+        }
+
+        &__extra {
+            padding: 20px 15px 15px 15px;
+
+            button {
+                padding: 9px 0px 9px 0px;
+                font-size: 13px
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1450px) {
+    .accountContainer {
+        &::after {
+            right: 22%;
+        }
+    }
+
+    .loginContainer {
+        &::after {
+            right: 15%;
+        }
+    }
+}
+
+@media screen and (max-width: 1400px) {
+    .accountContainer {
+        &::after {
+            right: 23%;
+        }
+    }
+
+    .loginContainer {
+        &::after {
+            right: 16%;
+        }
+    }
+}
+
+@media screen and (max-width: 1350px) {
+    .accountContainer {
+        &::after {
+            right: 23%;
+        }
+    }
+
+    .loginContainer {
+        &::after {
+            right: 16%;
+        }
+    }
+}
+
+@media screen and (max-width: 1300px) {
+    .accountContainer {
+        &::after {
+            right: 24%;
+        }
+    }
+
+    .loginContainer {
+        &::after {
+            right: 17%;
+        }
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .accountContainer {
+        width: 280px;
+
+        &::after {
+            right: 18%;
+        }
+
+        &__close {
+            padding: 12.5px 12.5px 0px 12.5px;
+
+            i {
+                width: 15px;
+                height: 15px;
+                margin-right: 8px;
+            }
+
+            p {
+                font-size: 12.5px;
+                line-height: 15px;
+            }
+        }
+
+        &__info {
+            padding: 20px 12.5px 20px 12.5px;
+
+            img {
+                width: 38px;
+            }
+
+            p {
+                font-size: 12px;
+            }
+        }
+    }
+
+    .loginContainer {
+        width: 280px;
+
+        &::after {
+            right: 10%;
+        }
+
+        &__close {
+            padding: 12.5px 12.5px 0px 12.5px;
+
+            i {
+                width: 15px;
+                height: 15px;
+            }
+
+            p {
+                font-size: 12.5px;
+                line-height: 15px;
+            }
+        }
+
+        &__options {
+            padding: 0px 12.5px 0px 12.5px;
+
+            button {
+                font-size: 13px;
+                padding: 5px 0px 5px 0px;
+            }
+        }
+
+        &__formsSignup {
+            padding: 12.5px 12.5px 12.5px 12.5px;
+
+            &:after {
+                width: 18px;
+                height: 18px;
+                top: -16px;
+            }
+
+            form {
+                .inputEnter {
+                    padding: 7px 9px 7px 8px;
+                    font-size: 12px;
+                }
+            }
+
+            &__checkbox,
+            &__checkbox2 {
+
+                #checkboxSpecials,
+                #checkboxKeep {
+                    width: 14px;
+                    height: 14px;
+                }
+
+                label {
+                    font-size: 11px;
+                    line-height: 14px;
+                }
+            }
+
+            &__signUp {
+                font-size: 12px;
+                padding: 3px 0px 3px 0px;
+                margin: 10px 0px 7px 0px;
+            }
+
+            p {
+                font-size: 10px;
+            }
+
+        }
+
+        &__formsLogin {
+            padding: 12.5px 12.5px 12.5px 12.5px;
+
+            &:after {
+                width: 18px;
+                height: 18px;
+                top: -16px;
+            }
+
+            form {
+                .inputEnter {
+                    padding: 7px 9px 7px 8px;
+                    font-size: 12px;
+                }
+            }
+
+            &__checkbox {
+                #checkboxRemeber {
+                    width: 14px;
+                    height: 14px;
+                }
+
+                label {
+                    font-size: 11px;
+                    line-height: 14px;
+                }
+            }
+
+            &__signIn {
+                font-size: 12px;
+                padding: 3px 0px 3px 0px;
+                margin: 10px 0px 7px 0px;
+            }
+        }
+
+        &__formsSignUpInformation {
+            padding: 12.5px 0px 9px 25px;
+
+            h1 {
+                font-size: 12px;
+            }
+
+            p {
+                font-size: 10px;
+            }
+
+            ul {
+                font-size: 8px;
+            }
+        }
+
+        &__formsLoginInformation {
+            padding: 12.5px 0px 9px 25px;
+
+            h1 {
+                font-size: 12px;
+            }
+
+            p {
+                font-size: 10px;
+            }
+
+            ul {
+                font-size: 8px;
+            }
+        }
+
+        &__extra {
+            padding: 20px 12.5px 12.5px 12.5px;
+
+            button {
+                padding: 8px 0px 8px 0px;
+                font-size: 12px
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1150px) {
+    .accountContainer {
+        &::after {
+            right: 20%;
         }
     }
 
     .loginContainer {
         &::after {
             right: 12%;
+        }
+    }
+}
+
+@media screen and (max-width: 1075px) {
+    .loginContainer {
+        &::after {
+            right: 12%;
+        }
+    }
+}
+
+@media screen and (max-width: 1025px) {
+    .accountContainer {
+        &::after {
+            right: 18%;
+        }
+    }
+
+    .loginContainer {
+        &::after {
+            right: 9.5%;
         }
     }
 }

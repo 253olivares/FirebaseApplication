@@ -61,7 +61,7 @@ p {
     height: 15px;
     display: block;
     position: absolute;
-    top: -10px;
+    top: -8px;
     right: 9%; }
   .accountContainer__close {
     display: flex;
@@ -103,7 +103,7 @@ p {
   display: none;
   position: absolute;
   width: 350px;
-  right: 5%;
+  right: 4.75%;
   top: 135px;
   z-index: 7;
   background-color: #fff;
@@ -117,7 +117,7 @@ p {
     height: 20px;
     display: block;
     position: absolute;
-    top: -10px;
+    top: -8px;
     right: 9%; }
   .loginContainer__close {
     display: flex;
@@ -269,7 +269,9 @@ p {
       color: #fff;
       border-radius: 25px;
       padding: 5px 0px 5px 0px;
-      margin: 15px 0px 15px 0px; }
+      margin: 15px 0px 15px 0px;
+      display: table-cell;
+      vertical-align: middle; }
       .loginContainer__formsLogin__signIn:hover {
         cursor: pointer; }
     .loginContainer__formsLogin__forgotPass {
@@ -379,13 +381,251 @@ p {
   .accountContainer::after {
     right: 17%; }
   .loginContainer::after {
-    right: 11.5%; } }
+    right: 12%; } }
 
 @media screen and (max-width: 1500px) {
+  .accountContainer {
+    width: 300px; }
+    .accountContainer::after {
+      right: 20%; }
+    .accountContainer__close {
+      padding: 15px 15px 0px 15px; }
+      .accountContainer__close i {
+        width: 17px;
+        height: 17px;
+        margin-right: 8px; }
+      .accountContainer__close p {
+        font-size: 13.5px;
+        line-height: 17px; }
+    .accountContainer__info {
+      padding: 20px 15px 20px 15px; }
+      .accountContainer__info img {
+        width: 40px; }
+      .accountContainer__info p {
+        font-size: 13px; }
+  .loginContainer {
+    width: 300px; }
+    .loginContainer::after {
+      right: 14%; }
+    .loginContainer__close {
+      padding: 15px 15px 0px 15px; }
+      .loginContainer__close i {
+        width: 17px;
+        height: 17px;
+        margin-right: 8px; }
+      .loginContainer__close p {
+        font-size: 13.5px;
+        line-height: 17px; }
+    .loginContainer__options {
+      padding: 0px 15px 0px 15px; }
+      .loginContainer__options button {
+        font-size: 14px;
+        padding: 6px 0px 6px 0px;
+        font-size: 14px; }
+    .loginContainer__formsSignup {
+      padding: 15px 15px 15px 15px; }
+      .loginContainer__formsSignup:after {
+        width: 18px;
+        height: 18px;
+        top: -16px; }
+      .loginContainer__formsSignup form .inputEnter {
+        padding: 8px 10px 8px 10px;
+        font-size: 13.5px; }
+      .loginContainer__formsSignup__checkbox #checkboxSpecials,
+      .loginContainer__formsSignup__checkbox #checkboxKeep, .loginContainer__formsSignup__checkbox2 #checkboxSpecials,
+      .loginContainer__formsSignup__checkbox2 #checkboxKeep {
+        width: 15px;
+        height: 15px; }
+      .loginContainer__formsSignup__checkbox label, .loginContainer__formsSignup__checkbox2 label {
+        font-size: 12px;
+        line-height: 15px; }
+      .loginContainer__formsSignup__signUp {
+        font-size: 13px;
+        padding: 5px 0px 5px 0px;
+        margin: 11px 0px 8px 0px; }
+      .loginContainer__formsSignup p {
+        font-size: 12px; }
+    .loginContainer__formsLogin {
+      padding: 15px 15px 15px 15px; }
+      .loginContainer__formsLogin:after {
+        width: 18px;
+        height: 18px;
+        top: -16px; }
+      .loginContainer__formsLogin form .inputEnter {
+        padding: 8px 10px 8px 10px;
+        font-size: 13.5px; }
+      .loginContainer__formsLogin__checkbox #checkboxRemeber {
+        width: 15px;
+        height: 15px; }
+      .loginContainer__formsLogin__checkbox label {
+        font-size: 12px;
+        line-height: 15px; }
+      .loginContainer__formsLogin__signIn {
+        font-size: 13px;
+        padding: 5px 0px 5px 0px;
+        margin: 11px 0px 8px 0px; }
+    .loginContainer__formsSignUpInformation {
+      padding: 15px 0px 10px 28px; }
+      .loginContainer__formsSignUpInformation h1 {
+        font-size: 13px; }
+      .loginContainer__formsSignUpInformation p {
+        font-size: 11px; }
+      .loginContainer__formsSignUpInformation ul {
+        font-size: 9px; }
+    .loginContainer__formsLoginInformation {
+      padding: 15px 0px 10px 28px; }
+      .loginContainer__formsLoginInformation h1 {
+        font-size: 13px; }
+      .loginContainer__formsLoginInformation p {
+        font-size: 11px; }
+      .loginContainer__formsLoginInformation ul {
+        font-size: 9px; }
+    .loginContainer__extra {
+      padding: 20px 15px 15px 15px; }
+      .loginContainer__extra button {
+        padding: 9px 0px 9px 0px;
+        font-size: 13px; } }
+
+@media screen and (max-width: 1450px) {
   .accountContainer::after {
-    right: 17.5%; }
+    right: 22%; }
+  .loginContainer::after {
+    right: 15%; } }
+
+@media screen and (max-width: 1400px) {
+  .accountContainer::after {
+    right: 23%; }
+  .loginContainer::after {
+    right: 16%; } }
+
+@media screen and (max-width: 1350px) {
+  .accountContainer::after {
+    right: 23%; }
+  .loginContainer::after {
+    right: 16%; } }
+
+@media screen and (max-width: 1300px) {
+  .accountContainer::after {
+    right: 24%; }
+  .loginContainer::after {
+    right: 17%; } }
+
+@media screen and (max-width: 1200px) {
+  .accountContainer {
+    width: 280px; }
+    .accountContainer::after {
+      right: 18%; }
+    .accountContainer__close {
+      padding: 12.5px 12.5px 0px 12.5px; }
+      .accountContainer__close i {
+        width: 15px;
+        height: 15px;
+        margin-right: 8px; }
+      .accountContainer__close p {
+        font-size: 12.5px;
+        line-height: 15px; }
+    .accountContainer__info {
+      padding: 20px 12.5px 20px 12.5px; }
+      .accountContainer__info img {
+        width: 38px; }
+      .accountContainer__info p {
+        font-size: 12px; }
+  .loginContainer {
+    width: 280px; }
+    .loginContainer::after {
+      right: 10%; }
+    .loginContainer__close {
+      padding: 12.5px 12.5px 0px 12.5px; }
+      .loginContainer__close i {
+        width: 15px;
+        height: 15px; }
+      .loginContainer__close p {
+        font-size: 12.5px;
+        line-height: 15px; }
+    .loginContainer__options {
+      padding: 0px 12.5px 0px 12.5px; }
+      .loginContainer__options button {
+        font-size: 13px;
+        padding: 5px 0px 5px 0px; }
+    .loginContainer__formsSignup {
+      padding: 12.5px 12.5px 12.5px 12.5px; }
+      .loginContainer__formsSignup:after {
+        width: 18px;
+        height: 18px;
+        top: -16px; }
+      .loginContainer__formsSignup form .inputEnter {
+        padding: 7px 9px 7px 8px;
+        font-size: 12px; }
+      .loginContainer__formsSignup__checkbox #checkboxSpecials,
+      .loginContainer__formsSignup__checkbox #checkboxKeep, .loginContainer__formsSignup__checkbox2 #checkboxSpecials,
+      .loginContainer__formsSignup__checkbox2 #checkboxKeep {
+        width: 14px;
+        height: 14px; }
+      .loginContainer__formsSignup__checkbox label, .loginContainer__formsSignup__checkbox2 label {
+        font-size: 11px;
+        line-height: 14px; }
+      .loginContainer__formsSignup__signUp {
+        font-size: 12px;
+        padding: 3px 0px 3px 0px;
+        margin: 10px 0px 7px 0px; }
+      .loginContainer__formsSignup p {
+        font-size: 10px; }
+    .loginContainer__formsLogin {
+      padding: 12.5px 12.5px 12.5px 12.5px; }
+      .loginContainer__formsLogin:after {
+        width: 18px;
+        height: 18px;
+        top: -16px; }
+      .loginContainer__formsLogin form .inputEnter {
+        padding: 7px 9px 7px 8px;
+        font-size: 12px; }
+      .loginContainer__formsLogin__checkbox #checkboxRemeber {
+        width: 14px;
+        height: 14px; }
+      .loginContainer__formsLogin__checkbox label {
+        font-size: 11px;
+        line-height: 14px; }
+      .loginContainer__formsLogin__signIn {
+        font-size: 12px;
+        padding: 3px 0px 3px 0px;
+        margin: 10px 0px 7px 0px; }
+    .loginContainer__formsSignUpInformation {
+      padding: 12.5px 0px 9px 25px; }
+      .loginContainer__formsSignUpInformation h1 {
+        font-size: 12px; }
+      .loginContainer__formsSignUpInformation p {
+        font-size: 10px; }
+      .loginContainer__formsSignUpInformation ul {
+        font-size: 8px; }
+    .loginContainer__formsLoginInformation {
+      padding: 12.5px 0px 9px 25px; }
+      .loginContainer__formsLoginInformation h1 {
+        font-size: 12px; }
+      .loginContainer__formsLoginInformation p {
+        font-size: 10px; }
+      .loginContainer__formsLoginInformation ul {
+        font-size: 8px; }
+    .loginContainer__extra {
+      padding: 20px 12.5px 12.5px 12.5px; }
+      .loginContainer__extra button {
+        padding: 8px 0px 8px 0px;
+        font-size: 12px; } }
+
+@media screen and (max-width: 1150px) {
+  .accountContainer::after {
+    right: 20%; }
   .loginContainer::after {
     right: 12%; } }
+
+@media screen and (max-width: 1075px) {
+  .loginContainer::after {
+    right: 12%; } }
+
+@media screen and (max-width: 1025px) {
+  .accountContainer::after {
+    right: 18%; }
+  .loginContainer::after {
+    right: 9.5%; } }
 
 .bannerAd {
   width: 100%;
@@ -445,7 +685,6 @@ p {
 
 .keurigHeader {
   background-color: #ece9e4;
-  min-height: 145px;
   letter-spacing: 1px; }
   .keurigHeader__topNav {
     display: flex;
@@ -458,7 +697,7 @@ p {
       width: 175px;
       filter: invert(0%) sepia(3%) saturate(13%) hue-rotate(77deg) brightness(97%) contrast(103%); }
     .keurigHeader__topNav__searchBar {
-      min-width: 570px;
+      min-width: 600px;
       background-color: #f3f3f3;
       padding: 5px 30px 5px 30px;
       border-radius: 25px;
@@ -479,7 +718,10 @@ p {
         border: none;
         color: #000000;
         font-size: 13px;
-        background-color: #f3f3f3; }
+        background-color: #f3f3f3;
+        line-height: 15px;
+        display: table-cell;
+        vertical-align: middle; }
       .keurigHeader__topNav__searchBar input:focus {
         font-size: 13px;
         border: none;
@@ -500,7 +742,10 @@ p {
         background-color: transparent;
         padding: 0px 25px 0px 25px;
         font-size: 13px;
-        margin-bottom: 0px; }
+        margin-bottom: 0px;
+        line-height: 15px;
+        text-align: center;
+        display: table-cell; }
       .keurigHeader__topNav__extraRight__freeShipping:hover {
         cursor: pointer; }
       .keurigHeader__topNav__extraRight__profile, .keurigHeader__topNav__extraRight__cart, .keurigHeader__topNav__extraRight__signOut, .keurigHeader__topNav__extraRight__account {
@@ -611,15 +856,13 @@ p {
   .keurigHeader__topNav__mainButton__logo {
     width: 170px; }
   .keurigHeader__topNav__searchBar {
-    min-width: 565px;
+    min-width: 570px;
     padding: 5px 27.5px 5px 27.5px; }
     .keurigHeader__topNav__searchBar img {
       scale: .95; }
     .keurigHeader__topNav__searchBar input {
       font-size: 12px;
-      line-height: 14px;
-      display: table-cell;
-      vertical-align: middle; }
+      line-height: 14px; }
     .keurigHeader__topNav__searchBar input:focus {
       font-size: 12px; }
     .keurigHeader__topNav__searchBar ::placeholder {
@@ -630,13 +873,160 @@ p {
     width: 30px;
     height: 30px; }
   .keurigHeader__topNav__extraRight__profile p, .keurigHeader__topNav__extraRight__cart p, .keurigHeader__topNav__extraRight__signOut p, .keurigHeader__topNav__extraRight__account p {
-    font-size: 12px; } }
+    font-size: 12px; }
+  .keurigHeader__bottomNav a {
+    font-size: 13px;
+    padding: 14px 13px 14px 13px;
+    margin-right: 17px; } }
 
 @media screen and (max-width: 1550px) {
   .keurigHeader__bottomNav .remove1 {
     display: none; }
   .keurigHeader__bottomNav .remove2 {
     display: none; } }
+
+@media screen and (max-width: 1500px) {
+  .bannerAd {
+    min-height: 38px; }
+    .bannerAd__message {
+      font-size: 13.5px; }
+      .bannerAd__message__cr {
+        font-size: 12px; }
+    .bannerAd__close {
+      min-height: 38px;
+      width: 18px; }
+  .keurigHeader__topNav {
+    min-height: 80px; }
+    .keurigHeader__topNav__searchBar {
+      min-width: 550px;
+      padding: 4px 25px 4px 25px; }
+      .keurigHeader__topNav__searchBar img {
+        scale: .75; }
+    .keurigHeader__topNav__extraRight__freeShipping {
+      padding: 0px 20px 0px 20px;
+      font-size: 11px; }
+  .keurigHeader__bottomNav {
+    padding: 0px 0px 8px 0px; }
+    .keurigHeader__bottomNav a {
+      font-size: 12.5px;
+      margin-right: 16px;
+      padding: 13px; } }
+
+@media screen and (max-width: 1400px) {
+  .keurigHeader__topNav__mainButton__logo {
+    width: 160px; } }
+
+@media screen and (max-width: 1350px) {
+  .keurigHeader__topNav__mainButton__logo {
+    width: 155px; }
+  .keurigHeader__topNav__searchBar {
+    min-width: 475px;
+    padding: 2px 20px 2px 20px; }
+    .keurigHeader__topNav__searchBar img {
+      scale: .65; }
+    .keurigHeader__topNav__searchBar input {
+      font-size: 11px;
+      line-height: 13px; }
+  .keurigHeader__topNav__extraRight__freeShipping {
+    font-size: 11.5px;
+    padding: 0px 16px 0px 16px; }
+  .keurigHeader__topNav__extraRight__profile img, .keurigHeader__topNav__extraRight__cart img, .keurigHeader__topNav__extraRight__signOut img, .keurigHeader__topNav__extraRight__account img {
+    width: 24px;
+    height: 24px; }
+  .keurigHeader__topNav__extraRight__profile p, .keurigHeader__topNav__extraRight__cart p, .keurigHeader__topNav__extraRight__signOut p, .keurigHeader__topNav__extraRight__account p {
+    font-size: 11px; }
+  .keurigHeader__topNav__extraRight__profile__count, .keurigHeader__topNav__extraRight__cart__count, .keurigHeader__topNav__extraRight__signOut__count, .keurigHeader__topNav__extraRight__account__count {
+    width: 18px;
+    height: 18px;
+    line-height: 14px;
+    font-size: 10px; }
+  .keurigHeader__bottomNav {
+    padding: 0px 0px 8px 0px; }
+    .keurigHeader__bottomNav a {
+      font-size: 12.5px;
+      margin-right: 14px;
+      padding: 12px; } }
+
+@media screen and (max-width: 1225px) {
+  .bannerAd {
+    min-height: 33px; }
+    .bannerAd__message {
+      font-size: 12.5px; }
+      .bannerAd__message__cr {
+        font-size: 11px; }
+    .bannerAd__close {
+      min-height: 33px;
+      width: 18px; }
+  .keurigHeader__topNav {
+    min-height: 70px; }
+    .keurigHeader__topNav__mainButton__logo {
+      width: 150px; }
+    .keurigHeader__topNav__searchBar {
+      min-width: 465px;
+      padding: 0px 18px 0px 18px; }
+      .keurigHeader__topNav__searchBar img {
+        scale: .65; }
+      .keurigHeader__topNav__searchBar input {
+        font-size: 11px;
+        line-height: 13px; }
+    .keurigHeader__topNav__extraRight__freeShipping {
+      font-size: 10px;
+      padding: 0px 14px 0px 14px; }
+    .keurigHeader__topNav__extraRight__profile img, .keurigHeader__topNav__extraRight__cart img, .keurigHeader__topNav__extraRight__signOut img, .keurigHeader__topNav__extraRight__account img {
+      width: 22px;
+      height: 22px; }
+    .keurigHeader__topNav__extraRight__profile p, .keurigHeader__topNav__extraRight__cart p, .keurigHeader__topNav__extraRight__signOut p, .keurigHeader__topNav__extraRight__account p {
+      font-size: 10px; }
+  .keurigHeader__bottomNav {
+    padding: 0px 0px 8px 0px; }
+    .keurigHeader__bottomNav a {
+      font-size: 11px;
+      margin-right: 12px;
+      padding: 10px; } }
+
+@media screen and (max-width: 1200px) {
+  .keurigHeader__topNav {
+    margin: 0px 20px 0px 20px; }
+  .keurigHeader__bottomNav {
+    margin: 0px 20px 0px 20px; } }
+
+@media screen and (max-width: 1125px) {
+  .keurigHeader__topNav__mainButton__logo {
+    width: 145px; }
+  .keurigHeader__topNav__searchBar {
+    min-width: 430px;
+    padding: 0px 15px 0px 15px; }
+  .keurigHeader__topNav__extraRight__freeShipping {
+    font-size: 10px;
+    padding: 0px 8px 0px 8px; }
+  .keurigHeader__topNav__extraRight__profile img, .keurigHeader__topNav__extraRight__cart img, .keurigHeader__topNav__extraRight__signOut img, .keurigHeader__topNav__extraRight__account img {
+    width: 22px;
+    height: 22px; }
+  .keurigHeader__topNav__extraRight__profile p, .keurigHeader__topNav__extraRight__cart p, .keurigHeader__topNav__extraRight__signOut p, .keurigHeader__topNav__extraRight__account p {
+    font-size: 10px; } }
+
+@media screen and (max-width: 1075px) {
+  .keurigHeader__topNav {
+    margin: 0px 14px 0px 14px; }
+    .keurigHeader__topNav__mainButton__logo {
+      width: 140px; }
+    .keurigHeader__topNav__searchBar {
+      min-width: 415px;
+      padding: 0px 14px 0px 14px; }
+    .keurigHeader__topNav__extraRight__freeShipping {
+      font-size: 9px;
+      padding: 0px 8px 0px 8px; }
+    .keurigHeader__topNav__extraRight__profile img, .keurigHeader__topNav__extraRight__cart img, .keurigHeader__topNav__extraRight__signOut img, .keurigHeader__topNav__extraRight__account img {
+      width: 22px;
+      height: 22px; }
+    .keurigHeader__topNav__extraRight__profile p, .keurigHeader__topNav__extraRight__cart p, .keurigHeader__topNav__extraRight__signOut p, .keurigHeader__topNav__extraRight__account p {
+      font-size: 10px; }
+  .keurigHeader__bottomNav {
+    margin: 0px 14px 0px 14px; }
+    .keurigHeader__bottomNav a {
+      font-size: 10.5px;
+      margin-right: 12px;
+      padding: 10px; } }
 
 .footer {
   position: absolute;
@@ -772,6 +1162,70 @@ p {
         font-style: italic;
         margin: auto; }
 
+@media screen and (max-width: 1500px) {
+  .footer__container {
+    max-width: 1200px; }
+    .footer__container__topWrap {
+      height: 50px; }
+      .footer__container__topWrap__left img {
+        height: 19px; }
+      .footer__container__topWrap__left p {
+        font-size: 14px; }
+      .footer__container__topWrap__left span {
+        font-size: 18px; }
+      .footer__container__topWrap__right {
+        padding-right: 80px; }
+        .footer__container__topWrap__right img {
+          width: 15.5px; }
+        .footer__container__topWrap__right p {
+          font-size: 14px; }
+    .footer__container__middleInfo__column1 h1, .footer__container__middleInfo__column2 h1, .footer__container__middleInfo__column3 h1, .footer__container__middleInfo__column4 h1 {
+      font-size: 16px; }
+    .footer__container__middleInfo__column1 li, .footer__container__middleInfo__column2 li, .footer__container__middleInfo__column3 li, .footer__container__middleInfo__column4 li {
+      font-size: 13px; }
+    .footer__container__middleInfo__column4__Row1 p {
+      font-size: 13px; }
+    .footer__container__middleInfo__column4__Row2 input {
+      font-size: 13px; }
+    .footer__container__middleInfo__column4__Row2 button {
+      font-size: 13px; }
+    .footer__container__bottomInfo__copyright {
+      padding: 20px 0px 18px 0px; }
+      .footer__container__bottomInfo__copyright p,
+      .footer__container__bottomInfo__copyright a {
+        margin: 0px 11px 0px 11px; }
+    .footer__container__bottomInfo__trademark {
+      padding-top: 15px;
+      padding-bottom: 5px; } }
+
+@media screen and (max-width: 1350px) {
+  .footer__container {
+    max-width: 1150px; }
+    .footer__container__topWrap {
+      height: 45px; }
+      .footer__container__topWrap__left img {
+        height: 18px; }
+      .footer__container__topWrap__left p {
+        font-size: 13px; }
+      .footer__container__topWrap__left span {
+        font-size: 17px; }
+      .footer__container__topWrap__right {
+        padding-right: 75px; }
+        .footer__container__topWrap__right img {
+          width: 15px; }
+        .footer__container__topWrap__right p {
+          font-size: 13px; }
+    .footer__container__middleInfo__column1 h1, .footer__container__middleInfo__column2 h1, .footer__container__middleInfo__column3 h1, .footer__container__middleInfo__column4 h1 {
+      font-size: 15px; }
+    .footer__container__middleInfo__column1 li, .footer__container__middleInfo__column2 li, .footer__container__middleInfo__column3 li, .footer__container__middleInfo__column4 li {
+      font-size: 12px; }
+    .footer__container__middleInfo__column4__Row1 p {
+      font-size: 12px; }
+    .footer__container__middleInfo__column4__Row2 input {
+      font-size: 12px; }
+    .footer__container__middleInfo__column4__Row2 button {
+      font-size: 12px; } }
+
 .listPage {
   width: 100%;
   max-width: 1280px;
@@ -859,10 +1313,12 @@ p {
   .listPage__coffeeList {
     display: flex;
     flex-wrap: wrap;
-    padding: 30px 5px 30px 5px; }
+    padding: 30px 5px 30px 5px;
+    width: 100%; }
     .listPage__coffeeList__item {
       padding: 10px;
       width: 23.5%;
+      min-width: 275px;
       color: #2d2a26;
       display: flex;
       flex-direction: column;
@@ -871,9 +1327,8 @@ p {
       z-index: 1;
       position: relative;
       background-color: #fff;
-      margin-bottom: 20px;
       border: 1px solid transparent;
-      margin-right: auto; }
+      margin: 0px auto 20px auto; }
       .listPage__coffeeList__item:hover {
         border: 1px solid #000000;
         cursor: pointer;
@@ -885,15 +1340,18 @@ p {
         border-top: none; }
       .listPage__coffeeList__item__special {
         position: absolute;
-        top: 5px;
-        left: 1px;
+        top: 3px;
+        left: 2px;
         font-size: 10px;
-        padding: 5px 20px 5px 10px;
-        border-radius: 5px;
+        padding: 0px 20px 0px 10px;
+        border-radius: 2px;
         color: #fff;
         margin-bottom: 0px;
         height: 20px;
-        letter-spacing: 1px; }
+        letter-spacing: 1px;
+        line-height: 20px;
+        display: inline-block;
+        align-items: center; }
         .listPage__coffeeList__item__special:after {
           content: "";
           background-image: url("../../images/28911.svg");
@@ -909,9 +1367,10 @@ p {
         background-color: #007c91; }
       .listPage__coffeeList__item .nasturtium {
         background-color: #c60000; }
+      .listPage__coffeeList__item .scarlet {
+        background-color: #9b3342; }
       .listPage__coffeeList__item .connection {
         width: 100%;
-        min-height: 250px;
         margin: 70px auto 20px auto; }
       .listPage__coffeeList__item__colorPicker {
         width: 100%;
@@ -1067,6 +1526,95 @@ p {
           font-size: 16px;
           margin-left: 5px; }
 
+@media screen and (max-width: 1500px) {
+  .listPage {
+    max-width: 1200px; }
+    .listPage__banner {
+      height: 200px; }
+    .listPage__filterBanner__left a {
+      border: 2px solid #706f73;
+      padding: 12px 43px 12px 15px; }
+      .listPage__filterBanner__left a:hover {
+        border: 2px solid #000000; }
+      .listPage__filterBanner__left a .arrowHover {
+        width: 16.5px;
+        margin-top: 5px; }
+    .listPage__filterBanner__right a {
+      padding: 12px 45px 12px 15px; }
+      .listPage__filterBanner__right a p .first {
+        color: #706f73;
+        font-size: 11px; }
+      .listPage__filterBanner__right a p .second {
+        font-size: 13px; }
+      .listPage__filterBanner__right a .arrowHover {
+        width: 16.5px;
+        top: 48%; }
+    .listPage__coffeeList__item {
+      width: 23%; }
+      .listPage__coffeeList__item__colorPicker button {
+        width: 22px;
+        height: 22px; }
+      .listPage__coffeeList__item__coffeeName {
+        font-size: 13px; }
+      .listPage__coffeeList__item__discount__cutPrice {
+        font-size: 19px; }
+      .listPage__coffeeList__item__discount__originalPrice {
+        font-size: 11px; }
+      .listPage__coffeeList__item__basePrice {
+        font-size: 19px; }
+      .listPage__coffeeList__item__coupon__icon p {
+        font-size: 12px; }
+      .listPage__coffeeList__item__coupon__detail .one {
+        font-size: 10px; }
+      .listPage__coffeeList__item__coupon__detail .two {
+        font-size: 8px; }
+      .listPage__coffeeList__item__ratingSystem {
+        font-size: 12px; }
+      .listPage__coffeeList__item__freeShipping p {
+        font-size: 14px; } }
+
+@media screen and (max-width: 1400px) {
+  .listPage__coffeeList__item .connection {
+    width: 95%; }
+  .listPage__coffeeList__item__freeShipping {
+    margin-bottom: 23px; } }
+
+@media screen and (max-width: 1350px) {
+  .listPage {
+    max-width: 1150px; }
+    .listPage__filterBanner {
+      margin-left: 10px;
+      margin-right: 10px; }
+    .listPage__coffeeList__item .connection {
+      width: 90%; } }
+
+@media screen and (max-width: 1150px) {
+  .listPage__filterBanner {
+    margin-left: 15px;
+    margin-right: 15px; }
+    .listPage__filterBanner__left a {
+      border: 2px solid #706f73;
+      padding: 10px 40px 10px 13px;
+      font-size: 11px; }
+      .listPage__filterBanner__left a:hover {
+        border: 2px solid #000000; }
+      .listPage__filterBanner__left a .arrowHover {
+        width: 14.5px;
+        margin-top: 3px; }
+    .listPage__filterBanner__right a {
+      padding: 10px 38px 10px 13px; }
+      .listPage__filterBanner__right a p .first {
+        color: #706f73;
+        font-size: 10px; }
+      .listPage__filterBanner__right a p .second {
+        font-size: 12px; }
+      .listPage__filterBanner__right a .arrowHover {
+        width: 14.5px;
+        top: 48%; }
+  .listPage__coffeeList {
+    max-width: 975px;
+    margin: auto; } }
+
 .cartPage {
   width: 100%;
   max-width: 1280px;
@@ -1103,7 +1651,7 @@ p {
       display: flex;
       justify-content: space-around; }
       .cartPage__content__cartinfo__cartDisplay {
-        width: 100%;
+        width: 72%;
         max-width: 925px;
         display: block;
         background-color: #fff; }
@@ -1250,7 +1798,7 @@ p {
                 cursor: pointer;
                 border: 3px solid #000000; }
       .cartPage__content__cartinfo__total {
-        width: 100%;
+        width: 23.5%;
         max-width: 300px;
         display: block; }
         .cartPage__content__cartinfo__total__container {
@@ -1369,3 +1917,159 @@ p {
               background-color: #ebebeb; }
               .cartPage__content__cartinfo__total__container__paymentButtons #checkoutPaypal i {
                 color: #7bcfff; }
+
+@media screen and (max-width: 1500px) {
+  .cartPage {
+    max-width: 1200px; }
+    .cartPage__content__cartinfo__cartDisplay__container__coffeelist__item__left__name h1 {
+      font-size: 13px; }
+    .cartPage__content__cartinfo__cartDisplay__container__coffeelist__item__left__name p {
+      font-size: 15px; }
+    .cartPage__content__cartinfo__total__container h1 {
+      font-size: 13.5px; }
+    .cartPage__content__cartinfo__total__container p {
+      font-size: 13.5px; }
+    .cartPage__content__cartinfo__total__container__header h1 {
+      font-size: 18px; }
+    .cartPage__content__cartinfo__total__container__subtotal h1,
+    .cartPage__content__cartinfo__total__container__subtotal p {
+      font-size: 14.5px; }
+    .cartPage__content__cartinfo__total__container__savings h1,
+    .cartPage__content__cartinfo__total__container__savings p {
+      font-size: 14.5px; }
+    .cartPage__content__cartinfo__total__container__addCoupon h1 {
+      font-size: 14.5px; }
+    .cartPage__content__cartinfo__total__container__shipping h1,
+    .cartPage__content__cartinfo__total__container__shipping p {
+      font-size: 14.5px; }
+    .cartPage__content__cartinfo__total__container__tax h1,
+    .cartPage__content__cartinfo__total__container__tax p {
+      font-size: 14.5px; }
+    .cartPage__content__cartinfo__total__container__orderTotal h1,
+    .cartPage__content__cartinfo__total__container__orderTotal p {
+      font-size: 14.5px; }
+    .cartPage__content__cartinfo__total__container__paymentButtons p {
+      font-size: 14px; }
+    .cartPage__content__cartinfo__total__container__paymentButtons #checkout {
+      font-size: 15px; }
+    .cartPage__content__cartinfo__total__container__paymentButtons #checkoutPaypal {
+      font-size: 15px; } }
+
+@media screen and (max-width: 1350px) {
+  .cartPage {
+    max-width: 1150px; }
+    .cartPage__content__shipping {
+      font-size: 13px; }
+      .cartPage__content__shipping i {
+        font-size: 20px; }
+    .cartPage__content__cartinfo__cartDisplay {
+      width: 71%; }
+      .cartPage__content__cartinfo__cartDisplay__container__coffeelist__item__left__name h1 {
+        font-size: 11.5px; }
+      .cartPage__content__cartinfo__cartDisplay__container__coffeelist__item__left__name p {
+        font-size: 13.5px; }
+      .cartPage__content__cartinfo__cartDisplay__container__coffeelist__item__right__unitPrice {
+        font-size: 14px; }
+      .cartPage__content__cartinfo__cartDisplay__container__coffeelist__item__right__subtotal {
+        font-size: 14px; }
+      .cartPage__content__cartinfo__cartDisplay__coupon {
+        padding: 25px 20px 25px 20px; }
+        .cartPage__content__cartinfo__cartDisplay__coupon p {
+          font-size: 18px; }
+        .cartPage__content__cartinfo__cartDisplay__coupon__couponInput input {
+          width: 220px;
+          padding: 8px; }
+        .cartPage__content__cartinfo__cartDisplay__coupon__couponInput button {
+          padding: 8px; }
+    .cartPage__content__cartinfo__total {
+      width: 24.5%; }
+      .cartPage__content__cartinfo__total__container h1 {
+        font-size: 13.5px; }
+      .cartPage__content__cartinfo__total__container p {
+        font-size: 13.5px; }
+      .cartPage__content__cartinfo__total__container__header h1 {
+        font-size: 18px; }
+      .cartPage__content__cartinfo__total__container__subtotal h1,
+      .cartPage__content__cartinfo__total__container__subtotal p {
+        font-size: 14.5px; }
+      .cartPage__content__cartinfo__total__container__savings h1,
+      .cartPage__content__cartinfo__total__container__savings p {
+        font-size: 14.5px; }
+      .cartPage__content__cartinfo__total__container__addCoupon h1 {
+        font-size: 14.5px; }
+      .cartPage__content__cartinfo__total__container__shipping h1,
+      .cartPage__content__cartinfo__total__container__shipping p {
+        font-size: 14.5px; }
+      .cartPage__content__cartinfo__total__container__tax h1,
+      .cartPage__content__cartinfo__total__container__tax p {
+        font-size: 14.5px; }
+      .cartPage__content__cartinfo__total__container__orderTotal h1,
+      .cartPage__content__cartinfo__total__container__orderTotal p {
+        font-size: 14.5px; }
+      .cartPage__content__cartinfo__total__container__paymentButtons p {
+        font-size: 14px; }
+      .cartPage__content__cartinfo__total__container__paymentButtons #checkout {
+        font-size: 15px; }
+      .cartPage__content__cartinfo__total__container__paymentButtons #checkoutPaypal {
+        font-size: 15px; } }
+
+@media screen and (max-width: 1150px) {
+  .cartPage__content__cartinfo {
+    padding-left: 18px;
+    padding-right: 18px; } }
+
+@media screen and (max-width: 1080px) {
+  .cartPage__content__shipping {
+    font-size: 13px; }
+    .cartPage__content__shipping i {
+      font-size: 20px; }
+  .cartPage__content__cartinfo__cartDisplay {
+    width: 70%; }
+    .cartPage__content__cartinfo__cartDisplay__container__coffeelist__item__left__name h1 {
+      font-size: 10.5px; }
+    .cartPage__content__cartinfo__cartDisplay__container__coffeelist__item__left__name p {
+      font-size: 12.5px; }
+    .cartPage__content__cartinfo__cartDisplay__container__coffeelist__item__right__unitPrice {
+      font-size: 12px; }
+    .cartPage__content__cartinfo__cartDisplay__container__coffeelist__item__right__subtotal {
+      font-size: 12px; }
+    .cartPage__content__cartinfo__cartDisplay__coupon {
+      padding: 25px 20px 25px 20px; }
+      .cartPage__content__cartinfo__cartDisplay__coupon p {
+        font-size: 16px; }
+      .cartPage__content__cartinfo__cartDisplay__coupon__couponInput input {
+        width: 220px;
+        padding: 8px; }
+      .cartPage__content__cartinfo__cartDisplay__coupon__couponInput button {
+        padding: 8px; }
+  .cartPage__content__cartinfo__total {
+    width: 26.5%; }
+    .cartPage__content__cartinfo__total__container h1 {
+      font-size: 11.5px; }
+    .cartPage__content__cartinfo__total__container p {
+      font-size: 11.5px; }
+    .cartPage__content__cartinfo__total__container__header h1 {
+      font-size: 17px; }
+    .cartPage__content__cartinfo__total__container__subtotal h1,
+    .cartPage__content__cartinfo__total__container__subtotal p {
+      font-size: 13px; }
+    .cartPage__content__cartinfo__total__container__savings h1,
+    .cartPage__content__cartinfo__total__container__savings p {
+      font-size: 13px; }
+    .cartPage__content__cartinfo__total__container__addCoupon h1 {
+      font-size: 13px; }
+    .cartPage__content__cartinfo__total__container__shipping h1,
+    .cartPage__content__cartinfo__total__container__shipping p {
+      font-size: 13px; }
+    .cartPage__content__cartinfo__total__container__tax h1,
+    .cartPage__content__cartinfo__total__container__tax p {
+      font-size: 13px; }
+    .cartPage__content__cartinfo__total__container__orderTotal h1,
+    .cartPage__content__cartinfo__total__container__orderTotal p {
+      font-size: 13px; }
+    .cartPage__content__cartinfo__total__container__paymentButtons p {
+      font-size: 13px; }
+    .cartPage__content__cartinfo__total__container__paymentButtons #checkout {
+      font-size: 13px; }
+    .cartPage__content__cartinfo__total__container__paymentButtons #checkoutPaypal {
+      font-size: 13px; } }

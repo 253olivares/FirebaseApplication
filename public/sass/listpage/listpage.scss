@@ -123,10 +123,12 @@
         display: flex;
         flex-wrap: wrap;
         padding: 30px 5px 30px 5px;
+        width: 100%;
 
         &__item {
             padding: 10px;
             width: 23.5%;
+            min-width: 275px;
             color: $textBlack;
             display: flex;
             flex-direction: column;
@@ -135,9 +137,8 @@
             z-index: 1;
             position: relative;
             background-color: $white;
-            margin-bottom: 20px;
             border: 1px solid transparent;
-            margin-right: auto;
+            margin: 0px auto 20px auto;
 
             &:hover {
                 border: 1px solid $black;
@@ -156,15 +157,18 @@
 
             &__special {
                 position: absolute;
-                top: 5px;
-                left: 1px;
+                top: 3px;
+                left: 2px;
                 font-size: 10px;
-                padding: 5px 20px 5px 10px;
-                border-radius: 5px;
+                padding: 0px 20px 0px 10px;
+                border-radius: 2px;
                 color: $white;
                 margin-bottom: 0px;
                 height: 20px;
                 letter-spacing: 1px;
+                line-height: 20px;
+                display: inline-block;
+                align-items: center;
 
                 &:after {
                     content: "";
@@ -188,9 +192,12 @@
                 background-color: $Nasturtium;
             }
 
+            .scarlet {
+                background-color: $Scarlet;
+            }
+
             .connection {
                 width: 100%;
-                min-height: 250px;
                 margin: 70px auto 20px auto;
             }
 
@@ -429,4 +436,201 @@
     }
 }
 
-@media screen and (max-width: 1500px) {}
+@media screen and (max-width: 1500px) {
+    .listPage {
+        max-width: 1200px;
+
+        &__banner {
+            height: 200px;
+        }
+
+        &__filterBanner {
+            &__left {
+                a {
+                    border: 2px solid $textDealGrey;
+                    padding: 12px 43px 12px 15px;
+
+                    &:hover {
+                        border: 2px solid $black;
+                    }
+
+                    .arrowHover {
+                        width: 16.5px;
+                        margin-top: 5px;
+                    }
+                }
+            }
+
+            &__right {
+                a {
+                    padding: 12px 45px 12px 15px;
+
+                    p {
+                        .first {
+                            color: $textDealGrey;
+                            font-size: 11px;
+                        }
+
+                        .second {
+                            font-size: 13px;
+                        }
+                    }
+
+                    .arrowHover {
+                        width: 16.5px;
+                        top: 48%;
+                    }
+                }
+            }
+        }
+
+        &__coffeeList {
+            &__item {
+                width: 23%;
+
+                &__colorPicker {
+                    button {
+                        width: 22px;
+                        height: 22px;
+                    }
+                }
+
+                &__coffeeName {
+                    font-size: 13px;
+                }
+
+                &__discount {
+                    &__cutPrice {
+                        font-size: 19px;
+                    }
+
+                    &__originalPrice {
+                        font-size: 11px;
+                    }
+                }
+
+                &__basePrice {
+                    font-size: 19px;
+                }
+
+                &__coupon {
+                    &__icon {
+                        p {
+                            font-size: 12px;
+                        }
+                    }
+
+                    &__detail {
+                        .one {
+                            font-size: 10px;
+                        }
+
+                        .two {
+                            font-size: 8px;
+                        }
+                    }
+                }
+
+                &__ratingSystem {
+                    font-size: 12px;
+                }
+
+                &__freeShipping {
+                    p {
+                        font-size: 14px;
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1400px) {
+    .listPage {
+
+        &__coffeeList {
+            &__item {
+                .connection {
+                    width: 95%;
+                }
+
+                &__freeShipping {
+                    margin-bottom: 23px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1350px) {
+    .listPage {
+        max-width: 1150px;
+
+        &__filterBanner {
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+
+        &__coffeeList {
+            &__item {
+                .connection {
+                    width: 90%;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1150px) {
+    .listPage {
+        &__filterBanner {
+            margin-left: 15px;
+            margin-right: 15px;
+
+            &__left {
+                a {
+                    border: 2px solid $textDealGrey;
+                    padding: 10px 40px 10px 13px;
+                    font-size: 11px;
+
+                    &:hover {
+                        border: 2px solid $black;
+                    }
+
+                    .arrowHover {
+                        width: 14.5px;
+                        margin-top: 3px;
+                    }
+                }
+            }
+
+            &__right {
+                a {
+                    padding: 10px 38px 10px 13px;
+
+                    p {
+                        .first {
+                            color: $textDealGrey;
+                            font-size: 10px;
+                        }
+
+                        .second {
+                            font-size: 12px;
+                        }
+                    }
+
+                    .arrowHover {
+                        width: 14.5px;
+                        top: 48%;
+                    }
+                }
+            }
+        }
+
+        &__coffeeList {
+            max-width: 975px;
+            margin: auto
+        }
+    }
+}

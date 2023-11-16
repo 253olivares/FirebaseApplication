@@ -209,3 +209,168 @@
         }
     }
 }
+
+@media screen and (max-width: 1500px) {
+    .footer {
+        &__container {
+            max-width: 1200px;
+
+            &__topWrap {
+                height: 50px;
+
+                &__left {
+                    img {
+                        height: 19px;
+                    }
+
+                    p {
+                        font-size: 14px;
+                    }
+
+                    span {
+                        font-size: 18px;
+                    }
+                }
+
+                &__right {
+                    padding-right: 80px;
+
+                    img {
+                        width: 15.5px;
+                    }
+
+                    p {
+                        font-size: 14px;
+                    }
+                }
+            }
+
+            &__middleInfo {
+
+                &__column1,
+                &__column2,
+                &__column3,
+                &__column4 {
+
+                    h1 {
+                        font-size: 16px;
+                    }
+
+                    li {
+                        font-size: 13px;
+                    }
+                }
+
+                &__column4 {
+                    &__Row1 {
+                        p {
+                            font-size: 13px;
+                        }
+                    }
+
+                    &__Row2 {
+                        input {
+                            font-size: 13px;
+                        }
+
+                        button {
+                            font-size: 13px;
+                        }
+                    }
+
+                }
+            }
+
+            &__bottomInfo {
+                &__copyright {
+                    padding: 20px 0px 18px 0px;
+
+                    p,
+                    a {
+                        margin: 0px 11px 0px 11px;
+                    }
+                }
+
+                &__trademark {
+                    padding-top: 15px;
+
+                    padding-bottom: 5px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1350px) {
+    .footer {
+        &__container {
+            max-width: 1150px;
+
+            &__topWrap {
+                height: 45px;
+
+                &__left {
+                    img {
+                        height: 18px;
+                    }
+
+                    p {
+                        font-size: 13px;
+                    }
+
+                    span {
+                        font-size: 17px;
+                    }
+                }
+
+                &__right {
+                    padding-right: 75px;
+
+                    img {
+                        width: 15px;
+                    }
+
+                    p {
+                        font-size: 13px;
+                    }
+                }
+            }
+
+            &__middleInfo {
+
+                &__column1,
+                &__column2,
+                &__column3,
+                &__column4 {
+
+                    h1 {
+                        font-size: 15px;
+                    }
+
+                    li {
+                        font-size: 12px;
+                    }
+                }
+
+                &__column4 {
+                    &__Row1 {
+                        p {
+                            font-size: 12px;
+                        }
+                    }
+
+                    &__Row2 {
+                        input {
+                            font-size: 12px;
+                        }
+
+                        button {
+                            font-size: 12px;
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+}
