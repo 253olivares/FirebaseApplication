@@ -83,7 +83,6 @@
 
 .keurigHeader {
     background-color: $burg;
-
     letter-spacing: 1px;
 
     &__topNav {
@@ -94,11 +93,19 @@
         min-height: 91px;
         margin: 0px 40px 0px 40px;
 
+        &__menuBurger {
+            display: none;
+        }
+
         &__mainButton {
             &__logo {
                 width: 175px;
                 filter: $filterBlack;
             }
+        }
+
+        &__mobileExtraRight {
+            display: none;
         }
 
         &__searchBar {
@@ -244,6 +251,10 @@
             }
 
         }
+    }
+
+    &__middleMobileSearch {
+        display: none;
     }
 
     &__bottomNav {
@@ -715,6 +726,326 @@
                 font-size: 10.5px;
                 margin-right: 12px;
                 padding: 10px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 990px) {
+    .bannerAd {
+        min-height: 50px;
+
+        &__message {
+            font-size: 15px;
+
+            &__cr {
+                font-size: 13px;
+            }
+        }
+
+        &__close {
+            min-height: 50px;
+            width: 18px;
+        }
+    }
+
+    .keurigHeader {
+
+        &__topNav {
+            justify-content: space-between;
+            margin: auto;
+            width: 98%;
+            padding-left: 10px;
+            padding-right: 10px;
+            align-items: center;
+
+            &__menuBurger {
+                display: block !important;
+                min-width: 150px;
+
+                img {
+                    display: none;
+                }
+
+                .open {
+                    display: block;
+                    width: 30px;
+                    height: 30px;
+
+                }
+            }
+
+            &__mainButton {
+                height: 24px;
+
+
+                &__logo {
+                    width: 145px;
+                    height: 24px;
+                }
+            }
+
+            &__mobileExtraRight {
+                display: block;
+                display: flex;
+                flex: wrap;
+                justify-content: center;
+                align-items: center;
+                min-width: 150px;
+
+                &__account,
+                &__cart {
+                    position: relative;
+                    padding: 8px;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 10px;
+                    margin-left: 25px;
+
+                    img {
+                        width: 30px;
+                        height: 30px;
+                        height: 30px;
+                        filter: $filterBlack;
+                    }
+
+                    &:hover {
+                        cursor: pointer;
+                        background-color: $lightBiege;
+                    }
+
+                    &__count {
+                        display: none;
+                        position: absolute;
+                        padding: 3px;
+                        background-color: $brown;
+                        color: $white;
+                        font-size: 11px;
+                        width: 17px;
+                        height: 17px;
+                        right: 0;
+                        bottom: 0;
+                        border-radius: 25px;
+                        text-align: center;
+                        line-height: 12px;
+                        vertical-align: middle;
+                    }
+                }
+
+                &__cart {
+                    display: flex;
+                }
+            }
+
+            &__searchBar {
+                display: none;
+            }
+
+            &__extraRight {
+                display: none;
+
+                &__freeShipping {
+                    display: none;
+                }
+
+                &__profile,
+                &__cart,
+                &__signOut,
+                &__account {
+                    display: none !important;
+                }
+            }
+
+        }
+
+        &__middleMobileSearch {
+            width: 99%;
+            margin: auto;
+            display: block;
+
+            input {
+                width: 100%;
+                background-color: $secondWhite;
+                border-radius: 3px;
+                padding: 12px 10px;
+                border: 1px solid $gray;
+            }
+        }
+
+        &__bottomNav {
+            width: 99%;
+            margin: 0px auto;
+            padding: 0;
+
+            a {
+                display: none !important;
+            }
+
+            &__mobileDeal {
+                width: 100%;
+                text-align: center;
+                line-height: 16px;
+                display: table-cell;
+                vertical-align: middle;
+                background-color: $gray;
+                margin: 5px auto 5px auto;
+                padding: 15px;
+
+                p {
+                    margin-bottom: 0px;
+                    font-size: 14px;
+
+                    span {
+                        font-size: 18px;
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .bannerAd {
+        min-height: 40px;
+
+        &__message {
+            font-size: 13px;
+
+            &__cr {
+                font-size: 11px;
+            }
+        }
+
+        &__close {
+            min-height: 40px;
+            width: 17px;
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .bannerAd {
+        display: none !important;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .keurigHeader {
+
+        &__topNav {
+            &__menuBurger {
+                display: block !important;
+                min-width: 90px;
+
+                img {
+                    display: none;
+                }
+
+                .open {
+                    display: block;
+                    width: 25px;
+                    height: 25px;
+
+                }
+            }
+
+            &__mainButton {
+                height: 20px;
+
+
+                &__logo {
+                    width: 125px;
+                    height: 20px;
+                }
+            }
+
+            &__mobileExtraRight {
+                min-width: 90px;
+
+                &__cart {
+                    margin-left: 10px;
+
+                    img {
+                        width: 25px;
+                        height: 25px;
+                        filter: $filterBlack;
+                    }
+
+
+                    &__count {
+                        display: none;
+                        font-size: 10px;
+                        width: 16px;
+                        height: 16px;
+                        line-height: 12px;
+                    }
+                }
+
+                &__account {
+                    width: 40px;
+                    height: 40px;
+                    margin-left: 0px;
+                    padding: 8px;
+                }
+            }
+
+        }
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .keurigHeader {
+        &__topNav {
+            &__menuBurger {
+                display: block !important;
+                min-width: 0px;
+
+                .open {
+                    display: block;
+                    width: 23.5px;
+                    height: 23.5px;
+
+                }
+            }
+
+            &__mainButton {
+                height: 18px;
+
+
+                &__logo {
+                    width: 110px;
+                    height: 18px;
+                }
+            }
+
+            &__mobileExtraRight {
+                min-width: 0px;
+
+                &__cart {
+                    margin-left: 8px;
+                    padding: 7px;
+
+                    img {
+                        width: 23.5px;
+                        height: 23.5px;
+                    }
+
+                    &__count {
+                        display: none;
+                        font-size: 10px;
+                        width: 16px;
+                        height: 16px;
+                        line-height: 12px;
+                    }
+                }
+
+                &__account {
+                    width: 37.5px;
+                    height: 37.5px;
+                    padding: 7px;
+                }
             }
         }
     }

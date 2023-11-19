@@ -693,9 +693,13 @@ p {
     align-items: center;
     min-height: 91px;
     margin: 0px 40px 0px 40px; }
+    .keurigHeader__topNav__menuBurger {
+      display: none; }
     .keurigHeader__topNav__mainButton__logo {
       width: 175px;
       filter: invert(0%) sepia(3%) saturate(13%) hue-rotate(77deg) brightness(97%) contrast(103%); }
+    .keurigHeader__topNav__mobileExtraRight {
+      display: none; }
     .keurigHeader__topNav__searchBar {
       min-width: 600px;
       background-color: #f3f3f3;
@@ -793,6 +797,8 @@ p {
       .keurigHeader__topNav__extraRight__profile:hover, .keurigHeader__topNav__extraRight__cart:hover, .keurigHeader__topNav__extraRight__signOut:hover, .keurigHeader__topNav__extraRight__account:hover {
         cursor: pointer;
         background-color: #f0f0f0; }
+  .keurigHeader__middleMobileSearch {
+    display: none; }
   .keurigHeader__bottomNav {
     height: 100%;
     margin: 0px 40px 0px 40px;
@@ -1028,6 +1034,199 @@ p {
       margin-right: 12px;
       padding: 10px; } }
 
+@media screen and (max-width: 990px) {
+  .bannerAd {
+    min-height: 50px; }
+    .bannerAd__message {
+      font-size: 15px; }
+      .bannerAd__message__cr {
+        font-size: 13px; }
+    .bannerAd__close {
+      min-height: 50px;
+      width: 18px; }
+  .keurigHeader__topNav {
+    justify-content: space-between;
+    margin: auto;
+    width: 98%;
+    padding-left: 10px;
+    padding-right: 10px;
+    align-items: center; }
+    .keurigHeader__topNav__menuBurger {
+      display: block !important;
+      min-width: 150px; }
+      .keurigHeader__topNav__menuBurger img {
+        display: none; }
+      .keurigHeader__topNav__menuBurger .open {
+        display: block;
+        width: 30px;
+        height: 30px; }
+    .keurigHeader__topNav__mainButton {
+      height: 24px; }
+      .keurigHeader__topNav__mainButton__logo {
+        width: 145px;
+        height: 24px; }
+    .keurigHeader__topNav__mobileExtraRight {
+      display: block;
+      display: flex;
+      flex: wrap;
+      justify-content: center;
+      align-items: center;
+      min-width: 150px; }
+      .keurigHeader__topNav__mobileExtraRight__account, .keurigHeader__topNav__mobileExtraRight__cart {
+        position: relative;
+        padding: 8px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        margin-left: 25px; }
+        .keurigHeader__topNav__mobileExtraRight__account img, .keurigHeader__topNav__mobileExtraRight__cart img {
+          width: 30px;
+          height: 30px;
+          height: 30px;
+          filter: invert(0%) sepia(3%) saturate(13%) hue-rotate(77deg) brightness(97%) contrast(103%); }
+        .keurigHeader__topNav__mobileExtraRight__account:hover, .keurigHeader__topNav__mobileExtraRight__cart:hover {
+          cursor: pointer;
+          background-color: #f0f0f0; }
+        .keurigHeader__topNav__mobileExtraRight__account__count, .keurigHeader__topNav__mobileExtraRight__cart__count {
+          display: none;
+          position: absolute;
+          padding: 3px;
+          background-color: #592615;
+          color: #fff;
+          font-size: 11px;
+          width: 17px;
+          height: 17px;
+          right: 0;
+          bottom: 0;
+          border-radius: 25px;
+          text-align: center;
+          line-height: 12px;
+          vertical-align: middle; }
+      .keurigHeader__topNav__mobileExtraRight__cart {
+        display: flex; }
+    .keurigHeader__topNav__searchBar {
+      display: none; }
+    .keurigHeader__topNav__extraRight {
+      display: none; }
+      .keurigHeader__topNav__extraRight__freeShipping {
+        display: none; }
+      .keurigHeader__topNav__extraRight__profile, .keurigHeader__topNav__extraRight__cart, .keurigHeader__topNav__extraRight__signOut, .keurigHeader__topNav__extraRight__account {
+        display: none !important; }
+  .keurigHeader__middleMobileSearch {
+    width: 99%;
+    margin: auto;
+    display: block; }
+    .keurigHeader__middleMobileSearch input {
+      width: 100%;
+      background-color: #f3f3f3;
+      border-radius: 3px;
+      padding: 12px 10px;
+      border: 1px solid #c7c7c7; }
+  .keurigHeader__bottomNav {
+    width: 99%;
+    margin: 0px auto;
+    padding: 0; }
+    .keurigHeader__bottomNav a {
+      display: none !important; }
+    .keurigHeader__bottomNav__mobileDeal {
+      width: 100%;
+      text-align: center;
+      line-height: 16px;
+      display: table-cell;
+      vertical-align: middle;
+      background-color: #c7c7c7;
+      margin: 5px auto 5px auto;
+      padding: 15px; }
+      .keurigHeader__bottomNav__mobileDeal p {
+        margin-bottom: 0px;
+        font-size: 14px; }
+        .keurigHeader__bottomNav__mobileDeal p span {
+          font-size: 18px;
+          font-weight: bold; } }
+
+@media screen and (max-width: 700px) {
+  .bannerAd {
+    min-height: 40px; }
+    .bannerAd__message {
+      font-size: 13px; }
+      .bannerAd__message__cr {
+        font-size: 11px; }
+    .bannerAd__close {
+      min-height: 40px;
+      width: 17px; } }
+
+@media screen and (max-width: 600px) {
+  .bannerAd {
+    display: none !important; } }
+
+@media screen and (max-width: 500px) {
+  .keurigHeader__topNav__menuBurger {
+    display: block !important;
+    min-width: 90px; }
+    .keurigHeader__topNav__menuBurger img {
+      display: none; }
+    .keurigHeader__topNav__menuBurger .open {
+      display: block;
+      width: 25px;
+      height: 25px; }
+  .keurigHeader__topNav__mainButton {
+    height: 20px; }
+    .keurigHeader__topNav__mainButton__logo {
+      width: 125px;
+      height: 20px; }
+  .keurigHeader__topNav__mobileExtraRight {
+    min-width: 90px; }
+    .keurigHeader__topNav__mobileExtraRight__cart {
+      margin-left: 10px; }
+      .keurigHeader__topNav__mobileExtraRight__cart img {
+        width: 25px;
+        height: 25px;
+        filter: invert(0%) sepia(3%) saturate(13%) hue-rotate(77deg) brightness(97%) contrast(103%); }
+      .keurigHeader__topNav__mobileExtraRight__cart__count {
+        display: none;
+        font-size: 10px;
+        width: 16px;
+        height: 16px;
+        line-height: 12px; }
+    .keurigHeader__topNav__mobileExtraRight__account {
+      width: 40px;
+      height: 40px;
+      margin-left: 0px;
+      padding: 8px; } }
+
+@media screen and (max-width: 400px) {
+  .keurigHeader__topNav__menuBurger {
+    display: block !important;
+    min-width: 0px; }
+    .keurigHeader__topNav__menuBurger .open {
+      display: block;
+      width: 23.5px;
+      height: 23.5px; }
+  .keurigHeader__topNav__mainButton {
+    height: 18px; }
+    .keurigHeader__topNav__mainButton__logo {
+      width: 110px;
+      height: 18px; }
+  .keurigHeader__topNav__mobileExtraRight {
+    min-width: 0px; }
+    .keurigHeader__topNav__mobileExtraRight__cart {
+      margin-left: 8px;
+      padding: 7px; }
+      .keurigHeader__topNav__mobileExtraRight__cart img {
+        width: 23.5px;
+        height: 23.5px; }
+      .keurigHeader__topNav__mobileExtraRight__cart__count {
+        display: none;
+        font-size: 10px;
+        width: 16px;
+        height: 16px;
+        line-height: 12px; }
+    .keurigHeader__topNav__mobileExtraRight__account {
+      width: 37.5px;
+      height: 37.5px;
+      padding: 7px; } }
+
 .footer {
   position: absolute;
   bottom: 0;
@@ -1063,6 +1262,16 @@ p {
         .footer__container__topWrap__left span {
           font-size: 20px;
           font-weight: bold; }
+        .footer__container__topWrap__left__first {
+          display: flex;
+          justify-content: space-between;
+          align-items: center; }
+        .footer__container__topWrap__left__second {
+          display: flex;
+          justify-content: center;
+          align-items: center; }
+          .footer__container__topWrap__left__second img {
+            display: none; }
       .footer__container__topWrap__right {
         color: #fff;
         display: flex;
@@ -1226,6 +1435,383 @@ p {
     .footer__container__middleInfo__column4__Row2 button {
       font-size: 12px; } }
 
+@media screen and (max-width: 990px) {
+  .footer__container {
+    width: 100%;
+    max-width: none; }
+    .footer__container__topWrap {
+      height: auto;
+      flex-direction: column;
+      padding: 0px; }
+      .footer__container__topWrap__left {
+        display: flex;
+        flex-direction: column;
+        width: 100%; }
+        .footer__container__topWrap__left span {
+          display: none; }
+        .footer__container__topWrap__left__first {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          position: relative;
+          padding: 25px 0px 25px 0px;
+          border-bottom: 2px white solid; }
+          .footer__container__topWrap__left__first p {
+            font-size: 18px; }
+          .footer__container__topWrap__left__first img {
+            position: absolute;
+            left: 30px;
+            height: 35%;
+            width: auto;
+            top: 32.5%; }
+        .footer__container__topWrap__left__second {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          position: relative;
+          flex-direction: column;
+          padding: 25px 0px 25px 0px;
+          border-bottom: 2px white solid; }
+          .footer__container__topWrap__left__second p {
+            font-size: 15px; }
+          .footer__container__topWrap__left__second img {
+            display: block;
+            position: absolute;
+            left: 25px;
+            height: 30%;
+            width: auto;
+            top: 35%; }
+      .footer__container__topWrap__right {
+        padding: 0px;
+        width: 100%; }
+        .footer__container__topWrap__right p {
+          display: none; }
+        .footer__container__topWrap__right img {
+          width: 25px;
+          padding: 30px 0px 30px 0px;
+          margin: 0px 15px 0px 15px; }
+    .footer__container__middleInfo {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 0px 0px 0px 0px; }
+      .footer__container__middleInfo__column1, .footer__container__middleInfo__column2, .footer__container__middleInfo__column3, .footer__container__middleInfo__column4 {
+        width: 100%;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        padding-bottom: 20px; }
+        .footer__container__middleInfo__column1 h1, .footer__container__middleInfo__column2 h1, .footer__container__middleInfo__column3 h1, .footer__container__middleInfo__column4 h1 {
+          font-size: 25px; }
+        .footer__container__middleInfo__column1 li, .footer__container__middleInfo__column2 li, .footer__container__middleInfo__column3 li, .footer__container__middleInfo__column4 li {
+          font-size: 16px;
+          padding-bottom: 15px; }
+      .footer__container__middleInfo__column1 {
+        padding: 0px;
+        margin-top: 25px; }
+        .footer__container__middleInfo__column1__topRow {
+          width: 100%;
+          text-align: center;
+          margin-bottom: 0px;
+          padding-bottom: 20px; }
+        .footer__container__middleInfo__column1__bottomRow {
+          width: 100%;
+          text-align: center;
+          padding-bottom: 20px; }
+      .footer__container__middleInfo__column3 {
+        border-bottom: 3px solid #c7c7c7;
+        padding-bottom: 15px; }
+      .footer__container__middleInfo__column4__Row1 {
+        width: 100%;
+        margin: auto;
+        padding: 15px 0px 0px 0px; }
+        .footer__container__middleInfo__column4__Row1 h1,
+        .footer__container__middleInfo__column4__Row1 p {
+          margin: 0px 0px 10px 5%;
+          text-align: left;
+          letter-spacing: 2px; }
+        .footer__container__middleInfo__column4__Row1 h1 {
+          font-size: 17px;
+          margin-bottom: 18px; }
+        .footer__container__middleInfo__column4__Row1 p {
+          font-size: 13px; }
+      .footer__container__middleInfo__column4__Row2 {
+        width: 100%;
+        margin: 0px auto 0px auto;
+        padding: 10px 0px 40px 0px;
+        border-bottom: 3px solid #c7c7c7; }
+        .footer__container__middleInfo__column4__Row2 input {
+          width: 72%;
+          padding: 12px 15px 12px 15px;
+          font-size: 16px; }
+        .footer__container__middleInfo__column4__Row2 button {
+          width: 18%;
+          padding: 12px 15px 12px 15px;
+          font-size: 16px; }
+      .footer__container__middleInfo__column4__Row3 {
+        width: 100%;
+        padding: 15px 0px 10px 0px; }
+        .footer__container__middleInfo__column4__Row3__country {
+          width: 100%;
+          padding-left: 5%; }
+        .footer__container__middleInfo__column4__Row3 h1 {
+          font-size: 18px; }
+        .footer__container__middleInfo__column4__Row3 img {
+          width: 48px; }
+        .footer__container__middleInfo__column4__Row3 select {
+          border: none;
+          padding: 10px 20px 10px 20px; }
+    .footer__container__bottomInfo {
+      border-top: 3px solid #c7c7c7;
+      width: 100%; }
+      .footer__container__bottomInfo__copyright {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 25px 0px 30px 5%; }
+        .footer__container__bottomInfo__copyright p {
+          margin: 0px;
+          width: 100%;
+          margin-bottom: 13px;
+          font-size: 14px;
+          color: #706f73;
+          font-style: normal;
+          letter-spacing: 1px; }
+        .footer__container__bottomInfo__copyright a {
+          margin: 0px;
+          width: 100%;
+          margin-bottom: 13px;
+          font-size: 13px;
+          color: #706f73;
+          font-style: normal;
+          letter-spacing: 1px; }
+      .footer__container__bottomInfo__trademark {
+        display: none; } }
+
+@media screen and (max-width: 700px) {
+  .footer__container {
+    width: 100%;
+    max-width: none; }
+    .footer__container__topWrap {
+      height: auto;
+      padding: 0px; }
+      .footer__container__topWrap__left {
+        display: flex;
+        width: 100%; }
+        .footer__container__topWrap__left__first {
+          width: 100%;
+          padding: 15px 0px 15px 0px; }
+          .footer__container__topWrap__left__first p {
+            font-size: 16px; }
+          .footer__container__topWrap__left__first img {
+            left: 30px;
+            height: 35%;
+            width: auto;
+            top: 32.5%; }
+        .footer__container__topWrap__left__second {
+          width: 100%;
+          padding: 15px 0px 15px 0px; }
+          .footer__container__topWrap__left__second p {
+            font-size: 15px; }
+          .footer__container__topWrap__left__second img {
+            left: 25px;
+            height: 30%;
+            width: auto;
+            top: 35%; }
+      .footer__container__topWrap__right {
+        width: 100%;
+        padding: 20px 0px 20px 0px; }
+      .footer__container__topWrap__right img {
+        padding: 0px;
+        margin: 0px;
+        width: 25px;
+        height: 25px;
+        margin: 0px 15px 0px 15px; }
+    .footer__container__middleInfo {
+      padding: 0px 0px 0px 0px; }
+      .footer__container__middleInfo__column1, .footer__container__middleInfo__column2, .footer__container__middleInfo__column3, .footer__container__middleInfo__column4 {
+        padding-bottom: 15px; }
+        .footer__container__middleInfo__column1 h1, .footer__container__middleInfo__column2 h1, .footer__container__middleInfo__column3 h1, .footer__container__middleInfo__column4 h1 {
+          font-size: 25px; }
+        .footer__container__middleInfo__column1 li, .footer__container__middleInfo__column2 li, .footer__container__middleInfo__column3 li, .footer__container__middleInfo__column4 li {
+          font-size: 16px;
+          padding-bottom: 10px; }
+      .footer__container__middleInfo__column1 {
+        padding: 0px;
+        margin-top: 25px; }
+        .footer__container__middleInfo__column1__topRow {
+          margin-bottom: 0px;
+          padding-bottom: 15px; }
+        .footer__container__middleInfo__column1__bottomRow {
+          padding-bottom: 15px; }
+      .footer__container__middleInfo__column3 {
+        padding-bottom: 15px; }
+      .footer__container__middleInfo__column4__Row1 {
+        padding: 15px 0px 0px 0px; }
+        .footer__container__middleInfo__column4__Row1 h1,
+        .footer__container__middleInfo__column4__Row1 p {
+          margin: 0px 5% 10px 5%;
+          letter-spacing: 2px; }
+        .footer__container__middleInfo__column4__Row1 h1 {
+          font-size: 17px;
+          margin-bottom: 18px; }
+        .footer__container__middleInfo__column4__Row1 p {
+          font-size: 13px; }
+      .footer__container__middleInfo__column4__Row2 {
+        margin: 0px auto 0px auto;
+        padding: 10px 0px 40px 0px; }
+        .footer__container__middleInfo__column4__Row2 input {
+          width: 72%;
+          padding: 12px 15px 12px 15px;
+          font-size: 16px; }
+        .footer__container__middleInfo__column4__Row2 button {
+          width: 18%;
+          padding: 12px 15px 12px 15px;
+          font-size: 16px; }
+      .footer__container__middleInfo__column4__Row3 {
+        padding: 15px 0px 10px 0px; }
+        .footer__container__middleInfo__column4__Row3__country {
+          width: 100%;
+          padding-left: 5%; }
+        .footer__container__middleInfo__column4__Row3 h1 {
+          font-size: 18px; }
+        .footer__container__middleInfo__column4__Row3 img {
+          width: 48px; }
+        .footer__container__middleInfo__column4__Row3 select {
+          padding: 10px 20px 10px 20px; }
+    .footer__container__bottomInfo {
+      border-top: 3px solid #c7c7c7; }
+      .footer__container__bottomInfo__copyright {
+        padding: 25px 0px 30px 5%; }
+        .footer__container__bottomInfo__copyright p {
+          margin: 0px;
+          margin-bottom: 13px;
+          font-size: 14px; }
+        .footer__container__bottomInfo__copyright a {
+          margin: 0px;
+          margin-bottom: 13px;
+          font-size: 13px; } }
+
+@media screen and (max-width: 550px) {
+  .footer__container__middleInfo__column1, .footer__container__middleInfo__column2, .footer__container__middleInfo__column3, .footer__container__middleInfo__column4 {
+    padding-bottom: 10px; }
+    .footer__container__middleInfo__column1 h1, .footer__container__middleInfo__column2 h1, .footer__container__middleInfo__column3 h1, .footer__container__middleInfo__column4 h1 {
+      font-size: 20px; }
+    .footer__container__middleInfo__column1 li, .footer__container__middleInfo__column2 li, .footer__container__middleInfo__column3 li, .footer__container__middleInfo__column4 li {
+      font-size: 14px;
+      padding-bottom: 8px; }
+  .footer__container__middleInfo__column1 {
+    padding: 0px;
+    margin-top: 25px; }
+    .footer__container__middleInfo__column1__topRow {
+      margin-bottom: 0px;
+      padding-bottom: 10px; }
+    .footer__container__middleInfo__column1__bottomRow {
+      padding-bottom: 10px; }
+  .footer__container__middleInfo__column3 {
+    padding-bottom: 10px; }
+  .footer__container__middleInfo__column4__Row1 {
+    padding: 15px 0px 0px 0px; }
+    .footer__container__middleInfo__column4__Row1 h1,
+    .footer__container__middleInfo__column4__Row1 p {
+      margin: 0px 5% 10px 5%;
+      letter-spacing: 2px; }
+    .footer__container__middleInfo__column4__Row1 h1 {
+      font-size: 16px;
+      margin-bottom: 18px; }
+    .footer__container__middleInfo__column4__Row1 p {
+      font-size: 11px; }
+  .footer__container__middleInfo__column4__Row2 {
+    margin: 0px auto 0px auto;
+    padding: 10px 0px 40px 0px; }
+    .footer__container__middleInfo__column4__Row2 input {
+      width: 65%;
+      padding: 12px 15px 12px 15px;
+      font-size: 14px; }
+    .footer__container__middleInfo__column4__Row2 button {
+      width: 25%;
+      padding: 12px 8px 12px 8px;
+      font-size: 14px; }
+  .footer__container__middleInfo__column4__Row3 {
+    padding: 15px 0px 10px 0px; }
+    .footer__container__middleInfo__column4__Row3__country {
+      width: 100%;
+      padding-left: 5%; }
+    .footer__container__middleInfo__column4__Row3 h1 {
+      font-size: 16px; }
+    .footer__container__middleInfo__column4__Row3 img {
+      width: 35px; }
+    .footer__container__middleInfo__column4__Row3 select {
+      padding: 10px 20px 10px 20px; }
+  .footer__container__bottomInfo__copyright p {
+    margin: 0px;
+    margin-bottom: 12px;
+    font-size: 12px; }
+  .footer__container__bottomInfo__copyright a {
+    margin: 0px;
+    margin-bottom: 12px;
+    font-size: 11px; } }
+
+@media screen and (max-width: 450px) {
+  .footer__container__topWrap__left__first {
+    padding: 15px 0px 15px 0px; }
+    .footer__container__topWrap__left__first img {
+      left: 20px; }
+    .footer__container__topWrap__left__first p {
+      font-size: 14px; }
+  .footer__container__topWrap__left__second {
+    padding: 15px 0px 15px 0px; }
+    .footer__container__topWrap__left__second img {
+      left: 15px; }
+    .footer__container__topWrap__left__second p {
+      font-size: 13px; }
+  .footer__container__topWrap__right {
+    padding: 15px 0px 15px 0px; }
+  .footer__container__topWrap__right img {
+    width: 20px;
+    height: 20px; }
+  .footer__container__middleInfo__column4__Row1 h1,
+  .footer__container__middleInfo__column4__Row1 p {
+    margin: 0px 2.5% 10px 2.5%; }
+  .footer__container__middleInfo__column4__Row2 input {
+    width: 65%; }
+  .footer__container__middleInfo__column4__Row2 button {
+    width: 30%; }
+  .footer__container__middleInfo__column4__Row3__country {
+    padding-left: 2.5%; }
+  .footer__container__bottomInfo__copyright {
+    padding-left: 2.5%;
+    padding-right: 2.5%; } }
+
+@media screen and (max-width: 400px) {
+  .footer__container__middleInfo__column1 h1, .footer__container__middleInfo__column2 h1, .footer__container__middleInfo__column3 h1, .footer__container__middleInfo__column4 h1 {
+    font-size: 15px; }
+  .footer__container__middleInfo__column1 li, .footer__container__middleInfo__column2 li, .footer__container__middleInfo__column3 li, .footer__container__middleInfo__column4 li {
+    font-size: 12px;
+    padding-bottom: 10px; }
+  .footer__container__middleInfo__column4__Row1 h1,
+  .footer__container__middleInfo__column4__Row1 p {
+    margin: 0px 2.5% 10px 2.5%; }
+  .footer__container__middleInfo__column4__Row1 h1 {
+    font-size: 15px;
+    margin-bottom: 18px; }
+  .footer__container__middleInfo__column4__Row1 p {
+    font-size: 11px; }
+  .footer__container__middleInfo__column4__Row2 input {
+    width: 65%;
+    font-size: 12px; }
+  .footer__container__middleInfo__column4__Row2 button {
+    width: 30%;
+    font-size: 12px; }
+  .footer__container__middleInfo__column4__Row3__country {
+    padding-left: 2.5%; } }
+
 .listPage {
   width: 100%;
   max-width: 1280px;
@@ -1260,6 +1846,8 @@ p {
     justify-content: space-between;
     align-items: center;
     margin: 18px 0px 5px 0px; }
+    .listPage__filterBanner__mobile {
+      display: none; }
     .listPage__filterBanner__left {
       display: flex;
       justify-content: flex-start;
@@ -1614,6 +2202,39 @@ p {
   .listPage__coffeeList {
     max-width: 975px;
     margin: auto; } }
+
+@media screen and (max-width: 990px) {
+  .listPage__filterBanner__left a {
+    display: none; }
+  .listPage__filterBanner__right a {
+    display: none; }
+  .listPage__filterBanner__mobile {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center; }
+    .listPage__filterBanner__mobile a {
+      position: relative;
+      text-decoration: none;
+      color: #000000;
+      border: 3px solid #706f73;
+      padding: 13px;
+      font-size: 13.5px; }
+      .listPage__filterBanner__mobile a:hover {
+        border: 3px solid #000000; } }
+
+@media screen and (max-width: 800px) {
+  .listPage__banner {
+    min-height: 225px;
+    height: auto; }
+    .listPage__banner p {
+      font-size: 12px; }
+    .listPage__banner h1 {
+      font-size: 30px;
+      text-align: center; } }
+
+@media screen and (max-width: 500px) {
+  .listPage__banner {
+    min-height: 150px; } }
 
 .cartPage {
   width: 100%;

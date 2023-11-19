@@ -47,9 +47,23 @@
     <div class="mobileMenuView"></div>
     <div class="keurigHeader">
       <div class="keurigHeader__topNav">
+        <div class="keurigHeader__topNav__menuBurger">
+          <img class="open" src="./images/bars-solid.svg" alt="menuBurger">
+          <img src="closeMenu" src="./images/times-solid.svg" alt="menuBurger">
+        </div>
         <a href="#" class="keurigHeader__topNav__mainButton">
           <img class="keurigHeader__topNav__mainButton__logo" src="./images/Logo.svg" alt="Logo for the Keurig website">
         </a>
+        <div class="keurigHeader__topNav__mobileExtraRight">
+          <img class="keurigHeader__topNav__mobileExtraRight__account" src="./images/profile.svg" alt="Profile icon">
+          <a href="#/cart">
+            <div class="keurigHeader__topNav__mobileExtraRight__cart">
+              <img class="keurigHeader__topNav__mobileExtraRight__cart__count__count" src="./images/keurig-cart.svg"
+                alt="Search">
+              <div class="keurigHeader__topNav__mobileExtraRight__cart__count" id="cartCount">0</div>
+            </div>
+          </a>
+        </div>
         <div class="keurigHeader__topNav__searchBar">
           <img src="./images/searchIcon2Blue.svg" alt="Search bar">
           <input type="text" placeholder="Search" name="search" id="machineSearch">
@@ -81,37 +95,9 @@
           </a>
         </div>
       </div>
-      <!-- <div class="keurigHeader__login">
-        <div class="keurigHeader__login__container">
-          <div class="keurigHeader__login__container__close">
-            <i class="fa fa-times"></i>
-            <p>close</p>
-          </div>
-          <div class="keurigHeader__login__container__options">
-            <button class="keurigHeader__login__container__options__logIn"> LOG IN</button>
-            <button class="keurigHeader__login__container__options__signUp"> SIGN UP</button>
-          </div>
-          <div class="keurigHeader__login__container__formsLogin">
-            <form action="#">
-              <input type="email" name="email-Login" id="email-login">
-              <input type="password" name="password-Login" id="password-Login">
-              <div class="keurigHeader__login__container__formsLogin__checkbox">
-                <input type="checkbox" id="checkbox" name="checkbox" value="remeber">
-                <label for="checkbox">Keep me signed in.</label>
-              </div>
-              <button> SIGN IN </button>
-            </form>
-            <button> Fogot Password? </button>
-          </div>
-          <div class="keurigHeader__login__container__formsLoginInformation">
-
-          </div>
-          <div class="keurigHeader__login__container__extra">
-            <button class="keurigHeader__login__container__extra__register">Register Coffee Maker</button>
-            <button class="keurigHeader__login__container__extra__support">Support</button>
-          </div>
-        </div>
-      </div> -->
+      <div class="keurigHeader__middleMobileSearch">
+        <input type="text" placeholder="Search" name="searchMobile" id="mobileSearch">
+      </div>
       <div class="keurigHeader__bottomNav">
         <a href="#" class="keurigHeader__bottomNav__other"><span>Keurig<span>&#174;</span> Starter Kit</span></a>
         <a href="#" class="keurigHeader__bottomNav__other"><span>Start Auto-Delivery</span></a>
@@ -141,14 +127,20 @@
     </div>
 
     <!-- Footer -->
-    <footer class="footer">
+    <div class="footer">
       <div class="footer__container">
         <div class="footer__container__topWrap">
           <div class="footer__container__topWrap__left">
-            <img src="./images/location.png" alt="location Icon">
-            <p>Find a Store</p> <span>
-              &#183;</span>
-            <p>Customer Support: 866-901-BREW(2739)</p>
+            <div class="footer__container__topWrap__left__first">
+              <img src="./images/location.png" alt="location Icon">
+              <p>Find a Store</p>
+            </div>
+            <span> &#183;</span>
+            <div class="footer__container__topWrap__left__second">
+              <img src="./images/customer-support-phone.svg" alt="phone icon">
+              <p>Customer Support:</p>
+              <p>866-901-BREW(2739)</p>
+            </div>
           </div>
           <div class="footer__container__topWrap__right">
             <p>Follow Us</p>
@@ -223,7 +215,8 @@
         </div>
         <div class="footer__container__bottomInfo">
           <div class="footer__container__bottomInfo__copyright">
-            <p>© 2023 Keurig Green Mountain, Inc. - All Rights Reserved</p> <a href="#">Terms of Use</a> <a href="#">
+            <p>© 2023 Keurig Green Mountain, Inc. - Rebuild Site For Personal Use</p> <a href="#">Terms of Use</a> <a
+              href="#">
               Privacy Policy</a> <a href="#">Modern Slavery Act</a>
           </div>
           <div class="footer__container__bottomInfo__trademark">
@@ -232,7 +225,7 @@
           </div>
         </div>
       </div>
-    </footer>
+    </div>
 
     <div class="accountContainer">
       <div class="accountContainer__close">

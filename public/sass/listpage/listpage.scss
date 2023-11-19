@@ -44,6 +44,10 @@
         align-items: center;
         margin: 18px 0px 5px 0px;
 
+        &__mobile {
+            display: none;
+        }
+
         &__left {
             display: flex;
             justify-content: flex-start;
@@ -278,7 +282,6 @@
             &__addCart {
                 position: absolute;
                 width: calc(100% + 2px);
-                ;
                 min-width: 250px;
                 top: 99%;
                 left: -1px;
@@ -631,6 +634,73 @@
         &__coffeeList {
             max-width: 975px;
             margin: auto
+        }
+    }
+}
+
+@media screen and (max-width: 990px) {
+    .listPage {
+        &__filterBanner {
+            &__left {
+                a {
+                    display: none;
+                }
+            }
+
+            &__right {
+                a {
+                    display: none;
+                }
+            }
+
+            &__mobile {
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+
+                a {
+                    position: relative;
+                    text-decoration: none;
+                    color: $black;
+                    border: 3px solid $textDealGrey;
+                    padding: 13px;
+                    font-size: 13.5px;
+
+                    &:hover {
+                        border: 3px solid $black;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .listPage {
+        &__banner {
+            min-height: 225px;
+            height: auto;
+
+            p {
+                font-size: 12px;
+            }
+
+            h1 {
+                font-size: 30px;
+                text-align: center;
+            }
+        }
+
+        &__coffeeList {}
+    }
+}
+
+@media screen and (max-width: 600px) {}
+
+@media screen and (max-width: 500px) {
+    .listPage {
+        &__banner {
+            min-height: 150px;
         }
     }
 }
