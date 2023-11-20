@@ -13,6 +13,8 @@ let options = {
     minimumFractionDigits: 2,
     maximumFractionDigits: 2,
 }
+let menu = false;
+let log = false;
 var coffeeCart = [];
 
 // debug commands that I create for debugging
@@ -88,7 +90,8 @@ let checkBanner = () => {
         $(".bannerAd__close__button").click(() => {
             $(".bannerAd").addClass("test");
             sessionStorage.setItem("banner", true);
-            bannerAd = true;
+            $(".bannerAd").css("display", "none");
+            bannerAd = false;
         })
         console.log("checkBanner function: no local storeage banner!");
     }
@@ -154,11 +157,11 @@ let cartNumer = () => {
         if (coffeeCart.length != 0) {
             let itemNumber = 0;
             console.log("cartnumber functution has run and has found array has more than one");
-            $(".keurigHeader__topNav__extraRight__cart__count").css("display", "inline-block");
+            $(".keurigHeader__topNav__extraRight__cart__count , .keurigHeader__topNav__mobileExtraRight__cart__count ").css("display", "inline-block");
             for (let i = 0; i < coffeeCart.length; i++) {
                 itemNumber += coffeeCart[i].qty;
             }
-            $(".keurigHeader__topNav__extraRight__cart__count").text(itemNumber);
+            $(".keurigHeader__topNav__extraRight__cart__count, .keurigHeader__topNav__mobileExtraRight__cart__count").text(itemNumber);
             if (itemNumber >= 10) {
                 $(".keurigHeader__topNav__extraRight__cart__count").css("font-size", "12.5px")
             } else {
@@ -166,7 +169,7 @@ let cartNumer = () => {
             }
         } else {
             console.log("cartnumber functution has run and has found arrary has none");
-            $(".keurigHeader__topNav__extraRight__cart__count").css("display", "none");
+            $(".keurigHeader__topNav__extraRight__cart__count, .keurigHeader__topNav__mobileExtraRight__cart__count").css("display", "none");
         }
     } catch (e) {
         console.error("Document.ready has failed Error: " + e);
@@ -360,8 +363,8 @@ let checkColorListener = () => {
 let cartPageappend = async () => {
     let cartSubtotal = 0;
     let orderQTY = 0;
-    let emptyCartPage = `<p style="margin-top:75px;">0 ITEM</p>
-    <h1 style="margin-bottom:75px;">You don't have any items in your shopping cart</h1>`;
+    let emptyCartPage = `<p class="cartHead" >0 ITEM</p>
+    <h1 class="cartDesc">You don't have any items in your shopping cart</h1>`;
     console.log(JSON.stringify(coffeeCart));
     if (!coffeeCart.length) {
         $(".cartPage__content").html(emptyCartPage);
@@ -409,6 +412,7 @@ let cartPageappend = async () => {
                                 </div>
                                 <div
                                     class="cartPage__content__cartinfo__cartDisplay__container__coffeelist__item__right__subtotal">
+                                    <h1>Order Total:</h1>
                                     <p class="cartPage__content__cartinfo__cartDisplay__container__coffeelist__item__right__subtotal__number">$${subtotal}</p>
                                 </div>
                             </div>
@@ -697,8 +701,6 @@ let accountHover = () => {
 
 }
 
-//
-
 // Modal create for user to create a new account using an email and password
 let accountModal = () => {
     $(".loginContainer__options__logIn, .loginContainer__options__signUp").click(() => {
@@ -907,6 +909,64 @@ let signoutClick = () => {
     });
 }
 
+let mobileMenu = () => {
+    $(".keurigHeader__topNav__menuBurger>img").click(() => {
+        let mobileMenuiDiv = $(".mobileMenu");
+        let topNavDiv = $(".keurigHeader__topNav")
+        let bannerAdD = $(".bannerAd");
+        let t = 0;
+        if (bannerAdD.css("display") == "none") {
+            t = topNavDiv.height();
+            $(".mobileMenu").css(
+                "height", `calc(100vh - ${t}px)`
+            )
+            $(".mobileMenu").css("top", `${t}px`);
+        } else {
+            t = topNavDiv.height() + bannerAdD.height();
+            $(".mobileMenu").css(
+                "height", `calc(100vh - ${t}px)`
+            )
+            $(".mobileMenu").css("top", `${t}px`);
+        }
+        if (menu == false) {
+            $(".keurigHeader__topNav__menuBurger>img").removeClass("open");
+            $(".closeMenu").addClass("open");
+            mobileMenuiDiv.css("right", "0px");
+            $('html, body').css({
+                overflow: 'hidden'
+            });
+            menu = true
+        } else {
+            $(".keurigHeader__topNav__menuBurger>img").removeClass("open");
+            $(".openMenu").addClass("open");
+            mobileMenuiDiv.css("right", "100%");
+            $('html, body').css({
+                overflow: 'auto'
+            });
+            menu = false
+        }
+    });
+}
+
+let mobileLog = () => {
+    $(".keurigHeader__topNav__mobileExtraRight__account").click(() => {
+        let logDiv = $(".mobileAcountLogin");
+        logDiv.css("top", "0px");
+        $('html, body').css({
+            overflow: 'hidden'
+        });
+
+    })
+    $(".mobileAcountLogin__close>i,.mobileAcountLogin__close>p").click(() => {
+        let logDiv = $(".mobileAcountLogin");
+        logDiv.css("top", "100%");
+        $('html, body').css({
+            overflow: 'auto'
+        });
+
+    })
+}
+
 // A function that contains a list of functions I want running before hashing the page
 let commands2LoadBeforePageHash = () => {
     debugCommands();
@@ -916,6 +976,8 @@ let commands2LoadBeforePageHash = () => {
     searchBarListener();
     checkBanner();
     setFooterHeight();
+    mobileMenu();
+    mobileLog();
 }
 
 // Firebase command that will run at start to see if user credentals already exist on the web browser. If so to store them into local storage.

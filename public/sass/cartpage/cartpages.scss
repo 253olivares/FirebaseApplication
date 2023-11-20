@@ -22,6 +22,16 @@
         align-items: center;
         margin-bottom: 30px;
 
+        .cartHead {
+            margin-top: 75px;
+            text-align: center;
+        }
+
+        .cartDesc {
+            margin-bottom: 75px;
+            text-align: center;
+        }
+
         &__shipping {
             width: 100%;
             align-items: center;
@@ -154,6 +164,12 @@
                                     margin-right: 35px;
                                     position: relative;
 
+
+                                    h1 {
+                                        display: none;
+                                        margin-bottom: 0px;
+                                    }
+
                                     p {
                                         font-style: italic;
                                         margin-bottom: 0px;
@@ -177,7 +193,7 @@
                             &__close {
                                 position: absolute;
                                 right: 35px;
-                                top: 10%;
+                                top: 20px;
                                 display: flex;
                                 align-items: center;
                                 color: $textDealGrey;
@@ -863,5 +879,468 @@
 
             }
         }
+    }
+}
+
+@media screen and (max-width: 990px) {
+    .cartPage {
+        &__content {
+            .cartHead {}
+
+            .cartDesc {}
+
+            &__cartinfo {
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                padding-left: 20px;
+                padding-right: 20px;
+
+                &__cartDisplay {
+                    width: 100%;
+                    max-width: none;
+                    margin-bottom: 30px;
+                }
+
+                &__total {
+                    width: 100%;
+                    max-width: none;
+
+                    &__container {
+                        width: 100%;
+
+                        &__header {
+                            padding: 15px 15px 0px 15px;
+
+                            h1 {
+                                font-size: 18px;
+                            }
+                        }
+
+                        &__subtotal {
+                            padding: 0px 15px 0px 15px;
+
+                            h1,
+                            p {
+                                font-size: 15px;
+                            }
+                        }
+
+                        .firstHr {
+                            margin: 0px 15px 15px 15px;
+                        }
+
+                        &__savings {
+                            padding: 0px 15px 1px 15px;
+
+                            h1,
+                            p {
+                                font-size: 15px;
+                            }
+                        }
+
+                        &__addCoupon {
+                            padding: 0px 15px 1px 15px;
+
+                            h1 {
+                                font-size: 15px;
+                            }
+                        }
+
+                        &__shipping {
+                            padding: 0px 15px 1px 15px;
+
+                            h1,
+                            p {
+                                font-size: 15px;
+                            }
+                        }
+
+                        &__tax {
+                            padding: 0px 15px 1px 15px;
+
+                            h1,
+                            p {
+                                font-size: 15px;
+                            }
+                        }
+
+                        &__orderTotal {
+                            padding: 8px 15px 8px 15px;
+                            margin: 0px 0px 10px 0px;
+                            border-radius: 0px;
+
+                            h1,
+                            p {
+                                font-size: 15px;
+                            }
+                        }
+
+                        .secondHr {
+                            margin: 0px 15px 5px 15px;
+                        }
+
+                        &__paymentButtons {
+                            padding: 0px 15px 15px 15px;
+                        }
+                    }
+
+
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .cartPage {
+        &__content {
+            &__cartinfo {
+                &__cartDisplay {
+                    &__container {
+                        &__coffeelist {
+                            &__item {
+                                height: auto;
+                                flex-direction: column;
+                                align-items: center;
+                                justify-content: center;
+                                padding: 25px 0px 30px 0px;
+
+                                &__left {
+                                    width: 100%;
+                                    flex-direction: column;
+                                    justify-content: center;
+                                    align-items: center;
+
+                                    &__image {
+                                        width: 40%;
+                                        min-width: 275px;
+                                        height: auto;
+                                    }
+
+                                    &__name {
+                                        width: 100%;
+                                        height: auto;
+                                        text-align: center;
+                                        padding: 0px 10% 0px 10%;
+
+                                        h1 {
+                                            font-size: 13px;
+                                            display: none;
+                                        }
+
+                                        p {
+                                            text-align: center;
+                                            font-size: 18px;
+                                            margin: 20px auto 20px auto;
+                                        }
+                                    }
+                                }
+
+                                &__right {
+                                    width: 100%;
+                                    flex-direction: column;
+                                    justify-content: center;
+                                    align-items: center;
+
+                                    &__unitPrice {
+                                        width: 100%;
+                                        margin: 25px auto 25px auto;
+                                        padding: 0px 10% 0px 10%;
+
+                                        p {
+                                            width: 50%;
+                                            text-align: right;
+                                        }
+
+                                        select {
+                                            width: 50%;
+                                        }
+                                    }
+
+                                    &__subtotal {
+                                        width: 100%;
+                                        padding: 0px 10% 0px 10%;
+                                        margin-right: 0px;
+                                        justify-content: space-between;
+
+                                        h1 {
+                                            display: block;
+                                            font-size: 15px;
+                                        }
+
+                                        p {
+                                            font-size: 15px;
+                                        }
+
+                                        .maxqty {
+                                            &::after {
+                                                right: 10%;
+                                                top: 100%;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    &__coupon {
+                        flex-direction: column;
+                        justify-content: center;
+                        padding: 20px 15px 20px 15px;
+
+                        p {
+                            width: 100%;
+                            text-align: left;
+                            margin-bottom: 10px;
+                        }
+
+                        &__couponInput {
+                            width: 100%;
+
+                            input {
+                                width: 75%;
+                            }
+
+                            button {
+                                width: 25%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .cartPage {
+        &__content {
+            .cartHead {
+                margin-top: 50px;
+            }
+
+            .cartDesc {
+                font-size: 25px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 475px) {
+    .cartPage {
+        &__banner {
+            height: 100px;
+        }
+
+        &__content {
+            &__cartinfo {
+                padding-left: 10px;
+                padding-right: 10px;
+
+                &__cartDisplay {
+                    &__container {
+                        padding: 15px;
+
+                        &__coffeelist {
+                            &__item {
+                                padding: 30px 0px 30px 0px;
+
+                                &__left {
+                                    &__image {
+                                        min-width: 225px
+                                    }
+
+                                    &__name {
+                                        padding: 0px 5% 0px 5%;
+
+                                        p {
+                                            font-size: 15px;
+                                        }
+                                    }
+                                }
+
+                                &__right {
+                                    &__unitPrice {
+                                        margin: 10px auto 20px auto;
+                                        padding: 0px 5% 0px 5%;
+                                    }
+
+                                    &__subtotal {
+                                        padding: 0px 5% 0px 5%;
+
+                                        .maxqty {
+                                            &::after {
+                                                right: 5%;
+                                                top: 100%;
+                                            }
+                                        }
+                                    }
+                                }
+
+                                &__close {
+                                    right: 20px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .cartPage {
+        &__content {
+            .cartDesc {
+                font-size: 20px;
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .cartPage {
+        &__content {
+            &__cartinfo {
+                padding-left: 5px;
+                padding-right: 5px;
+
+                &__cartDisplay {
+                    &__container {
+                        padding: 15px 8px 15px 8px;
+
+                        &__coffeelist {
+                            &__item {
+                                margin-top: 20px;
+                            }
+                        }
+                    }
+
+                    &__coupon {
+                        padding: 15px 13px 15px 13px;
+
+                        &__couponInput {
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            align-items: center;
+
+                            input {
+                                width: 100%;
+                                border: 3px solid $gray;
+                            }
+
+                            button {
+                                width: 100%;
+                                margin-top: 10px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 325px) {
+    .cartPage {
+        &__content {
+            &__cartinfo {
+                &__total {
+                    width: 100%;
+                    max-width: none;
+
+                    &__container {
+
+                        &__header {
+                            padding: 12px 12px 0px 12px;
+
+                            h1 {
+                                font-size: 16px;
+                            }
+                        }
+
+                        &__subtotal {
+                            padding: 0px 12px 0px 12px;
+
+                            h1,
+                            p {
+                                font-size: 13px;
+                            }
+                        }
+
+                        .firstHr {
+                            margin: 0px 12px 12px 12px;
+                        }
+
+                        &__savings {
+                            padding: 0px 12px 1px 12px;
+
+                            h1,
+                            p {
+                                font-size: 13px;
+                            }
+                        }
+
+                        &__addCoupon {
+                            padding: 0px 12px 1px 12px;
+
+                            h1 {
+                                font-size: 13px;
+                            }
+                        }
+
+                        &__shipping {
+                            padding: 0px 12px 1px 12px;
+
+                            h1,
+                            p {
+                                font-size: 13px;
+                            }
+                        }
+
+                        &__tax {
+                            padding: 0px 12px 1px 12px;
+
+                            h1,
+                            p {
+                                font-size: 13px;
+                            }
+                        }
+
+                        &__orderTotal {
+                            padding: 8px 12px 8px 12px;
+                            margin: 0px 0px 8px 0px;
+                            border-radius: 0px;
+
+                            h1,
+                            p {
+                                font-size: 13px;
+                            }
+                        }
+
+                        .secondHr {
+                            margin: 0px 12px 5px 12px;
+                        }
+
+                        &__paymentButtons {
+                            padding: 0px 12px 12px 12px;
+
+                            #checkoutPaypal {
+                                margin-top: 15px;
+                            }
+                        }
+                    }
+
+
+                }
+            }
+        }
+
     }
 }

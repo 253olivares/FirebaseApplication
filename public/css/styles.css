@@ -16,7 +16,7 @@ body {
   width: 100%;
   height: 100%;
   position: relative;
-  -ms-overflow-style: none;
+  -ms-overflow-style: hidden;
   scrollbar-width: none;
   background-color: #fff;
   scroll-behavior: smooth; }
@@ -35,7 +35,8 @@ p {
 
 #page-container {
   position: relative;
-  min-height: 100vh; }
+  min-height: 100vh;
+  overflow: hidden; }
 
 #app {
   width: 100%;
@@ -350,6 +351,12 @@ p {
         text-decoration: underline;
         cursor: pointer; }
 
+.mobileMenu {
+  display: none; }
+
+.mobileAcountLogin {
+  display: none; }
+
 .grayOverlay {
   display: none;
   position: absolute;
@@ -626,6 +633,124 @@ p {
     right: 18%; }
   .loginContainer::after {
     right: 9.5%; } }
+
+@media screen and (max-width: 990px) {
+  .mobileMenu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    position: absolute;
+    width: 100%;
+    height: calc(100vh - 120px);
+    right: 100%;
+    top: 119px;
+    background-color: #fff;
+    z-index: 10;
+    transition: right .7s ease-in-out; }
+    .mobileMenu__welcome {
+      border-top: 3px solid #c7c7c7;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 18px 0px 18px 15px;
+      background-color: #f0f0f0; }
+      .mobileMenu__welcome h1 {
+        font-size: 20px;
+        margin-bottom: 12px;
+        width: 100%;
+        text-align: left; }
+      .mobileMenu__welcome p {
+        font-size: 15px;
+        margin-bottom: 0px;
+        width: 100%;
+        text-align: left; }
+    .mobileMenu__options {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      width: 100%; }
+      .mobileMenu__options a {
+        width: 100%;
+        text-align: left;
+        position: relative;
+        text-decoration: none;
+        color: #000000;
+        padding: 8px 0px 8px 15px;
+        font-size: 14px;
+        border-bottom: 2px solid #c7c7c7; }
+      .mobileMenu__options .ar::after {
+        content: ">";
+        position: absolute;
+        right: 20px;
+        font-size: 14px; }
+    .mobileMenu__deal {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+      align-items: center;
+      padding: 10px 0px 10px 0px;
+      border-bottom: 2px solid #c7c7c7; }
+      .mobileMenu__deal a {
+        width: 100%;
+        text-align: left;
+        text-decoration: none;
+        color: #000000;
+        padding: 8px 0px 8px 15px;
+        font-size: 14px; }
+        .mobileMenu__deal a:first-child {
+          color: #cd2832; }
+    .mobileMenu__support {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 10px 0px 10px 0px;
+      width: 100%; }
+      .mobileMenu__support a {
+        width: 100%;
+        text-align: left;
+        text-decoration: none;
+        color: #000000;
+        padding: 5px 0px 5px 15px;
+        font-size: 14px; }
+  .mobileAcountLogin {
+    display: block;
+    position: fixed;
+    top: 100vh;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #fff;
+    z-index: 11;
+    transition: top .7s ease-in-out; }
+    .mobileAcountLogin__close {
+      display: flex;
+      justify-content: start;
+      align-items: center;
+      margin-bottom: 14px; }
+      .mobileAcountLogin__close i {
+        display: block;
+        background-image: url("../images/times-solid.svg");
+        background-size: 100% 100%;
+        filter: invert(0%) sepia(3%) saturate(13%) hue-rotate(77deg) brightness(97%) contrast(103%);
+        width: 20px;
+        height: 20px;
+        margin-right: 10px; }
+        .mobileAcountLogin__close i:hover {
+          cursor: pointer; }
+      .mobileAcountLogin__close p {
+        font-size: 16px;
+        line-height: 18px;
+        display: table-cell;
+        vertical-align: middle;
+        margin-bottom: 0px; }
+        .mobileAcountLogin__close p:hover {
+          cursor: pointer; } }
 
 .bannerAd {
   width: 100%;
@@ -1343,7 +1468,7 @@ p {
       width: 100%;
       display: flex;
       flex-direction: column;
-      height: 100px;
+      min-height: 100px;
       color: #000000; }
       .footer__container__bottomInfo__copyright {
         display: flex;
@@ -2014,7 +2139,6 @@ p {
         min-width: 250px;
         top: 99%;
         left: -1px;
-        display: none;
         background-color: #fff;
         text-align: center;
         padding: 10px 0px 20px 0px;
@@ -2220,7 +2344,20 @@ p {
       padding: 13px;
       font-size: 13.5px; }
       .listPage__filterBanner__mobile a:hover {
-        border: 3px solid #000000; } }
+        border: 3px solid #000000; }
+  .listPage__coffeeList__item {
+    padding: 10px 10px 70px 10px; }
+    .listPage__coffeeList__item:hover > .changeAddCart {
+      border: none; }
+    .listPage__coffeeList__item__addCart {
+      position: absolute;
+      top: auto;
+      bottom: 0;
+      border: none;
+      padding: 0px 0px 20px 0px;
+      background-color: transparent; }
+    .listPage__coffeeList__item .changeAddCart {
+      display: block; } }
 
 @media screen and (max-width: 800px) {
   .listPage__banner {
@@ -2232,9 +2369,20 @@ p {
       font-size: 30px;
       text-align: center; } }
 
+@media screen and (max-width: 559px) {
+  .listPage__coffeeList__item {
+    min-width: 300px; } }
+
 @media screen and (max-width: 500px) {
   .listPage__banner {
     min-height: 150px; } }
+
+@media screen and (max-width: 325px) {
+  .listPage__coffeeList {
+    padding-left: 0px;
+    padding-right: 0px; }
+    .listPage__coffeeList__item {
+      min-width: 260px; } }
 
 .cartPage {
   width: 100%;
@@ -2254,6 +2402,12 @@ p {
     justify-content: center;
     align-items: center;
     margin-bottom: 30px; }
+    .cartPage__content .cartHead {
+      margin-top: 75px;
+      text-align: center; }
+    .cartPage__content .cartDesc {
+      margin-bottom: 75px;
+      text-align: center; }
     .cartPage__content__shipping {
       width: 100%;
       align-items: center;
@@ -2350,6 +2504,9 @@ p {
                   justify-content: end;
                   margin-right: 35px;
                   position: relative; }
+                  .cartPage__content__cartinfo__cartDisplay__container__coffeelist__item__right__subtotal h1 {
+                    display: none;
+                    margin-bottom: 0px; }
                   .cartPage__content__cartinfo__cartDisplay__container__coffeelist__item__right__subtotal p {
                     font-style: italic;
                     margin-bottom: 0px; }
@@ -2365,7 +2522,7 @@ p {
               .cartPage__content__cartinfo__cartDisplay__container__coffeelist__item__close {
                 position: absolute;
                 right: 35px;
-                top: 10%;
+                top: 20px;
                 display: flex;
                 align-items: center;
                 color: #706f73; }
@@ -2694,3 +2851,240 @@ p {
       font-size: 13px; }
     .cartPage__content__cartinfo__total__container__paymentButtons #checkoutPaypal {
       font-size: 13px; } }
+
+@media screen and (max-width: 990px) {
+  .cartPage__content__cartinfo {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px; }
+    .cartPage__content__cartinfo__cartDisplay {
+      width: 100%;
+      max-width: none;
+      margin-bottom: 30px; }
+    .cartPage__content__cartinfo__total {
+      width: 100%;
+      max-width: none; }
+      .cartPage__content__cartinfo__total__container {
+        width: 100%; }
+        .cartPage__content__cartinfo__total__container__header {
+          padding: 15px 15px 0px 15px; }
+          .cartPage__content__cartinfo__total__container__header h1 {
+            font-size: 18px; }
+        .cartPage__content__cartinfo__total__container__subtotal {
+          padding: 0px 15px 0px 15px; }
+          .cartPage__content__cartinfo__total__container__subtotal h1,
+          .cartPage__content__cartinfo__total__container__subtotal p {
+            font-size: 15px; }
+        .cartPage__content__cartinfo__total__container .firstHr {
+          margin: 0px 15px 15px 15px; }
+        .cartPage__content__cartinfo__total__container__savings {
+          padding: 0px 15px 1px 15px; }
+          .cartPage__content__cartinfo__total__container__savings h1,
+          .cartPage__content__cartinfo__total__container__savings p {
+            font-size: 15px; }
+        .cartPage__content__cartinfo__total__container__addCoupon {
+          padding: 0px 15px 1px 15px; }
+          .cartPage__content__cartinfo__total__container__addCoupon h1 {
+            font-size: 15px; }
+        .cartPage__content__cartinfo__total__container__shipping {
+          padding: 0px 15px 1px 15px; }
+          .cartPage__content__cartinfo__total__container__shipping h1,
+          .cartPage__content__cartinfo__total__container__shipping p {
+            font-size: 15px; }
+        .cartPage__content__cartinfo__total__container__tax {
+          padding: 0px 15px 1px 15px; }
+          .cartPage__content__cartinfo__total__container__tax h1,
+          .cartPage__content__cartinfo__total__container__tax p {
+            font-size: 15px; }
+        .cartPage__content__cartinfo__total__container__orderTotal {
+          padding: 8px 15px 8px 15px;
+          margin: 0px 0px 10px 0px;
+          border-radius: 0px; }
+          .cartPage__content__cartinfo__total__container__orderTotal h1,
+          .cartPage__content__cartinfo__total__container__orderTotal p {
+            font-size: 15px; }
+        .cartPage__content__cartinfo__total__container .secondHr {
+          margin: 0px 15px 5px 15px; }
+        .cartPage__content__cartinfo__total__container__paymentButtons {
+          padding: 0px 15px 15px 15px; } }
+
+@media screen and (max-width: 800px) {
+  .cartPage__content__cartinfo__cartDisplay__container__coffeelist__item {
+    height: auto;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 25px 0px 30px 0px; }
+    .cartPage__content__cartinfo__cartDisplay__container__coffeelist__item__left {
+      width: 100%;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center; }
+      .cartPage__content__cartinfo__cartDisplay__container__coffeelist__item__left__image {
+        width: 40%;
+        min-width: 275px;
+        height: auto; }
+      .cartPage__content__cartinfo__cartDisplay__container__coffeelist__item__left__name {
+        width: 100%;
+        height: auto;
+        text-align: center;
+        padding: 0px 10% 0px 10%; }
+        .cartPage__content__cartinfo__cartDisplay__container__coffeelist__item__left__name h1 {
+          font-size: 13px;
+          display: none; }
+        .cartPage__content__cartinfo__cartDisplay__container__coffeelist__item__left__name p {
+          text-align: center;
+          font-size: 18px;
+          margin: 20px auto 20px auto; }
+    .cartPage__content__cartinfo__cartDisplay__container__coffeelist__item__right {
+      width: 100%;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center; }
+      .cartPage__content__cartinfo__cartDisplay__container__coffeelist__item__right__unitPrice {
+        width: 100%;
+        margin: 25px auto 25px auto;
+        padding: 0px 10% 0px 10%; }
+        .cartPage__content__cartinfo__cartDisplay__container__coffeelist__item__right__unitPrice p {
+          width: 50%;
+          text-align: right; }
+        .cartPage__content__cartinfo__cartDisplay__container__coffeelist__item__right__unitPrice select {
+          width: 50%; }
+      .cartPage__content__cartinfo__cartDisplay__container__coffeelist__item__right__subtotal {
+        width: 100%;
+        padding: 0px 10% 0px 10%;
+        margin-right: 0px;
+        justify-content: space-between; }
+        .cartPage__content__cartinfo__cartDisplay__container__coffeelist__item__right__subtotal h1 {
+          display: block;
+          font-size: 15px; }
+        .cartPage__content__cartinfo__cartDisplay__container__coffeelist__item__right__subtotal p {
+          font-size: 15px; }
+        .cartPage__content__cartinfo__cartDisplay__container__coffeelist__item__right__subtotal .maxqty::after {
+          right: 10%;
+          top: 100%; }
+  .cartPage__content__cartinfo__cartDisplay__coupon {
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px 15px 20px 15px; }
+    .cartPage__content__cartinfo__cartDisplay__coupon p {
+      width: 100%;
+      text-align: left;
+      margin-bottom: 10px; }
+    .cartPage__content__cartinfo__cartDisplay__coupon__couponInput {
+      width: 100%; }
+      .cartPage__content__cartinfo__cartDisplay__coupon__couponInput input {
+        width: 75%; }
+      .cartPage__content__cartinfo__cartDisplay__coupon__couponInput button {
+        width: 25%; } }
+
+@media screen and (max-width: 550px) {
+  .cartPage__content .cartHead {
+    margin-top: 50px; }
+  .cartPage__content .cartDesc {
+    font-size: 25px; } }
+
+@media screen and (max-width: 475px) {
+  .cartPage__banner {
+    height: 100px; }
+  .cartPage__content__cartinfo {
+    padding-left: 10px;
+    padding-right: 10px; }
+    .cartPage__content__cartinfo__cartDisplay__container {
+      padding: 15px; }
+      .cartPage__content__cartinfo__cartDisplay__container__coffeelist__item {
+        padding: 30px 0px 30px 0px; }
+        .cartPage__content__cartinfo__cartDisplay__container__coffeelist__item__left__image {
+          min-width: 225px; }
+        .cartPage__content__cartinfo__cartDisplay__container__coffeelist__item__left__name {
+          padding: 0px 5% 0px 5%; }
+          .cartPage__content__cartinfo__cartDisplay__container__coffeelist__item__left__name p {
+            font-size: 15px; }
+        .cartPage__content__cartinfo__cartDisplay__container__coffeelist__item__right__unitPrice {
+          margin: 10px auto 20px auto;
+          padding: 0px 5% 0px 5%; }
+        .cartPage__content__cartinfo__cartDisplay__container__coffeelist__item__right__subtotal {
+          padding: 0px 5% 0px 5%; }
+          .cartPage__content__cartinfo__cartDisplay__container__coffeelist__item__right__subtotal .maxqty::after {
+            right: 5%;
+            top: 100%; }
+        .cartPage__content__cartinfo__cartDisplay__container__coffeelist__item__close {
+          right: 20px; } }
+
+@media screen and (max-width: 425px) {
+  .cartPage__content .cartDesc {
+    font-size: 20px;
+    padding-left: 10px;
+    padding-right: 10px; } }
+
+@media screen and (max-width: 350px) {
+  .cartPage__content__cartinfo {
+    padding-left: 5px;
+    padding-right: 5px; }
+    .cartPage__content__cartinfo__cartDisplay__container {
+      padding: 15px 8px 15px 8px; }
+      .cartPage__content__cartinfo__cartDisplay__container__coffeelist__item {
+        margin-top: 20px; }
+    .cartPage__content__cartinfo__cartDisplay__coupon {
+      padding: 15px 13px 15px 13px; }
+      .cartPage__content__cartinfo__cartDisplay__coupon__couponInput {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center; }
+        .cartPage__content__cartinfo__cartDisplay__coupon__couponInput input {
+          width: 100%;
+          border: 3px solid #c7c7c7; }
+        .cartPage__content__cartinfo__cartDisplay__coupon__couponInput button {
+          width: 100%;
+          margin-top: 10px; } }
+
+@media screen and (max-width: 325px) {
+  .cartPage__content__cartinfo__total {
+    width: 100%;
+    max-width: none; }
+    .cartPage__content__cartinfo__total__container__header {
+      padding: 12px 12px 0px 12px; }
+      .cartPage__content__cartinfo__total__container__header h1 {
+        font-size: 16px; }
+    .cartPage__content__cartinfo__total__container__subtotal {
+      padding: 0px 12px 0px 12px; }
+      .cartPage__content__cartinfo__total__container__subtotal h1,
+      .cartPage__content__cartinfo__total__container__subtotal p {
+        font-size: 13px; }
+    .cartPage__content__cartinfo__total__container .firstHr {
+      margin: 0px 12px 12px 12px; }
+    .cartPage__content__cartinfo__total__container__savings {
+      padding: 0px 12px 1px 12px; }
+      .cartPage__content__cartinfo__total__container__savings h1,
+      .cartPage__content__cartinfo__total__container__savings p {
+        font-size: 13px; }
+    .cartPage__content__cartinfo__total__container__addCoupon {
+      padding: 0px 12px 1px 12px; }
+      .cartPage__content__cartinfo__total__container__addCoupon h1 {
+        font-size: 13px; }
+    .cartPage__content__cartinfo__total__container__shipping {
+      padding: 0px 12px 1px 12px; }
+      .cartPage__content__cartinfo__total__container__shipping h1,
+      .cartPage__content__cartinfo__total__container__shipping p {
+        font-size: 13px; }
+    .cartPage__content__cartinfo__total__container__tax {
+      padding: 0px 12px 1px 12px; }
+      .cartPage__content__cartinfo__total__container__tax h1,
+      .cartPage__content__cartinfo__total__container__tax p {
+        font-size: 13px; }
+    .cartPage__content__cartinfo__total__container__orderTotal {
+      padding: 8px 12px 8px 12px;
+      margin: 0px 0px 8px 0px;
+      border-radius: 0px; }
+      .cartPage__content__cartinfo__total__container__orderTotal h1,
+      .cartPage__content__cartinfo__total__container__orderTotal p {
+        font-size: 13px; }
+    .cartPage__content__cartinfo__total__container .secondHr {
+      margin: 0px 12px 5px 12px; }
+    .cartPage__content__cartinfo__total__container__paymentButtons {
+      padding: 0px 12px 12px 12px; }
+      .cartPage__content__cartinfo__total__container__paymentButtons #checkoutPaypal {
+        margin-top: 15px; } }
