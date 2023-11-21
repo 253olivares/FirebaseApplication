@@ -703,21 +703,22 @@ let accountHover = () => {
 
 // Modal create for user to create a new account using an email and password
 let accountModal = () => {
-    $(".loginContainer__options__logIn, .loginContainer__options__signUp").click(() => {
+    $(".loginContainer__options__logIn, .loginContainer__options__signUp , .mobileAcountLogin__options__login, .mobileAcountLogin__options__signup ").click(() => {
+        console.log("log Model: clicked");
         $(event.target).parent().children().removeClass("lCSelected")
         $(event.target).addClass("lCSelected");
         let value = $(event.target).attr("value")
         switch (value) {
             case "signUp":
-                $(".loginContainer__formsSignup").css("display", "block");
+                $(".loginContainer__formsSignup, .mobileAcountLogin__formsSignUp").css("display", "flex");
                 $(".loginContainer__formsSignUpInformation").css("display", "flex");
-                $(".loginContainer__formsLogin").css("display", "none");
+                $(".loginContainer__formsLogin, .mobileAcountLogin__formsLogin").css("display", "none");
                 $(".loginContainer__formsLoginInformation").css("display", "none");
                 break;
             case "logIn":
-                $(".loginContainer__formsLogin").css("display", "block");
+                $(".loginContainer__formsLogin, .mobileAcountLogin__formsLogin").css("display", "flex");
                 $(".loginContainer__formsLoginInformation").css("display", "flex");
-                $(".loginContainer__formsSignup").css("display", "none");
+                $(".loginContainer__formsSignup, .mobileAcountLogin__formsSignUp").css("display", "none");
                 $(".loginContainer__formsSignUpInformation").css("display", "none");
                 break;
 
@@ -832,6 +833,111 @@ let signup = () => {
     }
 }
 
+let mobilesignup = () => {
+
+    let fname = $("#mobilefname-Signup").val().trim();
+    let lname = $("#mobilelname-Signup").val().trim();
+    let email = $("#mobileemail-Signup").val().trim();
+    let password = $("#mobilepassword-Signup").val().trim();
+    let specials = $("#mobilecheckboxSpecials").is(':checked');
+    let remember = $("#mobilecheckboxKeep").is(':checked');
+
+
+    if (remember == true) {
+        firebase
+            .auth()
+            .setPersistence(firebase.auth.Auth.Persistence.LOCAL)
+            .then(() => {
+                return firebase
+                    .auth()
+                    .createUserWithEmailAndPassword(email, password)
+                    .then((userCredential) => {
+                        $("#mobilefname-Signup").val("");
+                        $("#mobilelname-Signup").val("");
+                        $("#mobileemail-Signup").val("");
+                        $("#mobilepassword-Signup").val("");
+                        _db
+                            .collection("USERS")
+                            .doc(`${userCredential.user.uid}`)
+                            .set({
+                                id: userCredential.user.uid,
+                                fname: fname,
+                                lname: lname,
+                                email: email,
+                                password: password,
+                                specials: specials,
+                                cart: []
+                            })
+                            .then(() => {
+                                console.log("Signup: Document has successfully been written!");
+                                loginStatus = true;
+                            })
+                            .catch((error) => {
+                                console.error("SignUp: Error writing document: ", error);
+                            });
+                    })
+                    .catch((error) => {
+                        var errorCode = error.code;
+                        var errorMessage = error.message;
+                        console.log(errorMessage);
+                        alert(errorCode + " " + errorMessage);
+                    });
+            })
+            .catch((error) => {
+                // Handle Errors here.
+                var errorCode = error.code;
+                var errorMessage = error.message;
+                console.log(errorCode, errorMessage);
+            })
+    } else {
+        firebase
+            .auth()
+            .setPersistence(firebase.auth.Auth.Persistence.SESSION)
+            .then(() => {
+                return firebase
+                    .auth()
+                    .createUserWithEmailAndPassword(email, password)
+                    .then((userCredential) => {
+                        $("#mobilefname-Signup").val("");
+                        $("#mobilelname-Signup").val("");
+                        $("#mobileemail-Signup").val("");
+                        $("#mobilepassword-Signup").val("");
+                        _db
+                            .collection("USERS")
+                            .doc(`${userCredential.user.uid}`)
+                            .set({
+                                id: userCredential.user.uid,
+                                fname: fname,
+                                lname: lname,
+                                email: email,
+                                password: password,
+                                specials: specials,
+                                cart: []
+                            })
+                            .then(() => {
+                                console.log("Signup: Document has successfully been written!");
+                                loginStatus = true;
+                            })
+                            .catch((error) => {
+                                console.error("SignUp: Error writing document: ", error);
+                            });
+                    })
+                    .catch((error) => {
+                        var errorCode = error.code;
+                        var errorMessage = error.message;
+                        console.log(errorMessage);
+                        alert(errorCode + " " + errorMessage);
+                    });
+            })
+            .catch((error) => {
+                // Handle Errors here.
+                var errorCode = error.code;
+                var errorMessage = error.message;
+                console.log(errorCode, errorMessage);
+            })
+    }
+}
+
 let login = () => {
     let email = $("#email-login").val();
     let pass = $("#password-Login").val();
@@ -873,6 +979,64 @@ let login = () => {
                     .then(() => {
                         $("#email-login").val("")
                         $("#password-Login").val("")
+                    })
+                    .catch((error) => {
+                        var errorCode = error.code;
+                        var errorMessage = error.message;
+                        console.log(errorMessage);
+                        alert(errorCode + " " + errorMessage);
+                    });
+            })
+            .catch((error) => {
+                // Handle Errors here.
+                var errorCode = error.code;
+                var errorMessage = error.message;
+                console.log(errorCode, errorMessage);
+            })
+    }
+}
+
+let mobileLogin = () => {
+    let email = $("#mobileEmail-login").val();
+    let pass = $("#mobilePassword-Login").val();
+    let remember = $("#mobilecheckboxRemeber").is(':checked');
+
+    if (remember == true) {
+        firebase
+            .auth()
+            .setPersistence(firebase.auth.Auth.Persistence.LOCAL)
+            .then(() => {
+                return firebase
+                    .auth()
+                    .signInWithEmailAndPassword(email, pass)
+                    .then(() => {
+                        $("#mobileEmail-login").val("");
+                        $("#mobilePassword-Login").val("");
+                    })
+                    .catch((error) => {
+                        var errorCode = error.code;
+                        var errorMessage = error.message;
+                        console.log(errorMessage);
+                        alert(errorCode + " " + errorMessage);
+                    });
+            })
+            .catch((error) => {
+                // Handle Errors here.
+                var errorCode = error.code;
+                var errorMessage = error.message;
+                console.log(errorCode, errorMessage);
+            })
+    } else {
+        firebase
+            .auth()
+            .setPersistence(firebase.auth.Auth.Persistence.SESSION)
+            .then(() => {
+                return firebase
+                    .auth()
+                    .signInWithEmailAndPassword(email, pass)
+                    .then(() => {
+                        $("#mobileEmail-login").val("");
+                        $("#mobilePassword-Login").val("");
                     })
                     .catch((error) => {
                         var errorCode = error.code;
@@ -955,7 +1119,7 @@ let mobileLog = () => {
         $('html, body').css({
             overflow: 'hidden'
         });
-
+        accountModal();
     })
     $(".mobileAcountLogin__close>i,.mobileAcountLogin__close>p").click(() => {
         let logDiv = $(".mobileAcountLogin");
@@ -986,12 +1150,14 @@ let initFirebase = async (callback) => {
     firebase.auth().onAuthStateChanged(async (user) => {
         if (user) {
             console.log("User is logged in");
+            loginStatus = true;
             $(".keurigHeader__topNav__extraRight__signOut").css("display", "flex");
             $(".keurigHeader__topNav__extraRight__account").css("display", "flex");
             $(".keurigHeader__topNav__extraRight__profile").css("display", "none");
+            $(".keurigHeader__topNav__mobileExtraRight__account").css("display", "none");
+            $(".keurigHeader__topNav__mobileExtraRight__signout").css("display", "block");
             await _db.collection("USERS").doc(user.uid).get().then(async (doc) => {
                 console.log(doc.data());
-                loginStatus = true;
                 loggedUser = doc.data();
                 if (doc.data().cart.length == 0 && localStorage.getItem("coffeeCart") != 0) {
                     await _db.collection("USERS").doc(loggedUser.id).update({
@@ -1032,6 +1198,8 @@ let initFirebase = async (callback) => {
             $(".keurigHeader__topNav__extraRight__signOut").css("display", "none");
             $(".keurigHeader__topNav__extraRight__account").css("display", "none");
             $(".keurigHeader__topNav__extraRight__profile").css("display", "flex");
+            $(".keurigHeader__topNav__mobileExtraRight__account").css("display", "block");
+            $(".keurigHeader__topNav__mobileExtraRight__signout").css("display", "none");
             loginStatus = false;
             loggedUser = null;
             if (!localStorage.getItem("coffeeCart").length == 0) {

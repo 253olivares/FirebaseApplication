@@ -55,6 +55,8 @@
           <img class="keurigHeader__topNav__mainButton__logo" src="./images/Logo.svg" alt="Logo for the Keurig website">
         </a>
         <div class="keurigHeader__topNav__mobileExtraRight">
+          <img class="keurigHeader__topNav__mobileExtraRight__signout" src="./images/image2vector.svg  "
+            alt="Signout icon">
           <img class="keurigHeader__topNav__mobileExtraRight__account" src="./images/profile.svg" alt="Profile icon">
           <a href="#/cart">
             <div class="keurigHeader__topNav__mobileExtraRight__cart">
@@ -259,7 +261,7 @@
             required>
           <div class="loginContainer__formsSignup__checkbox">
             <input type="checkbox" class="chec" name="checkboxSpecials" id="checkboxSpecials">
-            <label for="checkboxSpecials">Recieve specil offer emails</label>
+            <label for="checkboxSpecials">Recieve special offer emails</label>
           </div>
           <div class="loginContainer__formsSignup__checkbox2">
             <input type="checkbox" class="chec" name="checkboxKeep" id="checkboxKeep">
@@ -336,6 +338,46 @@
       <div class="mobileAcountLogin__close">
         <i></i>
         <p>Close</p>
+      </div>
+      <div class="mobileAcountLogin__options">
+        <button class="mobileAcountLogin__options__login lCSelected" value="logIn">LOG IN</button>
+        <button class="mobileAcountLogin__options__signup" value="signUp">SIGN UP</button>
+      </div>
+      <div class="mobileAcountLogin__formsSignUp">
+        <form onsubmit="return false">
+          <input class="mobileInputEnter" placeholder="First Name" name="mobilefname-Signup" id="mobilefname-Signup"
+            required>
+          <input class="mobileInputEnter" placeholder="Last Name" name="mobilelname-Signup" id="mobilelname-Signup"
+            required>
+          <input class="mobileInputEnter" type="email" placeholder="Email*" name="mobileemail-Signup"
+            id="mobileemail-Signup" required>
+          <input class="mobileInputEnter" type="password" placeholder="Passowrd*" name="mobilepassword-Signup"
+            id="mobilepassword-Signup" required>
+          <div class="mobileAcountLogin__formsSignUp__checkbox">
+            <input type="checkbox" class="chec" name="MobilecheckboxSpecials" id="mobilecheckboxSpecials">
+            <label for="mobilecheckboxSpecials">Recieve special offer emails</label>
+          </div>
+          <div class="mobileAcountLogin__formsSignUp__checkbox2">
+            <input type="checkbox" class="chec" name="mobilecheckboxKeep" id="mobilecheckboxKeep">
+            <label for="mobilecheckboxKeep">Keep me signed in.</label>
+          </div>
+          <button class="mobileAcountLogin__formsSignUp__signUp" onclick="mobilesignup()"> CREATE AN ACCOUNT</button>
+        </form>
+        <p>By clicking "Create and Account" I accept Keurig <a href="#">Terms of Use</a> and <a href="#">Privacy
+            Policy</a></p>
+      </div>
+      <div class="mobileAcountLogin__formsLogin">
+        <form onsubmit="return false">
+          <input class="mobileInputEnter" type="email" name="email-login" placeholder="Email*" id="mobileEmail-login">
+          <input class="mobileInputEnter" type="password" name="password-Login" placeholder="Password*"
+            id="mobilePassword-Login">
+          <div class="mobileAcountLogin__formsLogin__checkbox">
+            <input type="checkbox" class="chec" id="mobilecheckboxRemeber" name="mobilecheckboxRemeber" value="remeber">
+            <label for="mobilecheckboxRemeber">Keep me signed in.</label>
+          </div>
+          <button class="mobileAcountLogin__formsLogin__signIn" onclick="mobileLogin()">SIGN IN</button>
+        </form>
+        <button class="mobileAcountLogin__formsLogin__forgotPass"> Forgot Password?</button>
       </div>
     </div>
 

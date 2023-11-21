@@ -246,6 +246,7 @@ p {
         padding: 15px 20px 15px 20px;
         position: relative;
         display: none;
+        flex-direction: column;
 
         &:after {
             content: "";
@@ -331,6 +332,7 @@ p {
         padding: 15px 20px 15px 20px;
         position: relative;
         display: block;
+        flex-direction: column;
 
         &:after {
             content: "";
@@ -1180,15 +1182,17 @@ p {
             justify-content: start;
             align-items: center;
             margin-bottom: 14px;
+            margin-left: 10px;
+            margin-top: 18px;
 
             i {
                 display: block;
                 background-image: url('../images/times-solid.svg');
                 background-size: 100% 100%;
                 filter: $filterBlack;
-                width: 20px;
-                height: 20px;
-                margin-right: 10px;
+                width: 22px;
+                height: 22px;
+                margin-right: 8px;
 
                 &:hover {
                     cursor: pointer;
@@ -1196,11 +1200,216 @@ p {
             }
 
             p {
-                font-size: 16px;
-                line-height: 18px;
+                font-size: 18px;
+                line-height: 22px;
                 display: table-cell;
                 vertical-align: middle;
                 margin-bottom: 0px;
+
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+
+        &__options {
+            width: 100%;
+            padding: 0px 10px 0px 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 15px;
+
+            button {
+                width: 50%;
+                padding: 15px 0px 15px 0px;
+                font-size: 16px;
+                background-color: $white;
+                border: none;
+                color: $textDealGrey;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+
+            .lCSelected {
+                background-color: $burg;
+                color: $textBlack;
+
+            }
+        }
+
+        &__formsSignUp {
+            width: 100%;
+            padding: 0px 10px 0px 10px;
+            position: relative;
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            &:after {
+                content: "";
+                background-image: url('../images/28911.svg');
+                background-size: 100% 100%;
+                filter: $filterWhite;
+                width: 25px;
+                height: 25px;
+                position: absolute;
+                display: block;
+                top: -40px;
+                left: calc(75% - 12.5px);
+                z-index: 15;
+            }
+
+            form {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: start;
+                align-items: center;
+
+                .mobileInputEnter {
+                    width: 100%;
+                    padding: 10px 13px 10px 13px;
+                    font-size: 16px;
+                    margin-bottom: 10px;
+                }
+            }
+
+            &__checkbox,
+            &__checkbox2 {
+                display: flex;
+                justify-content: start;
+                align-items: center;
+                margin: 5px 0px 5px 0px;
+                width: 100%;
+
+                #mobilecheckboxSpecials,
+                #mobilecheckboxKeep {
+                    width: 22px;
+                    height: 22px;
+                    margin-right: 10px;
+                }
+
+                label {
+                    color: $textDealGrey;
+                    font-size: 16px;
+                    line-height: 22px;
+                    display: table-cell;
+                    vertical-align: middle;
+                }
+            }
+
+            &__signUp {
+                background-color: $darkBrown;
+                width: 100%;
+                text-align: center;
+                font-weight: bold;
+                font-size: 16px;
+                color: $white;
+                border-radius: 25px;
+                padding: 10px 0px 10px 0px;
+                margin: 15px 0px 15px 0px;
+            }
+
+            p {
+                margin-bottom: 0px;
+                color: $textDealGrey;
+                font-size: 13px;
+                align-items: center;
+                margin: auto;
+                text-align: center;
+
+                a {
+                    color: $brown;
+                }
+            }
+        }
+
+        &__formsLogin {
+            width: 100%;
+            padding: 0px 10px 0px 10px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 10px;
+
+            &:after {
+                content: "";
+                background-image: url('../images/28911.svg');
+                background-size: 100% 100%;
+                filter: $filterWhite;
+                width: 25px;
+                height: 25px;
+                position: absolute;
+                display: block;
+                top: -40px;
+                left: calc(25% - 12.5px);
+                z-index: 15;
+            }
+
+            form {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: start;
+                align-items: center;
+
+                .mobileInputEnter {
+                    width: 100%;
+                    padding: 10px 13px 10px 13px;
+                    font-size: 16px;
+                    margin-bottom: 10px;
+                }
+            }
+
+            &__checkbox {
+                width: 100%;
+                display: flex;
+                justify-content: start;
+                align-items: center;
+                margin: 8px 0px 8px 0px;
+
+                #mobilecheckboxRemeber {
+                    width: 22px;
+                    height: 22px;
+                    margin-right: 10px;
+                }
+
+                label {
+                    color: $textDealGrey;
+                    font-size: 16px;
+                    line-height: 22px;
+                    display: table-cell;
+                    vertical-align: middle;
+                }
+            }
+
+            &__signIn {
+                background-color: $darkBrown;
+                width: 100%;
+                text-align: center;
+                font-weight: bold;
+                font-size: 16px;
+                color: $white;
+                border-radius: 25px;
+                padding: 10px 0px 10px 0px;
+                margin: 15px 0px 15px 0px;
+            }
+
+            &__forgotPass {
+                border: none;
+                text-decoration: underline;
+                color: $blueDiscount;
+                text-align: center;
+                margin: 0px auto 0px auto;
+                width: 100%;
+                background-color: transparent;
+                font-size: 16px;
 
                 &:hover {
                     cursor: pointer;

@@ -806,7 +806,6 @@
                     img {
                         width: 30px;
                         height: 30px;
-                        height: 30px;
                         filter: $filterBlack;
                     }
 
@@ -835,6 +834,21 @@
 
                 &__cart {
                     display: flex;
+                }
+
+                &__account {
+                    display: none;
+                }
+
+                &__signout {
+                    display: none;
+                    width: 30px;
+                    height: 30px;
+
+                    &:hover {
+                        cursor: pointer;
+                        background-color: $lightBiege;
+                    }
                 }
             }
 
@@ -990,6 +1004,13 @@
                     margin-left: 0px;
                     padding: 8px;
                 }
+
+                &__signout {
+                    width: 40px;
+                    height: 40px;
+                    margin-left: 0px;
+                    padding: 8px;
+                }
             }
 
         }
@@ -1043,6 +1064,12 @@
                 }
 
                 &__account {
+                    width: 37.5px;
+                    height: 37.5px;
+                    padding: 7px;
+                }
+
+                &__signout {
                     width: 37.5px;
                     height: 37.5px;
                     padding: 7px;
