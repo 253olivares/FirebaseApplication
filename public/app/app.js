@@ -4,7 +4,7 @@ var alreadyRunning = false;
 var topNav;
 var loginStatus = false;
 var loggedUser;
-var shippingCost = 60.00;
+var shippingCost = 0.00;
 var coupon = false;
 var couponCodes = [];
 var savings = 0.00;
@@ -852,10 +852,7 @@ let mobilesignup = () => {
                     .auth()
                     .createUserWithEmailAndPassword(email, password)
                     .then((userCredential) => {
-                        $("#mobilefname-Signup").val("");
-                        $("#mobilelname-Signup").val("");
-                        $("#mobileemail-Signup").val("");
-                        $("#mobilepassword-Signup").val("");
+
                         _db
                             .collection("USERS")
                             .doc(`${userCredential.user.uid}`)
@@ -871,6 +868,15 @@ let mobilesignup = () => {
                             .then(() => {
                                 console.log("Signup: Document has successfully been written!");
                                 loginStatus = true;
+                                $("#mobilefname-Signup").val("");
+                                $("#mobilelname-Signup").val("");
+                                $("#mobileemail-Signup").val("");
+                                $("#mobilepassword-Signup").val("");
+                                let logDiv = $(".mobileAcountLogin");
+                                logDiv.css("top", "100%");
+                                $('html, body').css({
+                                    overflow: 'auto'
+                                });
                             })
                             .catch((error) => {
                                 console.error("SignUp: Error writing document: ", error);
@@ -898,10 +904,7 @@ let mobilesignup = () => {
                     .auth()
                     .createUserWithEmailAndPassword(email, password)
                     .then((userCredential) => {
-                        $("#mobilefname-Signup").val("");
-                        $("#mobilelname-Signup").val("");
-                        $("#mobileemail-Signup").val("");
-                        $("#mobilepassword-Signup").val("");
+
                         _db
                             .collection("USERS")
                             .doc(`${userCredential.user.uid}`)
@@ -916,6 +919,15 @@ let mobilesignup = () => {
                             })
                             .then(() => {
                                 console.log("Signup: Document has successfully been written!");
+                                $("#mobilefname-Signup").val("");
+                                $("#mobilelname-Signup").val("");
+                                $("#mobileemail-Signup").val("");
+                                $("#mobilepassword-Signup").val("");
+                                let logDiv = $(".mobileAcountLogin");
+                                logDiv.css("top", "100%");
+                                $('html, body').css({
+                                    overflow: 'auto'
+                                });
                                 loginStatus = true;
                             })
                             .catch((error) => {
@@ -1012,6 +1024,11 @@ let mobileLogin = () => {
                     .then(() => {
                         $("#mobileEmail-login").val("");
                         $("#mobilePassword-Login").val("");
+                        let logDiv = $(".mobileAcountLogin");
+                        logDiv.css("top", "100%");
+                        $('html, body').css({
+                            overflow: 'auto'
+                        });
                     })
                     .catch((error) => {
                         var errorCode = error.code;
@@ -1037,6 +1054,11 @@ let mobileLogin = () => {
                     .then(() => {
                         $("#mobileEmail-login").val("");
                         $("#mobilePassword-Login").val("");
+                        let logDiv = $(".mobileAcountLogin");
+                        logDiv.css("top", "100%");
+                        $('html, body').css({
+                            overflow: 'auto'
+                        });
                     })
                     .catch((error) => {
                         var errorCode = error.code;
@@ -1071,6 +1093,20 @@ let signoutClick = () => {
             console.log("signoutClick Error Occured:", error);
         })
     });
+}
+
+let mobilesignoutClick = () => {
+    $(".keurigHeader__topNav__mobileExtraRight__signout").click(() => {
+        firebase.auth().signOut().then(() => {
+            console.log("signoutClick: Signed Out");
+            loginStatus = false;
+            loggedUser = null;
+            alert("You've been successfully logged out! ");
+        }).catch((error) => {
+            console.log("signoutClick Error Occured:", error);
+        })
+    });
+
 }
 
 let mobileMenu = () => {
@@ -1142,6 +1178,7 @@ let commands2LoadBeforePageHash = () => {
     setFooterHeight();
     mobileMenu();
     mobileLog();
+    mobilesignoutClick();
 }
 
 // Firebase command that will run at start to see if user credentals already exist on the web browser. If so to store them into local storage.
