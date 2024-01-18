@@ -8,3 +8,5 @@ Users can then add the coffee machines to the cart
 The site is built using Firebase HTML, CSS, JS, and Sass. No additional framework like react or vue was utilized to create this site.
 
 The application should be responsive to function on mobile devices by adjusting flex boxes to fit on smaller screens. 
+
+Link to the site should be provided in the sidebar. 
