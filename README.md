@@ -12,7 +12,7 @@ Project utilizes Firebase a cloud provider that allows us to create an online da
 
 That's pretty much it. 
 
-Application Coding Languages: 
+Coding Languages: 
 **HTML, CSS, JAVASCRIPT, Jquery, SCSS**
 
 Frameworks: **NO JS FRAMEWORK WAS UTILIZED FOR THIS PROJECT** (EX; Angular, React, Vue ...)
