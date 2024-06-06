@@ -1,6 +1,6 @@
 # FirebaseApplication Reconstruction of the [Keurig Website](https://www.keurig.com/c/coffeemakers101?cm_sp=All-Hot-Brewers-_-Top-Nav-_-coffeemakers101 "Keurig Website")
 
-This is a practice project with the intended purpose of replicating the site design, layout, and functionality of [Keurig.com](https://www.keurig.com/c/coffeemakers101?cm_sp=All-Hot-Brewers-_-Top-Nav-_-coffeemakers101 "Keurig.com")
+This is a practice project with the intended purpose of replicating the site design, layout, and functionality of [Keurig.com](https://personal-project-d1c24.web.app "Keurig.com")
 
 ***FULL INTENTION OF EDUCATION PURPOSE! I DO NOT OWN ANY OF THE IMAGERY AND PRODUCTS AT DISPLAY. THIS PROJECT AND REPOSITORY ONLY EXIST TO PRACTICE MY CODING KNOWLEDGE OF HTML CSS AND JS. ***
 
